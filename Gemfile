@@ -8,6 +8,7 @@ gem 'rails', '4.0.2'
 group :development do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'guard-rspec'
 end
 
 # Use SCSS for stylesheets
@@ -41,7 +42,16 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-gem  'capybara'
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'rb-notifu'
+  gem 'win32console'
+  gem 'wdm'
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
