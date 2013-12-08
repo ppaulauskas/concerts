@@ -27,6 +27,8 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    bootstrap-sass (2.3.2.0)
+      sass (~> 3.2)
     builder (3.1.4)
     capybara (2.2.0)
       mime-types (>= 1.16)
@@ -159,6 +161,7 @@ GEM
       rubyzip (~> 1.0)
       websocket (~> 1.0.4)
     slop (3.4.7)
+    spork (1.0.0rc4)
     spork (1.0.0rc4-x86-mingw32)
       win32-process
     spork-rails (4.0.0)
@@ -201,6 +204,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bootstrap-sass (= 2.3.2.0)
   capybara
   childprocess
   coffee-rails (~> 4.0.0)
