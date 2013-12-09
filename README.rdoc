@@ -2,4 +2,4 @@
 
 A website app for keeping tack of concerts and scheduling possible future events based on user preference
 
-* Running with Ruby 1.9.3
+* Running with Ruby 2.0.0p195
