@@ -22,6 +22,10 @@ textarea {
   resize: vertical;
 }
 
+.navbar-inner .container {
+  background-image: -webkit-linear-gradient(bottom,#126acc,#1a579b);
+}
+
 .center {
   text-align: center;
   h1 {
@@ -56,6 +60,10 @@ p {
   line-height: 1.7em;
 }
 
+.hero-unit h1 {
+  letter-spacing: -4px;
+
+}
 
 /* header */
 
@@ -75,6 +83,23 @@ p {
   }
 }
 
+.navbar-inverse .nav > li > a {
+  color: white;
+  text-transform: uppercase;
+  padding: 15px 15px 5px;
+}
+
+.navbar-inverse .navbar-inner {
+  background-image: -webkit-linear-gradient(top,#1a579b,#126acc);
+  border-color: #126acc;
+  border-bottom-width: 0px;
+}
+
+.navbar-fixed-top .navbar-inner {
+  -webit-box-shadow: none;
+  box-shadow: none;
+}
+
 /* footer */
 
 footer {
@@ -83,7 +108,7 @@ footer {
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
   a {
-    color: $gray;
+    color: white;
     &:hover {
       color: $grayDarker;
     }
