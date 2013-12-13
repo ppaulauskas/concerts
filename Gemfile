@@ -3,7 +3,7 @@ ruby '1.9.3'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails'
-gem 'bootstrap-sass','2.3.2.0'
+gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 
 group :development, :test do
