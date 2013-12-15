@@ -16,7 +16,6 @@ group :development, :test do
   gem 'spork-rails', github: 'A-gen/spork-rails'
   gem 'guard-spork'
   gem 'childprocess'
-  gem 'factory_girl_rails', '4.2.1'
 end
 
 group :test do
@@ -24,6 +23,7 @@ group :test do
   gem 'capybara'
   gem 'rb-notifu'
   gem 'wdm'
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 gem 'sass-rails'
