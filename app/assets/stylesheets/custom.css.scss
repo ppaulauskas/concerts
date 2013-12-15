@@ -10,6 +10,17 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 
+/* pagination */
+.pagination ul > li > a {
+  background-color: #126acc;
+  &:hover {
+    color: black;
+  }
+}
+
+.pagination ul > .active > a {
+  color: black;
+}
 /* miscellaneous */
 
 .debug_dump {
@@ -21,6 +32,13 @@ $grayMediumLight: #eaeaea;
 }
 
 /* universal */
+
+a {
+  color: white;
+  &:hover {
+    color: lightgray;
+  }
+}
 
 html {
   overflow-y: scroll;
@@ -198,4 +216,19 @@ input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid white;
+    &:last-child {
+      border-bottom: 1px solid white;
+    }
+  }
 }
