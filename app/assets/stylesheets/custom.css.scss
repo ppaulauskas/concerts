@@ -49,7 +49,7 @@ body {
   padding-top: 60px;
   background-color: #126acc;
   color: white;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: "Roboto-condensed",verdana, arial, helvetica, sans-serif;
 }
 
 section {
@@ -77,6 +77,18 @@ textarea {
 
 /* typography */
 
+@font-face{
+    font-family: "Roboto-Condensed";
+    src: url('https://s3.amazonaws.com/concerts-assets/fonts/roboto-fontfacekit/web+fonts/roboto_condensed_macroman/RobotoCondensed-Regular-webfont.ttf'),
+    url('https://s3.amazonaws.com/concerts-assets/fonts/roboto-fontfacekit/web+fonts/roboto_condensed_macroman/RobotoCondensed-Regular-webfont.eot'); /* IE */
+}
+
+@font-face{
+    font-family: "Roboto-Condensed-Bold";
+    src: url('https://s3.amazonaws.com/concerts-assets/fonts/roboto-fontfacekit/web+fonts/roboto_boldcondensed_macroman/RobotoCondensed-Bold-webfont.ttf'),
+    url('https://s3.amazonaws.com/concerts-assets/fonts/roboto-fontfacekit/web+fonts/roboto_boldcondensed_macroman/RobotoCondensed-Bold-webfont.eot'); /* IE */
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -97,15 +109,17 @@ h2 {
 }
 
 h4 {
-  font-size: 15px;
+  font-size: 18px;
   margin-top: 5px;
   font-weight: normal;
+  font-family: "Roboto-Condensed";
 }
 
 h5 {
   margin-top: 10px;
   margin-bottom: 0px;
-  font-size: 15px;
+  font-size: 22px;
+  font-family: "Roboto-Condensed-Bold";
 }
 
 h6 {
