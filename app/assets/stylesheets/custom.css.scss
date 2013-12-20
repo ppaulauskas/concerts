@@ -38,6 +38,7 @@ a {
   color: white;
   &:hover {
     color: lightgray;
+    text-decoration: none;
   }
 }
 
@@ -75,6 +76,38 @@ textarea {
   width: 1488px;
 }
 
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: white;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #126acc;
+    padding: 1px 0px 0px 0px;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color: #126acc;
+    padding: 2px 0px 0px 0px;
+}
+
+input[type="text"] {
+  -moz-appearance:    textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+
+div#placeholder {
+  color: white;
+}
+
 /* typography */
 
 @font-face{
@@ -110,7 +143,7 @@ h2 {
 
 h4 {
   font-size: 18px;
-  margin-top: 5px;
+  margin-top: 4px;
   font-weight: normal;
   font-family: "Roboto-Condensed";
 }
@@ -123,7 +156,9 @@ h5 {
 }
 
 h6 {
-  font-size: 15px;
+  font-size: 21px;
+  font-family: "Roboto-Condensed-Bold";
+  margin-top: 4px;
 }
 
 p {
@@ -281,21 +316,133 @@ input {
 }
 
 .header-calendar {
-  width: 1488px;
-  height: 71px;
-  background-color: gray;
+  //position: fixed;
+  width: 1428px;
+  height: 40px;
+  background-color: #126acc;
+  padding: 0px 21px 0px 39px;
+  //top: 40px;
+  clear: both;
   
-  .elements {
-    height: 27px;
+  .currmonth {
+    width: 204px;
+    height: 40px;
+    font-size: 22px;
+    font-family: "Roboto-Condensed-Bold";
+    display: inline-block; 
+    float: left;
   }
+  
+  .container-search {
+    width: 204px;
+    height: 40px;
+    font-size: 22px;
+    font-family: "Roboto-Condensed";
+    display: inline-block; 
+    color: #126acc;
+    float: left;
+    
+    input[type="text"] {
+      color: #126acc;
+      font-size: 17px;
+      padding: 0px 6px 1px
+    }
+    
+    .searchbox {
+      font-family: "Roboto-Condensed";
+      width: 187px;
+      height: 27px !important;
+      color: #126acc;
+      border-radius: 0px;
+    }
+  }
+  
+  .container-dropdown {
+    width: 204px;
+    height: 40px;
+    display: inline-block;
+    float: left;
+    
+    .dropdown {
+      width: 187px;
+      height: 27px;
+      
+      .btn {
+        font-size: 17px;
+        font-family: "Roboto-Condensed";
+        width: 187px;
+        height: 27px;
+        text-align: left;
+        padding: 3px 6px;
+        background-color: white;
+        color: #126acc;
+        vertical-align: middle;
+        box-sizing: border-box;
+        text-shadow: none;
+        background-image: none;
+        border: 0px;
+        border-radius: 0;
+        
+        &:focus {
+          outline: 0px;
+        }
+      }
+    }
+    
+    .dropdown-menu {
+      width: 187px;
+      background-color: white;
+      margin: 0px;
+      border: 0px;
+      border-radius: 0px;
+      
+      li {
+        a{
+          color: #126acc;
+        }
+      }
+    }
+  }
+  
+  .container-navigation {
+    width: 204px;
+    height: 40px;
+    display: inline-block;
+    float: left;
+    
+    .nav-buttons {
+      width: 187px;
+      
+      .left {
+        float: left;
+      }
+      
+      .middle1 {
+        padding-left: 29px;
+        padding-right: 3px;
+      }
+      
+      .middle2 {
+        padding-right: 29px;
+      }
+      
+      .right {
+        float: right;
+      }
+    }
+  }
+  
+  
 }
 
 .weekdays-calendar {
-  width: 1488px;
+  //position: fixed;
+  width: 1428px;
   height: 40px;
   background-color: #126acc;
   padding: 0px 21px 0px 39px;
   clear: both;
+  //top: 111px;
   
   .weekday {
     width: 204px;
@@ -311,6 +458,7 @@ input {
   padding: 0px 21px 0px 39px;
   background-color: #126acc;
   clear: both;
+  //top: 200px;
   
   .container-event {
     width: 204px;
