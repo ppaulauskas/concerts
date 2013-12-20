@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131215025532) do
+ActiveRecord::Schema.define(version: 20131215103432) do
+
+  create_table "concerts", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "when"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "concerts", ["title", "when", "location"], name: "index_concerts_on_title_and_when_and_location"
 
   create_table "users", force: true do |t|
     t.string   "name"

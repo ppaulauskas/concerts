@@ -21,6 +21,7 @@ $grayMediumLight: #eaeaea;
 .pagination ul > .active > a {
   color: black;
 }
+
 /* miscellaneous */
 
 .debug_dump {
@@ -70,6 +71,10 @@ textarea {
   }
 }
 
+.container {
+  width: 1488px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -89,6 +94,22 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
+}
+
+h4 {
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: normal;
+}
+
+h5 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size: 15px;
+}
+
+h6 {
+  font-size: 15px;
 }
 
 p {
@@ -136,6 +157,10 @@ p {
 .navbar-fixed-top .navbar-inner {
   -webit-box-shadow: none;
   box-shadow: none;
+}
+
+.navbar-fixed-top .container {
+  width: 1488px;
 }
 
 /* footer */
@@ -229,6 +254,125 @@ input {
     border-top: 1px solid white;
     &:last-child {
       border-bottom: 1px solid white;
+    }
+  }
+}
+
+/* Calendar */
+
+.container-calendar {
+  width: 1488px;
+  height: 600px;
+  background-color: #126acc;
+}
+
+.header-calendar {
+  width: 1488px;
+  height: 71px;
+  background-color: gray;
+  
+  .elements {
+    height: 27px;
+  }
+}
+
+.weekdays-calendar {
+  width: 1488px;
+  height: 40px;
+  background-color: #126acc;
+  padding: 0px 21px 0px 39px;
+  clear: both;
+  
+  .weekday {
+    width: 204px;
+    height: 30px;
+    display: inline-block; 
+    padding-top: 10px;  
+    float: left;
+  }
+}
+.container-monthly {
+  width: 1428px;
+  height: 600px;
+  padding: 0px 21px 0px 39px;
+  background-color: #126acc;
+  clear: both;
+  
+  .container-event {
+    width: 204px;
+    height: 226px;
+    display: inline-block;
+    float: left;
+    // background-color:darkgray;
+    margin-bottom: 15px;
+    
+    .day {
+      width: 187px;
+      height: 27px;
+      float: left;
+      color: black;
+      // background-color: gray;
+      display: block;
+      text-align: right;
+      //margin-top: 2px;
+    }
+    .event {
+      width: 187px;
+      height: 199px;
+      // background-color:lightgray;
+      display: block;
+      clear: left;
+      
+      .playbutton {
+        position: absolute;
+        width: 15px;
+        height: 17px;
+        margin-left: 8px;
+        margin-top: 6px;
+        background: transparent url('/assets/play_button.png');
+        &:hover {
+          background-image: url('/assets/play_button_hover.png');
+        }
+        
+      }
+      
+      .bandpic {
+        width: 187px;
+        height: 86px;
+        // clear: both;
+        background-color: lightgray;
+      }
+      
+      .event-individual {
+        width: 187px;
+        height: 26px;
+        // background-color: black;
+        margin-bottom: 3px;
+        display: inline-block;
+        float: left;
+        
+        .star {
+          width: 26px;
+          height: 26px;  
+          display: inline-block;
+          float: left;
+        }
+        
+        .curr-event {
+          width: 135px;
+          height: 26px;
+          background-color: black;
+          display: inline-block;
+          float: left;
+        }
+        
+        .cross {
+          width: 26px;
+          height: 26px;
+          display: inline-block;
+          float: left;
+        }
+      }
     }
   }
 }
