@@ -159,6 +159,7 @@ h6 {
   font-size: 21px;
   font-family: "Roboto-Condensed-Bold";
   margin-top: 4px;
+  display: inline-block;
 }
 
 p {
@@ -210,6 +211,143 @@ p {
 
 .navbar-fixed-top .container {
   width: 1488px;
+}
+
+.navbar-secondary {
+  height: 80px;
+}
+
+.secondary-header {
+  width: 1488px;
+  position: fixed;
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+  display: block;
+  right: 0;
+  left: 0;
+  background-color: #126acc;
+  z-index: 1000;
+  top: 40px;
+}
+.header-calendar {
+  //position: fixed;
+  width: 1428px;
+  height: 40px;
+  //background-color: #126acc;
+  padding: 0px 21px 0px 39px;
+  //top: 40px;
+  clear: both;
+  
+  .currmonth {
+    width: 204px;
+    height: 40px;
+    font-size: 22px;
+    font-family: "Roboto-Condensed-Bold";
+    display: inline-block; 
+    float: left;
+  }
+  
+  .container-search {
+    width: 204px;
+    height: 40px;
+    font-size: 22px;
+    font-family: "Roboto-Condensed";
+    display: inline-block; 
+    color: #126acc;
+    float: left;
+    
+    input[type="text"] {
+      color: #126acc;
+      font-size: 17px;
+      padding: 0px 6px 1px
+    }
+    
+    .searchbox {
+      font-family: "Roboto-Condensed";
+      width: 187px;
+      height: 27px !important;
+      color: #126acc;
+      border-radius: 0px;
+    }
+  }
+  
+  .container-dropdown {
+    width: 204px;
+    height: 40px;
+    display: inline-block;
+    float: left;
+    
+    .dropdown {
+      width: 187px;
+      height: 27px;
+      
+      .btn {
+        font-size: 17px;
+        font-family: "Roboto-Condensed";
+        width: 187px;
+        height: 27px;
+        text-align: left;
+        padding: 3px 6px;
+        background-color: white;
+        color: #126acc;
+        vertical-align: middle;
+        box-sizing: border-box;
+        text-shadow: none;
+        background-image: none;
+        border: 0px;
+        border-radius: 0;
+        
+        &:focus {
+          outline: 0px;
+        }
+      }
+    }
+    
+    .dropdown-menu {
+      width: 187px;
+      background-color: white;
+      margin: 0px;
+      border: 0px;
+      border-radius: 0px;
+      
+      li {
+        a{
+          color: #126acc;
+        }
+      }
+    }
+  }
+  
+  .container-navigation {
+    width: 204px;
+    height: 40px;
+    display: inline-block;
+    float: left;
+    
+    .nav-buttons {
+      width: 187px;
+      
+      .left {
+        float: left;
+      }
+      
+      .middle1 {
+        padding-left: 31px;
+        padding-right: 3px;
+      }
+      
+      .middle2 {
+        padding-right: 27px;
+      }
+      
+      .right {
+        float: right;
+      }
+    }
+  }
+  
+  
 }
 
 /* footer */
@@ -311,135 +449,19 @@ input {
 
 .container-calendar {
   width: 1488px;
-  height: 600px;
-  background-color: #126acc;
+  height: 960px;
+  display: block;
+  margin-bottom: 30px;
+  //background-color: #126acc;
 }
 
-.header-calendar {
-  //position: fixed;
-  width: 1428px;
-  height: 40px;
-  background-color: #126acc;
-  padding: 0px 21px 0px 39px;
-  //top: 40px;
-  clear: both;
-  
-  .currmonth {
-    width: 204px;
-    height: 40px;
-    font-size: 22px;
-    font-family: "Roboto-Condensed-Bold";
-    display: inline-block; 
-    float: left;
-  }
-  
-  .container-search {
-    width: 204px;
-    height: 40px;
-    font-size: 22px;
-    font-family: "Roboto-Condensed";
-    display: inline-block; 
-    color: #126acc;
-    float: left;
-    
-    input[type="text"] {
-      color: #126acc;
-      font-size: 17px;
-      padding: 0px 6px 1px
-    }
-    
-    .searchbox {
-      font-family: "Roboto-Condensed";
-      width: 187px;
-      height: 27px !important;
-      color: #126acc;
-      border-radius: 0px;
-    }
-  }
-  
-  .container-dropdown {
-    width: 204px;
-    height: 40px;
-    display: inline-block;
-    float: left;
-    
-    .dropdown {
-      width: 187px;
-      height: 27px;
-      
-      .btn {
-        font-size: 17px;
-        font-family: "Roboto-Condensed";
-        width: 187px;
-        height: 27px;
-        text-align: left;
-        padding: 3px 6px;
-        background-color: white;
-        color: #126acc;
-        vertical-align: middle;
-        box-sizing: border-box;
-        text-shadow: none;
-        background-image: none;
-        border: 0px;
-        border-radius: 0;
-        
-        &:focus {
-          outline: 0px;
-        }
-      }
-    }
-    
-    .dropdown-menu {
-      width: 187px;
-      background-color: white;
-      margin: 0px;
-      border: 0px;
-      border-radius: 0px;
-      
-      li {
-        a{
-          color: #126acc;
-        }
-      }
-    }
-  }
-  
-  .container-navigation {
-    width: 204px;
-    height: 40px;
-    display: inline-block;
-    float: left;
-    
-    .nav-buttons {
-      width: 187px;
-      
-      .left {
-        float: left;
-      }
-      
-      .middle1 {
-        padding-left: 29px;
-        padding-right: 3px;
-      }
-      
-      .middle2 {
-        padding-right: 29px;
-      }
-      
-      .right {
-        float: right;
-      }
-    }
-  }
-  
-  
-}
+
 
 .weekdays-calendar {
   //position: fixed;
   width: 1428px;
   height: 40px;
-  background-color: #126acc;
+  // background-color: #126acc;
   padding: 0px 21px 0px 39px;
   clear: both;
   //top: 111px;
@@ -454,9 +476,9 @@ input {
 }
 .container-monthly {
   width: 1428px;
-  height: 600px;
+  height: auto;
   padding: 0px 21px 0px 39px;
-  background-color: #126acc;
+  // background-color: #126acc;
   clear: both;
   //top: 200px;
   
@@ -477,6 +499,11 @@ input {
       display: block;
       text-align: right;
       //margin-top: 2px;
+      
+      .month {
+        display: inline-block;
+        float: left;
+      }
     }
     .event {
       width: 187px;
