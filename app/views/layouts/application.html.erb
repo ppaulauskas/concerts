@@ -8,31 +8,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
-  <script>
-	$(document).ready(function(){
-	$(".maxprice").keyup(function(){
-		var str = parseInt($(".maxprice").val(), 10);
-		var count = 0;
-		//loop through the friendslist
-		$(".event-individual").each(function(index){
-			if($(this).attr("id")){
-				//case insenstive search
-                //if(!$(this).attr("id").match(new RegExp(str, "i"))){
-                //    $(this).fadeOut("fast");
-                //}else{
-                //    $(this).fadeIn("slow");
-                //    count++;
-                if(parseInt($(this).attr("id"), 10) > str){
-					$(this).fadeOut("fast");
-				}else{
-					$(this).fadeIn("slow");
-					count++;
-                }
-            }
-        });
-    });
-  });
-  </script>
+  <%= render 'layouts/maxprice'%>
 </head>
 <body>
 <%= render 'layouts/header' %>
