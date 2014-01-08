@@ -6,6 +6,7 @@
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
+          <li><%= link_to "Bands", bands_path %></li>
           <% if signed_in? %>
               <li><%= link_to "Users", users_path %></li>
               <li class="dropdown">
@@ -29,93 +30,3 @@
     </div>
   </div>
 </header>
-<div class="container navbar-secondary">
-  <div class="secondary-header">
-	<div class="header-calendar">
-		<div class="currmonth">DECEMBER 2013</div>
-		
-		<div class="container-search">
-			<form id="search" role="search">
-     			 <div>
-        			<input type="text" class="searchbox" placeholder="SEARCH">
-      			</div>
-    		</form>
-		</div>
-		
-		<div class="container-dropdown">
-			<div class="dropdown">
-			  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
-			    MAX PRICE: $WHATEVER
-			    <span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">$10</a></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">$20</a></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">$35</a></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">$50</a></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">$75</a></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">$100</a></li>
-			    <li role="presentation" class="divider"></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">$WHATEVER</a></li>
-			  </ul>
-			</div>
-		</div>
-		
-		<div class="container-search">
-			<form id="search2" role="search">
-     			 <div>
-        			<input type="text" class="searchbox" placeholder="LOC: NEW YORK, NY">
-      			</div>
-    		</form>
-		</div>
-		
-		<div class="container-search">
-			<form id="search3" role="search">
-     			 <div>
-        			<input type="text" class="searchbox" placeholder="MY EVENTS">
-      			</div>
-    		</form>
-		</div>
-		
-		<div class="container-search">
-			<form id="search3" role="search">
-     			 <div>
-        			<input type="text" class="searchbox" placeholder="MY PROFILE">
-      			</div>
-    		</form>
-		</div>
-		
-		<div class="container-navigation">
-			<div class="nav-buttons">
-				<img class="left" src="https://s3.amazonaws.com/concerts-assets/images/left_arrows.png">
-				<img class="middle1" src="https://s3.amazonaws.com/concerts-assets/images/month_selected.png">
-				<img class="middle2" src="https://s3.amazonaws.com/concerts-assets/images/week.png">
-				<img class="right" src="https://s3.amazonaws.com/concerts-assets/images/right_arrows.png">
-			</div>
-		</div>		
-	</div>
-	<div class="weekdays-calendar">
-		<div class="weekday">
-			<h5>SUNDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>MONDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>TUESDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>WEDNESDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>THURSDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>FRIDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>SATURDAY</h5>
-		</div>
-	</div>
-</div>	
-</div>

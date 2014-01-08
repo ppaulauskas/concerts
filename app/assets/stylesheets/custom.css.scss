@@ -270,6 +270,14 @@ p {
       color: #126acc;
       border-radius: 0px;
     }
+    
+    .maxprice {
+      font-family: "Roboto-Condensed";
+      width: 187px;
+      height: 27px !important;
+      color: #126acc;
+      border-radius: 0px;
+    }
   }
   
   .container-dropdown {
@@ -300,6 +308,45 @@ p {
         
         &:focus {
           outline: 0px;
+        }
+      }
+      
+      .selectpicker {
+        font-size: 17px;
+        font-family: "Roboto-Condensed";
+        width: 187px;
+        height: 27px;
+        text-align: left;
+        padding: 0px 6px 3px 6px;
+        background-color: white;
+        color: #126acc;
+        vertical-align: middle;
+        box-sizing: border-box;
+        text-shadow: none;
+        background-image: none;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: 0px;
+        outline: 0px;
+        margin: 0px;
+        position: relative;
+        
+        &:focus {
+          outline: 0px;
+        }
+        
+        option {
+          width: 147px;
+          height: 20px;
+          display: block;
+          padding: 3px 20px 60px;
+          clear: both;
+          font-weight: normal;
+          line-height: 20px;
+          color: #126acc;
+          white-space: nowrap;
+          outline: 0px
         }
       }
     }
@@ -445,6 +492,22 @@ input {
   }
 }
 
+/* Bands index */
+
+.bands {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid white;
+    &:last-child {
+      border-bottom: 1px solid white;
+    }
+  }
+}
+
+
 /* Calendar */
 
 .container-calendar {
@@ -511,6 +574,7 @@ input {
       // background-color:lightgray;
       display: block;
       clear: left;
+      overflow: hidden;
       
       .playbutton {
         position: absolute;
