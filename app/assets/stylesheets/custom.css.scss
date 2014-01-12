@@ -153,6 +153,7 @@ h5 {
   margin-bottom: 0px;
   font-size: 22px;
   font-family: "Roboto-Condensed-Bold";
+  font-weight: normal;
 }
 
 h6 {
@@ -603,6 +604,7 @@ input {
         margin-bottom: 3px;
         display: inline-block;
         float: left;
+        overflow: hidden;
         
         .star {
           width: 26px;
