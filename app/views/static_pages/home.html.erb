@@ -1,10 +1,9 @@
-<script>
-	$('.selectpicker').selectpicker();
-</script>
 <div class="container navbar-secondary">
   <div class="secondary-header">
 	<div class="header-calendar">
-		<div class="currmonth">DECEMBER 2013</div>
+		<div class="currmonth">
+			<%= Date.today.strftime("%B %Y").upcase%>
+			</div>
 		
 		<div class="container-search">
 			<form id="search" role="search">
@@ -88,37 +87,24 @@
 			</div>
 		</div>		
 	</div>
-	<div class="weekdays-calendar">
-		<div class="weekday">
-			<h5>SUNDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>MONDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>TUESDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>WEDNESDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>THURSDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>FRIDAY</h5>
-		</div>
-		<div class="weekday">
-			<h5>SATURDAY</h5>
-		</div>
-	</div>
+  <%= render 'layouts/weekdays'%>
 </div>	
 </div>
 
 <div class="container-calendar">
 	<div class="container-monthly">
+		<% d=Date.today.at_beginning_of_week %>
 		<div class="container-event">
 			<div class="day">
-				<h6>15</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="playbutton">
@@ -155,7 +141,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>16</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -185,7 +179,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>17</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -215,7 +217,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>18</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -245,7 +255,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>19</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -275,7 +293,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>20</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -305,218 +331,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>21</h6>
-			</div>
-			<div class="event">
-				<div class="bandpic">
-					Picture of band
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band1</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band2</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band3</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band4</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-			</div>
-		</div>
-		<br />
-		<div class="container-event">
-			<div class="day">
-				<h6>22</h6>
-			</div>
-			<div class="event">
-				<div class="bandpic">
-					Picture of band
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band1</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band2</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band3</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band4</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-			</div>
-		</div>
-		<div class="container-event">
-			<div class="day">
-				<h6>23</h6>
-			</div>
-			<div class="event">
-				<div class="bandpic">
-					Picture of band
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band1</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band2</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band3</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band4</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-			</div>
-		</div>
-		<div class="container-event">
-			<div class="day">
-				<h6>24</h6>
-			</div>
-			<div class="event">
-				<div class="bandpic">
-					Picture of band
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band1</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band2</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band3</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band4</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-			</div>
-		</div>
-		<div class="container-event">
-			<div class="day">
-				<h6>25</h6>
-			</div>
-			<div class="event">
-				<div class="bandpic">
-					Picture of band
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band1</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band2</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band3</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band4</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-			</div>
-		</div>
-		<div class="container-event">
-			<div class="day">
-				<h6>26</h6>
-			</div>
-			<div class="event">
-				<div class="bandpic">
-					Picture of band
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band1</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band2</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band3</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band4</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-			</div>
-		</div>
-		<div class="container-event">
-			<div class="day">
-				<h6>27</h6>
-			</div>
-			<div class="event">
-				<div class="bandpic">
-					Picture of band
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band1</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band2</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band3</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-				<div class="event-individual">
-					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
-					<div class="curr-event"><h4>Band4</h4></div>
-					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
-				</div>
-			</div>
-		</div>
-		<div class="container-event">
-			<div class="day">
-				<h6>28</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -547,7 +370,15 @@
 		<br />
 		<div class="container-event">
 			<div class="day">
-				<h6>29</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -577,7 +408,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>30</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -607,7 +446,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>31</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -637,7 +484,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6 class="month">JANUARY</h6><h6>1</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -667,7 +522,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>2</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -697,7 +560,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>3</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -727,7 +598,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>4</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -758,7 +637,15 @@
 		<br />
 		<div class="container-event">
 			<div class="day">
-				<h6>5</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -788,7 +675,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>6</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -818,7 +713,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>7</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -848,7 +751,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>8</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -878,7 +789,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>9</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -908,7 +827,15 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>10</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">
@@ -938,7 +865,282 @@
 		</div>
 		<div class="container-event">
 			<div class="day">
-				<h6>11</h6>
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
+			</div>
+			<div class="event">
+				<div class="bandpic">
+					Picture of band
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band1</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band2</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band3</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band4</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="container-event">
+			<div class="day">
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
+			</div>
+			<div class="event">
+				<div class="bandpic">
+					Picture of band
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band1</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band2</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band3</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band4</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+			</div>
+		</div>
+		<div class="container-event">
+			<div class="day">
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
+			</div>
+			<div class="event">
+				<div class="bandpic">
+					Picture of band
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band1</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band2</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band3</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band4</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+			</div>
+		</div>
+		<div class="container-event">
+			<div class="day">
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
+			</div>
+			<div class="event">
+				<div class="bandpic">
+					Picture of band
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band1</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band2</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band3</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band4</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+			</div>
+		</div>
+		<div class="container-event">
+			<div class="day">
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
+			</div>
+			<div class="event">
+				<div class="bandpic">
+					Picture of band
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band1</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band2</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band3</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band4</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+			</div>
+		</div>
+		<div class="container-event">
+			<div class="day">
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
+			</div>
+			<div class="event">
+				<div class="bandpic">
+					Picture of band
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band1</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band2</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band3</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band4</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+			</div>
+		</div>
+		<div class="container-event">
+			<div class="day">
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
+			</div>
+			<div class="event">
+				<div class="bandpic">
+					Picture of band
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band1</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band2</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band3</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+				<div class="event-individual">
+					<div class="star"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="curr-event"><h4>Band4</h4></div>
+					<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+				</div>
+			</div>
+		</div>
+		<div class="container-event">
+			<div class="day">
+				<h6 class="month">
+					<% if d.day == 1 %> 
+						<%= d.strftime("%B").upcase %>
+					<% end %>
+				</h6>
+				<h6>
+					<%= d.day %>
+					<% d=d.tomorrow %>
+				</h6>
 			</div>
 			<div class="event">
 				<div class="bandpic">

@@ -1,0 +1,1 @@
+Date::DATE_FORMATS[:day_only] = '%d'
