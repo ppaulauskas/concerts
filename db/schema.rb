@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140107072021) do
+ActiveRecord::Schema.define(version: 20140114035738) do
 
   create_table "bands", force: true do |t|
     t.string   "name"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20140107072021) do
   end
 
   add_index "concerts", ["title", "when", "location"], name: "index_concerts_on_title_and_when_and_location"
+
+  create_table "events", force: true do |t|
+    t.string   "band"
+    t.text     "description"
+    t.date     "eventtime"
+    t.string   "venue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

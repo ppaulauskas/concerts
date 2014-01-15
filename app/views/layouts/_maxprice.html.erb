@@ -7,6 +7,8 @@
       
       // Parses the search into an int
       var str = parseInt($(".maxprice").val(), 10);
+      
+      if(str > 10){
 
       //loop through the events
       $(".event-individual").each(function(index){
@@ -24,6 +26,12 @@
           }
         }
       });
+      }else if(isNaN(str)){
+      	$(".event-individual").each(function(index){
+            // Fades in items that match
+            $(this).fadeIn("slow");
+      });
+      };
     });
   });
 </script>

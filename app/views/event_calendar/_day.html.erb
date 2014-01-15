@@ -1,0 +1,11 @@
+<div class="day">
+	<h6 class="month">
+		<% if @d.day == 1 %> 
+			<%= @d.strftime("%B").upcase %>
+		<% end %>
+	</h6>
+	<h6>
+		<%= @d.day %>
+		<% @d=@d.tomorrow %>
+	</h6>
+</div>

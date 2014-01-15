@@ -1,0 +1,1 @@
+Concerts::Application.config.d = Date.today.at_beginning_of_week

@@ -146,6 +146,9 @@ h4 {
   margin-top: 4px;
   font-weight: normal;
   font-family: "Roboto-Condensed";
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 h5 {
@@ -526,7 +529,7 @@ input {
   width: 1428px;
   height: 40px;
   // background-color: #126acc;
-  padding: 0px 21px 0px 39px;
+  padding: 0px 21px 8px 39px;
   clear: both;
   //top: 111px;
   
@@ -605,6 +608,8 @@ input {
         display: inline-block;
         float: left;
         overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         
         .star {
           width: 26px;
@@ -619,6 +624,9 @@ input {
           background-color: black;
           display: inline-block;
           float: left;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
         
         .cross {
