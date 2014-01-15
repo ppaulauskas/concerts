@@ -8,9 +8,10 @@ gem 'bcrypt-ruby'
 gem 'faker'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
+gem 'pg', '0.15.1'
+gem 'pg_search'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'spork-rails', github: 'A-gen/spork-rails'
@@ -38,7 +39,5 @@ group :doc do
 end
 
 group :production do
-  gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
-  gem 'pg_search'
 end

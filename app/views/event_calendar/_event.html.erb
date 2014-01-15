@@ -4,7 +4,7 @@
 	<div class="bandpic">
 		<img src="https://s3.amazonaws.com/concerts-assets/images/hot_chip.png">
 	</div>
-	<% @eventstoday = Event.find(:all, :conditions =>['eventtime LIKE ?', @d.yesterday]) %>
+	<% @eventstoday = Event.find(:all, :conditions =>['eventtime LIKE ?', @d.yesterday.to_s]) %>
 	
 	<% @eventstoday.each do |individ| %>
 		<div class="event-individual" id="<%= Random.new.rand(10...100) %>">
