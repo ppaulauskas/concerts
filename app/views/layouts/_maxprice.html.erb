@@ -19,17 +19,17 @@
           // Parses the price from the id and checks it against max
           if(parseInt($(this).attr("id"), 10) > str){
             // Fades out those that dont match
-            $(this).fadeOut("fast");
+            $(this).delay(800).fadeOut("slow");
           }else{
             // Fades in items that match
-            $(this).fadeIn("slow");
+            $(this).delay(800).fadeIn("slow");
           }
         }
       });
       }else if(isNaN(str)){
       	$(".event-individual").each(function(index){
             // Fades in items that match
-            $(this).fadeIn("slow");
+            $(this).delay(800).fadeIn("slow");
       });
       };
     });

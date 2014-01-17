@@ -164,6 +164,7 @@ h6 {
   font-family: "Roboto-Condensed-Bold";
   margin-top: 4px;
   display: inline-block;
+  font-weight: normal;
 }
 
 p {
@@ -218,7 +219,7 @@ p {
 }
 
 .navbar-secondary {
-  height: 80px;
+  height: 65px;
 }
 
 .secondary-header {
@@ -570,6 +571,7 @@ input {
       .month {
         display: inline-block;
         float: left;
+        color: white;
       }
     }
     .event {
@@ -611,11 +613,23 @@ input {
         white-space: nowrap;
         text-overflow: ellipsis;
         
-        .star {
+        .star-empty {
           width: 26px;
           height: 26px;  
           display: inline-block;
           float: left;
+          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png');
+          &:hover {
+            background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
+          }
+        }
+        
+        .star-full {
+          width: 26px;
+          height: 26px;  
+          display: inline-block;
+          float: left;
+          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
         }
         
         .curr-event {
@@ -634,6 +648,10 @@ input {
           height: 26px;
           display: inline-block;
           float: left;
+          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png');
+          &:hover {
+            background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_full.png');
+          }
         }
       }
     }
