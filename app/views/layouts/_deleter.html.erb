@@ -1,12 +1,15 @@
 <script>
 window.onload = function() {
 	$('.deleter').on('click', function(){
- 		 $(this).parent().remove();
+ 		 $(this).parent().slideUp(400, function() {
+ 		 	$(this).remove();
+ 		 });
 	});
 	
 	$('.mover').on('click',function () {
-        $(this).parent().insertBefore($(this).parent().prevAll('.event-individual').last());
+        $(this).parent().insertBefore($(this).parent().prevAll('.event-individual').last()).hide().slideDown();
         $(this).removeClass('star-empty mover');
+        $(this).removeAttr('href');
     	$(this).addClass('star-full');
     });
 };
