@@ -4,18 +4,17 @@
 	<div class="bandpic">
 		<img src="https://s3.amazonaws.com/concerts-assets/images/hot_chip.png">
 	</div>
-	<% @eventstoday = Event.find(:all, :conditions =>['eventtime LIKE ?', @d.yesterday.to_s]) %>
-	
+	<% @eventstoday = @events.select{|x| x.eventtime == @d.yesterday.to_s}.sort_by{|x| -x[:rating]} %>
+
 	<% @eventstoday.each do |individ| %>
 		<div class="event-individual" id="<%= Random.new.rand(10...100) %>">
-			<div class="star">
-				<% if Random.new.rand(1...10) == 1 %>
-					<img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png"></div>
+				<% if individ.rating == 9 %>
+					<div class="star-full"></div>
 				<% else %>
-					<img src="https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png"></div>
+					<div class="star-empty"></div>
 				<% end %>
 			<div class="curr-event"><h4><%= individ.band %></h4></div>
-			<div class="cross"><img src="https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png"></div>
+			<div class="deleter cross" href="javascript:void(0);"></div>
 		</div>
 	<%end%>		
 </div>
