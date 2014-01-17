@@ -1,8 +1,14 @@
 <script>
 window.onload = function() {
 	$('.deleter').on('click', function(){
- 		 $(this).closest('.event-individual').remove();
+ 		 $(this).parent().remove();
 	});
+	
+	$('.mover').on('click',function () {
+        $(this).parent().insertBefore($(this).parent().prevAll('.event-individual').last());
+        $(this).removeClass('star-empty mover');
+    	$(this).addClass('star-full');
+    });
 };
 
 </script>

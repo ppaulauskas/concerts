@@ -1,0 +1,7 @@
+<script>
+window.onload = function() {
+	$('.mover').on('click',function () {
+        $(this).closest('.event-individual').insertAfter($(this).closest('.event'));
+    });
+};
+</script>

@@ -102,6 +102,11 @@ input[type="text"] {
   -moz-appearance:    textfield;
   -webkit-appearance: textfield;
   appearance: textfield;
+  border: 0px;
+}
+
+input {
+  border: 0px;
 }
 
 div#placeholder {
@@ -149,6 +154,7 @@ h4 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  height: 21px;
 }
 
 h5 {
