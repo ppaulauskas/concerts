@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
   before_filter :date_set
+  before_filter :events_get
   
   def date_set
     @d = Date.today.at_beginning_of_week
+  end
+  
+  def events_get
+    @events = Event.find(:all)
   end
   
   # Prevent CSRF attacks by raising an exception.
