@@ -1,12 +1,34 @@
 <script>
 window.onload = function() {
 	$('.deleter').on('click', function(){
+		$(this).addClass('changing');
+	
+		var values = $('.changing :input').serialize();
+		
+		$.ajax({
+        	url: "/events/remove",
+        	type: "post",
+        	data: values,
+     	});
+	
  		 $(this).parent().slideUp(400, function() {
  		 	$(this).remove();
  		 });
 	});
 	
 	$('.mover').on('click',function () {
+		$(this).addClass('changing');
+		
+		var values = $('.changing :input').serialize();
+		
+		$.ajax({
+        	url: "/events/star",
+        	type: "post",
+        	data: values,
+     	});
+	
+		$(this).removeClass('changing');
+		
         $(this).parent().insertBefore($(this).parent().prevAll('.event-individual').last()).hide().slideDown();
         $(this).removeClass('star-empty mover');
         $(this).removeAttr('href');
