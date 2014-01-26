@@ -33,6 +33,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'seed_dump'
 
 group :doc do
   gem 'sdoc', require: false
