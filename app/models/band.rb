@@ -1,2 +1,2 @@
-class Band < ActiveRecord::Base  
+class Band < ActiveRecord::Base
 end

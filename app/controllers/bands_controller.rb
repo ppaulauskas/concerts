@@ -1,9 +1,18 @@
 class BandsController < ApplicationController
-  def show
-    @band = Band.find(params[:id])
+  def star
+    band = Band.find_by name: params[:name]
+    rat = band.rating + 50
+    band.update_attribute(:rating, rat)
   end
   
-  def index
-    @bands = Band.paginate(page: params[:page])
+  def unstar
+    band = Band.find_by name: params[:name]
+    rat = band.rating - 50
+    band.update_attribute(:rating, rat)
+  end
+
+  def remove
+    band = Band.find_by name: params[:name]
+    band.update_attribute(:rating, 0)
   end
 end

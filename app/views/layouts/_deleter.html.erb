@@ -1,12 +1,11 @@
 <script>
-window.onload = function() {
 	$('.deleter').on('click', function(){
 		$(this).addClass('changing');
 	
 		var values = $('.changing :input').serialize();
 		
 		$.ajax({
-        	url: "/events/remove",
+        	url: "/bands/remove",
         	type: "post",
         	data: values,
      	});
@@ -15,25 +14,44 @@ window.onload = function() {
  		 	$(this).remove();
  		 });
 	});
-	
+</script>
+<script>
 	$('.mover').on('click',function () {
 		$(this).addClass('changing');
 		
 		var values = $('.changing :input').serialize();
 		
-		$.ajax({
-        	url: "/events/star",
-        	type: "post",
-        	data: values,
-     	});
-	
-		$(this).removeClass('changing');
-		
-        $(this).parent().insertBefore($(this).parent().prevAll('.event-individual').last()).hide().slideDown();
-        $(this).removeClass('star-empty mover');
-        $(this).removeAttr('href');
-    	$(this).addClass('star-full');
+		if($(this).hasClass('star-empty')) {
+			$.ajax({
+        		url: "/bands/star",
+        		type: "post",
+        		data: values,
+     		});
+     		
+     		$(this).parent().siblings('.bandpic').children('.topimg').attr('src', $(this).attr('id'));
+			$(this).addClass('top');
+			$(this).removeClass('changing');
+			$(this).parent().prevAll('.event-individual').children('.top').removeClass('top');
+        	$(this).parent().insertBefore($(this).parent().prevAll('.event-individual').last()).hide().slideDown();
+        	$(this).removeClass('star-empty');
+    		$(this).addClass('star-full');
+    	}
+    	else {
+    		$.ajax({
+        		url: "/bands/unstar",
+        		type: "post",
+        		data: values,
+     		});
+     		if($(this).hasClass('top')) {
+     			$(this).parent().siblings('.bandpic').children('.topimg').attr('src', $(this).parent().next().children('.mover').attr('id'));
+     			$(this).parent().next().children('.mover').addClass('top');
+     			$(this).removeClass('top');
+     		}
+     		
+     		$(this).removeClass('changing');
+        	$(this).parent().insertAfter($(this).parent().nextAll('.event-individual').last()).hide().slideDown();
+        	$(this).removeClass('star-full');
+    		$(this).addClass('star-empty');
+    	}
     });
-};
-
 </script>
