@@ -1,3 +1,4 @@
+#encoding utf-8
 Band.create!([
   {name: "Young Widows", related: nil, rating: 25, image: "http://userserve-ak.last.fm/serve/252/10805853.jpg", lastfmurl: nil},
   {name: "Albert Hammond, Jr", related: nil, rating: 25, image: "http://userserve-ak.last.fm/serve/252/260091.jpg", lastfmurl: nil},
