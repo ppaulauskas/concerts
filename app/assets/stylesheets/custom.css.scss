@@ -73,7 +73,7 @@ textarea {
 }
 
 .container {
-  width: 1488px;
+  width: 1428px;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -221,7 +221,7 @@ p {
 }
 
 .navbar-fixed-top .container {
-  width: 1488px;
+  width: 1428px;
 }
 
 .navbar-secondary {
@@ -229,7 +229,7 @@ p {
 }
 
 .secondary-header {
-  width: 1488px;
+  width: 1428px;
   position: fixed;
   margin-right: auto;
   margin-left: auto;
@@ -246,7 +246,7 @@ p {
   width: 1428px;
   height: 40px;
   //background-color: #126acc;
-  padding: 0px 21px 0px 39px;
+  //padding: 0px 21px 0px 39px;
   //top: 40px;
   clear: both;
   
@@ -522,7 +522,7 @@ input {
 /* Calendar */
 
 .container-calendar {
-  width: 1488px;
+  width: 1428px;
   height: 960px;
   display: block;
   margin-bottom: 30px;
@@ -536,7 +536,7 @@ input {
   width: 1428px;
   height: 40px;
   // background-color: #126acc;
-  padding: 0px 21px 8px 39px;
+  //padding: 0px 21px 8px 39px;
   clear: both;
   //top: 111px;
   
@@ -551,13 +551,13 @@ input {
 .container-monthly {
   width: 1428px;
   height: auto;
-  padding: 0px 21px 0px 39px;
+  //padding: 0px 21px 0px 39px;
   // background-color: #126acc;
   clear: both;
   //top: 200px;
   
   .container-event {
-    width: 204px;
+    width: 14.2857143%;
     height: 226px;
     display: inline-block;
     float: left;

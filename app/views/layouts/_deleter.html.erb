@@ -1,25 +1,33 @@
 <script>
 	$('.deleter').on('click', function(){
 		$(this).addClass('changing');
-	
 		var values = $('.changing :input').serialize();
+		$(this).removeClass('changing');
 		
 		$.ajax({
         	url: "/bands/remove",
         	type: "post",
         	data: values,
      	});
+     	
+		$('.'+$(this).parent().attr('class').split(' ')[1]).each(function() {
+			if($(this).children('.mover').hasClass('top')) {
+     			$(this).siblings('.bandpic').children('.topimg').attr('src', $(this).next().children('.mover').attr('name'));
+     			$(this).next().children('.mover').addClass('top');
+     			$(this).children('.mover').removeClass('top');
+     		}
 	
- 		 $(this).parent().slideUp(400, function() {
- 		 	$(this).remove();
- 		 });
+ 			$(this).slideUp(400, function() {
+ 		 		$(this).remove();
+ 			});
+ 		});
 	});
 </script>
 <script>
 	$('.mover').on('click',function () {
 		$(this).addClass('changing');
-		
 		var values = $('.changing :input').serialize();
+		$(this).removeClass('changing');
 		
 		if($(this).hasClass('star-empty')) {
 			$.ajax({
@@ -28,13 +36,14 @@
         		data: values,
      		});
      		
-     		$(this).parent().siblings('.bandpic').children('.topimg').attr('src', $(this).attr('id'));
-			$(this).addClass('top');
-			$(this).removeClass('changing');
-			$(this).parent().prevAll('.event-individual').children('.top').removeClass('top');
-        	$(this).parent().insertBefore($(this).parent().prevAll('.event-individual').last()).hide().slideDown();
-        	$(this).removeClass('star-empty');
-    		$(this).addClass('star-full');
+     		$('.'+$(this).parent().attr('class').split(' ')[1]).each(function() {
+     			$(this).siblings('.bandpic').children('.topimg').attr('src', $(this).attr('name'));
+				$(this).children('.mover').addClass('top');
+				$(this).prevAll('.event-individual').children('.top').removeClass('top');
+        		$(this).insertBefore($(this).prevAll('.event-individual').last()).hide().slideDown();
+        		$(this).children('.mover').removeClass('star-empty');
+    			$(this).children('.mover').addClass('star-full');
+    		});
     	}
     	else {
     		$.ajax({
@@ -42,16 +51,17 @@
         		type: "post",
         		data: values,
      		});
-     		if($(this).hasClass('top')) {
-     			$(this).parent().siblings('.bandpic').children('.topimg').attr('src', $(this).parent().next().children('.mover').attr('id'));
-     			$(this).parent().next().children('.mover').addClass('top');
-     			$(this).removeClass('top');
+     		$('.'+$(this).parent().attr('class').split(' ')[1]).each(function() {
+     		if($(this).children('.mover').hasClass('top')) {
+     			$(this).siblings('.bandpic').children('.topimg').attr('src', $(this).next().children('.mover').attr('name'));
+     			$(this).next().children('.mover').addClass('top');
+     			$(this).children('.mover').removeClass('top');
      		}
      		
-     		$(this).removeClass('changing');
-        	$(this).parent().insertAfter($(this).parent().nextAll('.event-individual').last()).hide().slideDown();
-        	$(this).removeClass('star-full');
-    		$(this).addClass('star-empty');
+        		$(this).insertAfter($(this).nextAll('.event-individual').last()).hide().slideDown();
+        		$(this).children('.mover').removeClass('star-full');
+    			$(this).children('.mover').addClass('star-empty');
+    		});
     	}
     });
 </script>

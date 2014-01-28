@@ -5,12 +5,13 @@
 	<div class="bandpic">
 		<img class="topimg" src="<% if @eventstoday.length > 0 %><%= (Band.find_by name: (@eventstoday[0].headliner)).image %><% end %>">
 	</div>
-	<% @eventstoday.each do |individ| %>
-		<div class="event-individual" id="<%= Random.new.rand(10...100) %>">
-				<% if (Band.find_by name: individ.headliner).rating > 50 %>
-					<div class="star-full mover" id="<%= (Band.find_by name: individ.headliner).image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= individ.headliner %>" name="name"></div>
+	<% @eventstoday.each_with_index do |individ, index| %>
+		<% @currband = (Band.find_by name: individ.headliner) %>
+		<div class="event-individual <%= @currband.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= Random.new.rand(10...100) %>">
+				<% if @currband.rating > 50 %>
+					<div class="star-full mover <% if index == 0 %>top<% end %>" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= individ.headliner %>" name="name"></div>
 				<% else %>
-					<div class="star-empty mover" id="<%= (Band.find_by name: individ.headliner).image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= individ.headliner %>" name="name"></div>
+					<div class="star-empty mover <% if index == 0 %>top<% end %>" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= individ.headliner %>" name="name"></div>
 				<% end %>
 			<div class="curr-event"><h4><%= individ.headliner %></h4></div>
 			<div class="deleter cross" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= individ.headliner%>" name="name"></div>
