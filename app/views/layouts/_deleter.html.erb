@@ -58,7 +58,9 @@
      			$(this).children('.mover').removeClass('top');
      		}
      		
-        		$(this).insertAfter($(this).nextAll('.event-individual').last()).hide().slideDown();
+        		$(this).slideUp(function() {
+        			$(this).insertAfter($(this).nextAll('.event-individual').last()).slideUp('slow')
+        		});
         		$(this).children('.mover').removeClass('star-full');
     			$(this).children('.mover').addClass('star-empty');
     		});
