@@ -37,10 +37,14 @@
      		});
      		
      		$('.'+$(this).parent().attr('class').split(' ')[1]).each(function() {
-     			$(this).siblings('.bandpic').children('.topimg').attr('src', $(this).attr('name'));
+     			$(this).siblings('.bandpic').children('.topimg').attr('src', $(this).children('.mover').attr('name'));
 				$(this).children('.mover').addClass('top');
 				$(this).prevAll('.event-individual').children('.top').removeClass('top');
         		$(this).insertBefore($(this).prevAll('.event-individual').last()).hide().slideDown();
+        		if($(this).children('.mover').hasClass('star-empty-old')) {
+        			$(this).children('.mover').removeClass('star-empty-old');
+    				$(this).children('.mover').addClass('star-full-old');
+    			}
         		$(this).children('.mover').removeClass('star-empty');
     			$(this).children('.mover').addClass('star-full');
     		});
@@ -59,11 +63,29 @@
      		}
      		
         		$(this).slideUp(function() {
-        			$(this).insertAfter($(this).nextAll('.event-individual').last()).slideUp('slow')
+        			$(this).insertAfter($(this).nextAll('.event-individual').last()).slideDown();
         		});
+        		if($(this).children('.mover').hasClass('star-full-old')) {
+        			$(this).children('.mover').removeClass('star-full-old');
+    				$(this).children('.mover').addClass('star-empty-old');
+    			}
         		$(this).children('.mover').removeClass('star-full');
     			$(this).children('.mover').addClass('star-empty');
     		});
     	}
     });
+</script>
+<script>
+	$('.bandpic').hover(function() {
+		$(this).siblings('.playbutton').css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button_hover_orange_border.png)");
+	}).mouseleave(function() {
+		$(this).siblings('.playbutton').css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button.png)");
+	});
+</script>
+<script>
+	$('.playbutton').hover(function() {
+		$(this).css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button_hover_orange_border.png)");
+	}).mouseleave(function() {
+		$(this).css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button.png)");
+	});
 </script>

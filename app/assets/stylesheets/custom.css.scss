@@ -595,17 +595,13 @@ input {
         margin-left: 8px;
         margin-top: 6px;
         background: url('https://s3.amazonaws.com/concerts-assets/images/play_button.png');
-        &:hover {
-          background-image: url('https://s3.amazonaws.com/concerts-assets/images/play_button_hover.png');
-        }
-        
       }
       
       .bandpic {
         width: 187px;
         height: 86px;
         // clear: both;
-        background-color: lightgray;
+        background: url('https://s3.amazonaws.com/concerts-assets/images/band_filler.png');
         overflow: hidden;
       }
       
@@ -628,6 +624,15 @@ input {
           background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png');
           &:hover {
             background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
+            cursor: pointer; 
+            cursor: hand;
+          }
+        }
+        
+        .star-empty-old {
+          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_empty.png');
+          &:hover {
+            background-image: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_full.png');
           }
         }
         
@@ -637,6 +642,14 @@ input {
           display: inline-block;
           float: left;
           background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
+          &:hover {
+            cursor: pointer; 
+            cursor: hand;
+          }
+        }
+        
+        .star-full-old {
+          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_full.png');
         }
         
         .curr-event {
@@ -650,6 +663,11 @@ input {
           text-overflow: ellipsis;
         }
         
+        .curr-event-old {
+          background-color: #525252;
+          color: #8d8d8d;
+        }
+        
         .cross {
           width: 26px;
           height: 26px;
@@ -658,6 +676,15 @@ input {
           background: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png');
           &:hover {
             background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_full.png');
+            cursor: pointer; 
+            cursor: hand;
+          }
+        }
+        
+        .cross-old {
+          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_cross_empty.png');
+          &:hover {
+            background-image: url('https://s3.amazonaws.com/concerts-assets/images/gray_cross_full.png');
           }
         }
       }
