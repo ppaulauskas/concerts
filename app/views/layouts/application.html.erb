@@ -11,7 +11,26 @@
   <%= render 'layouts/maxprice'%>
 </head>
 <body>
-<%= render 'layouts/header' %>
+	<!--
+	<%= render 'layouts/header' %>
+	
+<div class="header">
+	<div class="container navbar-secondary">
+	<div class="secondary-header">
+		<%= render 'layouts/navbar'%>
+  		<%= render 'layouts/weekdays'%>
+	</div>	
+	</div>
+</div>	
+-->
+<header class="navbar-fixed-top">
+<div class="secondary-header">
+		<%= render 'layouts/headbanner' %>
+		<%= render 'layouts/navbar' %>
+  		<%= render 'layouts/weekdays' %>
+</div>	
+</header>
+	
 <div class="container">
   <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "alert alert-#{key}") %>

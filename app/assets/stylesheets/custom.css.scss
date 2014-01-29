@@ -47,10 +47,11 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 165px;
   background-color: #126acc;
   color: white;
   font-family: "Roboto-condensed",verdana, arial, helvetica, sans-serif;
+  line-height: 1.231;
 }
 
 section {
@@ -158,7 +159,7 @@ h4 {
 }
 
 h5 {
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 0px;
   font-size: 22px;
   font-family: "Roboto-Condensed-Bold";
@@ -187,16 +188,153 @@ p {
 
 /* header */
 
+.headbanner {
+  height:68px;
+  margin-bottom:26px;
+  
+  .part1 {
+    width: 14.2857143%;
+    height: 64px;
+    display:inline-block;
+    float:left;
+    position:relative;
+  }
+  
+  .logo {
+    width: 91.666667%;
+    height: 64px;
+    background-color: black;
+    color: #ff6100;
+    font-size: 50px;
+    text-align:center;
+    vertical-align:center;
+  }
+  
+  .currsong {
+    width:100%;
+    height:26px;
+    background-color:black;
+    float:left;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    display:block;
+    position:absolute;
+    bottom:0;
+    
+    .pad {
+      padding-left:4px;
+    }
+  }
+  
+  .short {
+    width:91.666667%;
+  }
+  
+  .event-individual {
+    width: 187px;
+    height: 26px;
+    // background-color: black;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position:absolute;
+    bottom:0;
+   
+    .star-empty {
+      width: 26px;
+      height: 26px;  
+      display: inline-block;
+      float: left;
+      background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png');
+      &:hover {
+        background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
+        cursor: pointer; 
+        cursor: hand;
+      }
+    }
+        
+    .star-full {
+      width: 26px;
+      height: 26px;  
+      display: inline-block;
+      float: left;
+      background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
+      &:hover {
+        cursor: pointer; 
+        cursor: hand;
+      }
+    }
+    
+    .empty {
+      width: 26px;
+      height: 26px;  
+      display: inline-block;
+      float: left;
+      background-color:black;
+    }
+        
+    .curr-event {
+      width: 135px;
+      height: 26px;
+      background-color: black;
+      display: inline-block;
+      float: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    
+    .curr-venue {
+      width: 135px;
+      height: 26px;
+      background-color: black;
+      display: inline-block;
+      float: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    
+    .curr-date {
+      width: 135px;
+      height: 26px;
+      background-color: black;
+      display: inline-block;
+      float: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+        
+    .cross {
+      width: 26px;
+      height: 26px;
+      display: inline-block;
+      float: left;
+      background: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png');
+      &:hover {
+       background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_full.png');
+       cursor: pointer; 
+       cursor: hand;
+      }
+    }
+  }
+}
+
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  color: orange;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
+  background-color: black;
   &:hover {
     color: white;
     text-decoration: none;
@@ -239,7 +377,7 @@ p {
   left: 0;
   background-color: #126acc;
   z-index: 1000;
-  top: 40px;
+  //top: 40px;
 }
 .header-calendar {
   //position: fixed;
@@ -534,17 +672,18 @@ input {
 .weekdays-calendar {
   //position: fixed;
   width: 1428px;
-  height: 40px;
+  height: 26px;
   // background-color: #126acc;
   //padding: 0px 21px 8px 39px;
   clear: both;
   //top: 111px;
+  margin-bottom:5px;
   
   .weekday {
     width: 204px;
-    height: 30px;
+    height: 26px;
     display: inline-block; 
-    padding-top: 10px;  
+    padding-top: 0px;  
     float: left;
   }
 }
