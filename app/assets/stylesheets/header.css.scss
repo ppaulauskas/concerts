@@ -1,0 +1,375 @@
+/* header */
+
+.headbanner {
+  height:34px;
+  margin-bottom:17px;
+  
+  .part1 {
+    width: 14.2857143%;
+    height: 34px;
+    display:inline-block;
+    float:left;
+    position:relative;
+  }
+  
+  .spotify-player {
+    width: 28.5314286%;
+    height: 80px;
+    display: inline-block;
+    float: left;
+  }
+  
+  .logo {
+    width: 91.666667%;
+    height: 34px;
+    background-color: black;
+    color: #ff6100;
+    font-size: 20px;
+    text-align:center;
+    vertical-align:center;
+  }
+  
+  .currsong {
+    width:100%;
+    height:17px;
+    background-color:black;
+    float:left;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    display:block;
+    position:absolute;
+    bottom:0;
+    
+    .pad {
+      padding-left:4px;
+    }
+  }
+  
+  .short {
+    width:91.666667%;
+  }
+  
+  .event-individual {
+    width: 122px;
+    height: 17px;
+    // background-color: black;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position:absolute;
+    bottom:0;
+   
+    .star-empty {
+      width: 17px;
+      height: 17px;  
+      display: inline-block;
+      float: left;
+      background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png');
+      background-size: contain;
+      &:hover {
+        background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
+        background-size: contain;
+        cursor: pointer; 
+        cursor: hand;
+      }
+    }
+        
+    .star-full {
+      width: 17px;
+      height: 17px;  
+      display: inline-block;
+      float: left;
+      background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
+      background-size: contain;
+      &:hover {
+        cursor: pointer; 
+        cursor: hand;
+      }
+    }
+    
+    .empty {
+      width: 17px;
+      height: 17px;  
+      display: inline-block;
+      float: left;
+      background-color:black;
+    }
+        
+    .curr-event {
+      width: 88px;
+      height: 17px;
+      background-color: black;
+      display: inline-block;
+      float: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    
+    .curr-venue {
+      width: 88px;
+      height: 17px;
+      background-color: black;
+      display: inline-block;
+      float: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    
+    .curr-date {
+      width: 88px;
+      height: 17px;
+      background-color: black;
+      display: inline-block;
+      float: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+        
+    .cross {
+      width: 17px;
+      height: 17px;
+      display: inline-block;
+      float: left;
+      background: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png');
+      background-size: contain;
+      &:hover {
+       background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_full.png');
+       background-size: contain;
+       cursor: pointer; 
+       cursor: hand;
+      }
+    }
+  }
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: orange;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  background-color: black;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.navbar-inverse .nav > li > a {
+  color: white;
+  text-transform: uppercase;
+  padding: 15px 15px 5px;
+}
+
+.navbar-inverse .navbar-inner {
+  background-image: -webkit-linear-gradient(top,#1a579b,#126acc);
+  border-color: #126acc;
+  border-bottom-width: 0px;
+}
+
+.navbar-fixed-top .navbar-inner {
+  -webit-box-shadow: none;
+  box-shadow: none;
+}
+
+.navbar-fixed-top .container {
+  width: 1428px;
+}
+
+.navbar-secondary {
+  height: 65px;
+}
+
+.secondary-header {
+  width: 920px;
+  position: fixed;
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+  display: block;
+  right: 0;
+  left: 0;
+  //background-color: #126acc;
+  z-index: 1000;
+  //top: 40px;
+}
+.header-calendar {
+  //position: fixed;
+  width: 920px;
+  height: 30px;
+  //background-color: #126acc;
+  //padding: 0px 21px 0px 39px;
+  //top: 40px;
+  clear: both;
+  
+  .currmonth {
+    width: 14.2857143%;
+    height: 30px;
+    font-size: 16px;
+    font-family: "Roboto-Condensed-Bold";
+    display: inline-block; 
+    float: left;
+  }
+  
+  .container-search {
+    width: 14.2857143%;
+    height: 30px;
+    font-size: 16px;
+    font-family: "Roboto-Condensed";
+    display: inline-block; 
+    color: #126acc;
+    float: left;
+    
+    input[type="text"] {
+      color: #126acc;
+      font-size: 13px;
+      padding: 0px 6px 1px
+    }
+    
+    .searchbox {
+      font-family: "Roboto-Condensed";
+      width: 122px;
+      height: 17px !important;
+      color: #126acc;
+      border-radius: 0px;
+    }
+    
+    .maxprice {
+      font-family: "Roboto-Condensed";
+      width: 122px;
+      height: 17px !important;
+      color: #126acc;
+      border-radius: 0px;
+    }
+  }
+  
+  .container-dropdown {
+    width: 14.2857143%;
+    height: 30px;
+    display: inline-block;
+    float: left;
+    
+    .dropdown {
+      width: 122px;
+      height: 17px;
+      
+      .btn {
+        font-size: 17px;
+        font-family: "Roboto-Condensed";
+        width: 122px;
+        height: 17px;
+        text-align: left;
+        padding: 3px 6px;
+        background-color: white;
+        color: #126acc;
+        vertical-align: middle;
+        box-sizing: border-box;
+        text-shadow: none;
+        background-image: none;
+        border: 0px;
+        border-radius: 0;
+        
+        &:focus {
+          outline: 0px;
+        }
+      }
+      
+      .selectpicker {
+        font-size: 17px;
+        font-family: "Roboto-Condensed";
+        width: 122px;
+        height: 17px;
+        text-align: left;
+        padding: 0px 6px 3px 6px;
+        background-color: white;
+        color: #126acc;
+        vertical-align: middle;
+        box-sizing: border-box;
+        text-shadow: none;
+        background-image: none;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: 0px;
+        outline: 0px;
+        margin: 0px;
+        position: relative;
+        
+        &:focus {
+          outline: 0px;
+        }
+        
+        option {
+          width: 147px;
+          height: 20px;
+          display: block;
+          padding: 3px 20px 60px;
+          clear: both;
+          font-weight: normal;
+          line-height: 20px;
+          color: #126acc;
+          white-space: nowrap;
+          outline: 0px
+        }
+      }
+    }
+    
+    .dropdown-menu {
+      width: 122px;
+      background-color: white;
+      margin: 0px;
+      border: 0px;
+      border-radius: 0px;
+      
+      li {
+        a{
+          color: #126acc;
+        }
+      }
+    }
+  }
+  
+  .container-navigation {
+    width: 14.2857143%;
+    height: 30px;
+    display: inline-block;
+    float: left;
+    
+    .nav-buttons {
+      width: 122px;
+      
+      .left {
+        float: left;
+        max-height:17px;
+      }
+      
+      .middle1 {
+        max-height:17px;
+        padding-left: 18px;
+        padding-right: 0px;
+      }
+      
+      .middle2 {
+        max-height:17px;
+        //padding-right: 27px;
+      }
+      
+      .right {
+        max-height:17px;
+        float: right;
+      }
+    }
+  }
+  
+  
+}
