@@ -74,12 +74,6 @@ a {
 }
 
 html {
-  background: url('https://s3.amazonaws.com/concerts-assets/images/background.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  overflow-y: scroll;
 }
 
 body {
@@ -88,6 +82,13 @@ body {
   color: white;
   font-family: "Roboto-condensed",verdana, arial, helvetica, sans-serif;
   line-height: 1.231;
+  background: url('https://s3.amazonaws.com/concerts-assets/images/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow-y: scroll;
+  z-index: -1;
 }
 
 section {
@@ -111,6 +112,7 @@ textarea {
 
 .container {
   width: 920px;
+  overflow: auto;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -205,9 +207,9 @@ h5 {
 }
 
 h6 {
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Roboto-Condensed-Bold";
-  margin-top: 4px;
+  margin-top: 3px;
   display: inline-block;
   font-weight: normal;
 }
@@ -250,333 +252,5 @@ p {
     display: inline-block; 
     padding-top: 0px;  
     float: left;
-  }
-}
-.container-monthly {
-  width: 920px;
-  height: auto;
-  //padding: 0px 21px 0px 39px;
-  // background-color: #126acc;
-  clear: both;
-  //top: 200px;
-  overflow:auto;
-  
-  .container-event {
-    width: 14.2857143%;
-    height: 149px;
-    display: inline-block;
-    float: left;
-    overflow: hidden;
-    // background-color:darkgray;
-    margin-bottom: 10px;
-    
-    .day {
-      width: 122px;
-      height: 17px;
-      float: left;
-      color: black;
-      // background-color: gray;
-      display: block;
-      text-align: right;
-      //margin-top: 2px;
-      
-      .month {
-        display: inline-block;
-        float: left;
-        color: white;
-      }
-    }
-    .event {
-      width: 122px;
-      height: 199px;
-      // background-color:lightgray;
-      display: block;
-      clear: left;
-      overflow: hidden;
-      
-      .playbutton {
-        position: absolute;
-        width: 15px;
-        height: 17px;
-        margin-left: 8px;
-        margin-top: 6px;
-        background: url('https://s3.amazonaws.com/concerts-assets/images/play_button.png');
-      }
-      
-      .bandpic {
-        width: 122px;
-        height: 56px;
-        // clear: both;
-        background: url('https://s3.amazonaws.com/concerts-assets/images/band_filler.png');
-        
-        overflow: hidden;
-      }
-      
-      .event-individual {
-        width: 122px;
-        height: 17px;
-        // background-color: black;
-        margin-bottom: 2px;
-        display: inline-block;
-        float: left;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        
-        .star-empty {
-          width: 17px;
-          height: 17px;  
-          display: inline-block;
-          float: left;
-          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png');
-          background-size: contain;
-          &:hover {
-            background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
-            cursor: pointer; 
-            cursor: hand;
-          }
-        }
-        
-        .star-empty-old {
-          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_empty.png');
-          background-size: contain;
-          &:hover {
-            background-image: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_full.png');
-          }
-        }
-        
-        .star-full {
-          width: 17px;
-          height: 17px;  
-          display: inline-block;
-          float: left;
-          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
-          background-size: contain;
-          &:hover {
-            cursor: pointer; 
-            cursor: hand;
-          }
-        }
-        
-        .star-full-old {
-          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_full.png');
-          background-size: contain;
-        }
-        
-        .curr-event {
-          width: 88px;
-          height: 17px;
-          background-color: black;
-          display: inline-block;
-          float: left;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
-        
-        .curr-event-old {
-          background-color: #525252;
-          color: #8d8d8d;
-        }
-        
-        .cross {
-          width: 17px;
-          height: 17px;
-          display: inline-block;
-          float: left;
-          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png');
-          background-size: contain;
-          &:hover {
-            background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_full.png');
-            cursor: pointer; 
-            cursor: hand;
-          }
-        }
-        
-        .cross-old {
-          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_cross_empty.png');
-          background-size: contain;
-          &:hover {
-            background-image: url('https://s3.amazonaws.com/concerts-assets/images/gray_cross_full.png');
-          }
-        }
-      }
-    }
-  }
-}
-
-.container-weekly {
-  width: 1428px;
-  height: auto;
-  //padding: 0px 21px 0px 39px;
-  // background-color: #126acc;
-  clear: both;
-  //top: 200px;
-  
-  .container-daily {
-    width: 14.2857143%;
-    height: auto;
-    display: inline-block;
-    float: left;
-  
-  .container-event {
-    width: 100%;
-    height: auto;
-    display: inline-block;
-    float: left;
-    // background-color:darkgray;
-    margin-bottom: 15px;
-    
-    .day {
-      width: 187px;
-      height: 27px;
-      float: left;
-      color: black;
-      // background-color: gray;
-      display: block;
-      text-align: right;
-      //margin-top: 2px;
-      
-      .month {
-        display: inline-block;
-        float: left;
-        color: white;
-      }
-    }
-    .event {
-      width: 187px;
-      height: auto;
-      // background-color:lightgray;
-      display: block;
-      clear: left;
-      overflow: hidden;
-      
-      .littleinfo {
-        height: 17px;
-        width: 187px;
-        float: left;
-        background-color:#2b2b2b;
-        color: white;
-      }
-      
-      .weektiny {
-        padding-left:26px;
-        font-size:17px;
-        margin-top:0px
-        }
-      
-      .playbutton {
-        position: absolute;
-        width: 15px;
-        height: 17px;
-        margin-left: 8px;
-        margin-top: 6px;
-        background: url('https://s3.amazonaws.com/concerts-assets/images/play_button.png');
-      }
-      
-      .bandpic {
-        width: 187px;
-        height: 86px;
-        // clear: both;
-        background: url('https://s3.amazonaws.com/concerts-assets/images/band_filler.png');
-        overflow: hidden;
-      }
-      
-      .event-individual {
-        width: 187px;
-        height: 26px;
-        // background-color: black;
-        margin-bottom: 0px;
-        display: inline-block;
-        float: left;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        
-        .star-empty {
-          width: 26px;
-          height: 26px;  
-          display: inline-block;
-          float: left;
-          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png');
-          &:hover {
-            background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
-            cursor: pointer; 
-            cursor: hand;
-          }
-        }
-        
-        .star-empty-old {
-          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_empty.png');
-          &:hover {
-            background-image: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_full.png');
-          }
-        }
-        
-        .star-full {
-          width: 26px;
-          height: 26px;  
-          display: inline-block;
-          float: left;
-          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
-          &:hover {
-            cursor: pointer; 
-            cursor: hand;
-          }
-        }
-        
-        .star-full-old {
-          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_full.png');
-        }
-        
-        .curr-event {
-          width: 135px;
-          height: 26px;
-          background-color: black;
-          display: inline-block;
-          float: left;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
-        
-        .curr-venue {
-          width: 135px;
-          height: 26px;
-          background-color: black;
-          display: inline-block;
-          float: left;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
-        
-        .curr-event-old {
-          background-color: #525252;
-          color: #8d8d8d;
-        }
-        
-        .cross {
-          width: 26px;
-          height: 26px;
-          display: inline-block;
-          float: left;
-          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png');
-          &:hover {
-            background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_full.png');
-            cursor: pointer; 
-            cursor: hand;
-          }
-        }
-        
-        .cross-old {
-          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_cross_empty.png');
-          &:hover {
-            background-image: url('https://s3.amazonaws.com/concerts-assets/images/gray_cross_full.png');
-          }
-        }
-      }
-    }
-  }
   }
 }

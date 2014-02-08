@@ -1,10 +1,9 @@
 <div class="day">
 	<h6 class="month">
-		<% if @d.day == 1 %> 
-			<%= @d.strftime("%B").upcase %>
-		<% end %>
+		<%= @d.strftime("%^a") %>
 	</h6>
 	<h6>
+		<%= @d.strftime("%b").upcase %>
 		<%= @d.day %>
 	</h6>
 </div>
