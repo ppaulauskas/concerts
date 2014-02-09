@@ -1,3 +1,5 @@
+
+
 .container-monthly {
   width: 920px;
   height: auto;
@@ -6,6 +8,16 @@
   clear: both;
   //top: 200px;
   overflow:auto;
+  
+  .container-week {
+  width: 920px;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  
+    .test {
+      height: auto;
+    }
   
   .container-event {
     width: 14.2857143%;
@@ -34,7 +46,7 @@
     }
     .event {
       width: 122px;
-      height: 199px;
+      height: auto;
       // background-color:lightgray;
       display: block;
       clear: left;
@@ -149,4 +161,5 @@
       }
     }
   }
+}
 }

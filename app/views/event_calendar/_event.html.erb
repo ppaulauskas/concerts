@@ -1,4 +1,4 @@
-<div class="event">
+<div class="event <% if @d < Date.today %>old<%end%>">
 	<div class="playbutton">
 	</div>
 	<% @eventstoday = @events.select{|x| x.eventtime.to_date == @d}.sort_by{|x| -(Band.find_by name: x.headliner).rating} %>

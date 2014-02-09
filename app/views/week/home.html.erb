@@ -1,4 +1,23 @@
 <% provide(:title, 's This Week') %>
+
+<div class="secondary-header2">
+	<%= render 'layouts/navbar2' %>
+</div>
+<div class="secondary-header3">
+	<% for i in 0...7 %>
+	<div class="weekday">
+		<h6 class="month">
+			<%= @d.strftime("%^a") %>
+		</h6>
+		<h6>
+			<%= @d.strftime("%b").upcase %>
+			<%= @d.day %>
+		</h6>
+	</div>
+	<% @d = @d.tomorrow %>
+	<%end%>
+</div>
+	<% @d = Date.today.beginning_of_week %>
 <div class="container-calendar">
 	<div class="container-weekly">
 		<div class="container-daily">

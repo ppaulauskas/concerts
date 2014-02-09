@@ -1,4 +1,26 @@
 
+.old {
+  opacity: 0.5;
+}
+
+.weekday {
+      width: 122px;
+      height: 17px;
+      float: left;
+      color: white;
+      // background-color: gray;
+      display: inline-block;
+      text-align: right;
+      //margin-top: 2px;
+      padding-right:9px;
+      
+      .month {
+        display: inline-block;
+        float: left;
+        color: white;
+      }
+    }
+
 .container-weekly {
   width: 920px;
   height: auto;
@@ -21,7 +43,7 @@
     // background-color:darkgray;
     margin-bottom: 15px;
     
-    .day {
+    .weekday {
       width: 122px;
       height: 17px;
       float: left;
@@ -180,4 +202,10 @@
     }
   }
   }
+}
+
+.week-days {
+  width: 920px;
+  height: 17px;
+  
 }

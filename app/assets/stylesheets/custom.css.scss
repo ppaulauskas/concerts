@@ -113,6 +113,7 @@ textarea {
 .container {
   width: 920px;
   overflow: auto;
+  background: inherit;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
