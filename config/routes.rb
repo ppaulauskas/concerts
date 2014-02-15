@@ -10,6 +10,7 @@ Concerts::Application.routes.draw do
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/week',    to: 'week#home',            via: 'get'
+  match '/month',   to: 'month#home',           via: 'get'
   patch "/bands/star"
   patch "/bands/unstar"
   patch "/bands/remove"
