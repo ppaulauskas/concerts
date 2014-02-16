@@ -171,3 +171,16 @@
 		}
 	});
 </script>
+<script>
+	$(document).on('click','.AgnesObel', function() {
+		$(this).siblings('.event-individual2').toggle();
+		$(this).siblings('.littleinfo2').toggle();
+		$(this).siblings('.event-individual3').toggle();
+		$(this).parent().parent().css('height', 'auto');
+	})
+</script>
+<script>
+	$(document).on('click','.curr-venue2', function() {
+		$('.container').load('/events/3785640 .container');
+	});
+</script>

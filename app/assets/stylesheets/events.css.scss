@@ -1,3 +1,124 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.part1 {
+    width: 14.2857143%;
+    height: 34px;
+    display:inline-block;
+    float:left;
+    position:relative;
+  }
+  .part2 {
+    width: 28.5714286%;
+    height: auto;
+    display:inline-block;
+    float:left;
+    position:relative;
+  }
+  
+  .bandpic {
+    width: 96.212121%;
+    max-height:117px;
+    overflow:hidden;
+  }
+  
+.event-individual {
+        width: 122px;
+        height: 17px;
+        // background-color: black;
+        margin-bottom: 0px;
+        display: inline-block;
+        float: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        
+        .star-empty {
+          width: 17px;
+          height: 17px;  
+          display: inline-block;
+          float: left;
+          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png');
+          background-size: contain;
+          &:hover {
+            background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
+            cursor: pointer; 
+            cursor: hand;
+          }
+        }
+        
+        .star-empty-old {
+          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_empty.png');
+          background-size: contain;
+          &:hover {
+            background-image: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_full.png');
+          }
+        }
+        
+        .star-full {
+          width: 17px;
+          height: 17px;  
+          display: inline-block;
+          float: left;
+          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
+          background-size: contain;
+          &:hover {
+            cursor: pointer; 
+            cursor: hand;
+          }
+        }
+        
+        .star-full-old {
+          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_star_full.png');
+          background-size: contain;
+        }
+        
+        .curr-event {
+          width: 88px;
+          height: 17px;
+          background-color: black;
+          display: inline-block;
+          float: left;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        
+        .curr-venue {
+          width: 88px;
+          height: 17px;
+          background-color: black;
+          display: inline-block;
+          float: left;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        
+        .curr-event-old {
+          background-color: #525252;
+          color: #8d8d8d;
+        }
+        
+        .cross {
+          width: 17px;
+          height: 17px;
+          display: inline-block;
+          float: left;
+          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png');
+          background-size: contain;
+          &:hover {
+            background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_full.png');
+            cursor: pointer; 
+            cursor: hand;
+          }
+        }
+        
+        .cross-old {
+          background: url('https://s3.amazonaws.com/concerts-assets/images/gray_cross_empty.png');
+          background-size: contain;
+          &:hover {
+            background-image: url('https://s3.amazonaws.com/concerts-assets/images/gray_cross_full.png');
+          }
+        }
+      }
