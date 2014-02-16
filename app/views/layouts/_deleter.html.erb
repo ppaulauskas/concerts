@@ -184,3 +184,18 @@
 		$('.container').load('/events/3785640 .container');
 	});
 </script>
+<script>
+	$('.shuffle').on('click', function() {
+		$('#sptfy').attr('src',"https://embed.spotify.com/?uri=spotify:trackset:Upcoming Shows:6MeyHY5JmpUnCzUdpF1hIX,03gqZZavMKhWbSjdQvpF6O,5k8JECbcmHJKkFhMQVwrHb,2ZwJdFxMcasAwSlk9O7TLw,4MbZuoeftzK1drIISgc8Zj,6lxn3UHS467KBPW9FpGgH6");
+	});
+</script>
+<script>
+	$(document).on('click','.spotify2',function() {
+		$('#sptfy').attr('src',$(this).attr('name'));
+	});
+</script>
+<script>
+	$(document).on('click','.youtube2',function() {
+		$('#ytplayer').attr('src',$(this).attr('name'));
+	});
+</script>

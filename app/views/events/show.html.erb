@@ -5,7 +5,7 @@
 <div class="secondary-header2">
 	<%= render 'layouts/navbar3' %>
 </div>
-<div class="container-monthly">
+<div class="container-moreinfo">
 	<div class="part1">
 		<div class="event-individual <%= @currband.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= Random.new.rand(10...100) %>">
 					<% if @currband.rating > 50 %>
@@ -20,6 +20,42 @@
 	<div class="part2">
 		<div class="bandpic"><img src="<%= @currband.image %>" class="picture" \></div>
 	</div>
+	<div class="part2">
+		<div class="toptracks">
+			<div class="title">
+				<h4 class="bump">Top Tracks</h4>
+			</div>
+			<div class="songdetails">
+				<div class="song-individual">
+				<div class="songname"><h4 class="bump">Riverside</h4></div>
+				<div class="currsong short">
+					<div class="youtube2" name="https://www.youtube.com/embed/vjncyiuwwXQ"></div>
+					<div class="soundcloud2"></div>
+					<div class="rdio2"></div>
+					<div class="spotify2" name="https://embed.spotify.com/?uri=spotify:track:6SyLzd7dXHKynQZMzg0MMb"></div>
+				</div>
+				</div>
+				<div class="song-individual">
+				<div class="songname"><h4 class="bump">The Curse</h4></div>
+				<div class="currsong short">
+					<div class="youtube2" name="https://www.youtube.com/embed/6h9XUYj96ho"></div>
+					<div class="soundcloud2"></div>
+					<div class="rdio2"></div>
+					<div class="spotify2" name="https://embed.spotify.com/?uri=spotify:track:69Na5EJJ6GK5t2vy4eq62x"></div>
+				</div>
+				</div>
+				<div class="song-individual">
+				<div class="songname"><h4 class="bump">Just So</h4></div>
+				<div class="currsong short">
+					<div class="youtube2" name="https://www.youtube.com/embed/5NmjJeNFUVU"></div>
+					<div class="soundcloud2"></div>
+					<div class="rdio2"></div>
+					<div class="spotify2" name="https://embed.spotify.com/?uri=spotify:track:6R7MI6kfB2MtPmxdSMonXl"></div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="part1">
 		<% @currvenue = (Venue.find_by venue_id: @event.venue_id) %>
 		<div class="event-individual <%= @currvenue.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= @currvenue.venue_id %>">
@@ -27,12 +63,16 @@
 			<div class="curr-venue"><h4><%= @currvenue.name %></h4></div>
 			<div class="cross"></div>
 		</div>
-		<div class="time">
+		<div class="time"><h4>
 			<%= @event.eventtime.to_date.strftime("%^a, %^b")%>
-			<%= @event.eventtime.to_date.day %>
+			<%= @event.eventtime.to_date.day %></h4>
+			
+			<h4 class="less">Doors: 8:00 PM</h4>
+			<h4>Show: 9:00 PM</h4>
+			<h4 class="less">$20 Advance</h4>
+			<h4>$25 Day of Show</h4>
 		</div>
+		
 	</div>
-	<div class="part1"></div>
-	<div class="part1"></div>
 	<div class="part1"></div>
 </div>
