@@ -146,3 +146,28 @@
 		$('.container').load('/ .container');
 	});
 </script>
+<script>
+	$('.spotify').on('click', function() {
+		if($('.spotify-widget').is(':visible')) {
+			$('.spotify-widget').fadeOut('slow');
+		} else {
+			$('.spotify-widget').fadeIn('slow');
+		}
+	});
+</script>
+<script>
+	$('.youtube').on('click', function() {
+		if($('.youtube-player').is(':visible')) {
+			$('.youtube-player').fadeOut('slow');
+		} else {
+			$('.youtube-player').fadeIn('slow');
+		}
+	});
+</script>
+<script>
+	$(document).on('click','.bandpic', function() {
+		if ($(this).children('.topimg').attr('src') === "http://userserve-ak.last.fm/serve/252/93516511.png") {
+			$('#ytplayer').attr('src', "https://www.youtube.com/embed/6h9XUYj96ho");
+		}
+	});
+</script>
