@@ -3,21 +3,77 @@
   $(document).ready(function(){
   	
   	// Gets the maxprice as it is typed
-    $(".maxprice").keyup(function(){
+    $(document).on('keyup', '.maxprice', function(){
       
       // Parses the search into an int
       var str = parseInt($(".maxprice").val(), 10);
       
       if(str > 10){
+      		$(".event-individual").each(function(index){
+        		// Makes sure it has the id attribute
+        		if($(this).attr("id")){
+          			// Parses the price from the id and checks it against max
+          			if(parseInt($(this).attr("id"), 10) > str){
+            			// Fades out those that dont match
+            			$(this).delay(800).fadeOut("slow",function(){
+            				if($(this).parent().find('.event-individual:visible:first')) {
+            					$(this).parent().children('.bandpic').children('.topimg').attr('src', $(this).parent().children('.event-individual:visible:first').children('.mover').attr('name'));
+            				} 
+            				if(typeof($(this).parent().children('.event-individual:visible:first').attr('class')) === "undefined") {
+            					$(this).parent().fadeOut("slow");
+            				}
+            			});
+          			}else{
+            			// Fades in items that match
+            			$(this).delay(800).fadeIn("slow",function(){
+            				if($(this).parent().find('.event-individual:visible:first')) {
+            					$(this).parent().children('.bandpic').children('.topimg').attr('src', $(this).parent().children('.event-individual:visible:first').children('.mover').attr('name'));
+            					$(this).parent().fadeIn("slow");
+            				} 
+            				if(typeof($(this).parent().children('.event-individual:visible:first').attr('class')) === "undefined") {
+            					$(this).parent().fadeOut("slow");
+            				}
+            			});
+         			}
+       			}
+      		});
+      }else if(isNaN(str)){
+      	$(".event-individual").each(function(index){
+            // Fades in items that match
+            $(this).parent().fadeIn("slow");
+            
+            $(this).delay(800).fadeIn("slow",function(){
+            	if($(this).parent().find('.event-individual:visible:first')) {
+            		$(this).parent().children('.bandpic').children('.topimg').attr('src', $(this).parent().children('.event-individual:visible:first').children('.mover').attr('name'));
+            	}
+            	if(($(this).parent().children('.event-individual:visible:first').attr('class')) === "undefined") {
+            		$(this).parent().fadeOut("slow");
+            	}
+            });
+      });
+      };
+    });
+  });
+</script>
+
+<script>
+  //Loads on document load
+  $(document).ready(function(){
+  	
+  	// Gets the maxprice as it is typed
+    $(document).on('keyup', '.maxprice2', function(){
+
+      // Parses the search into an int
+      var str = parseInt($(".maxprice2").val(), 10);
+      
+      if(str > 10){
 
       //loop through the events
-      $(".event-individual").each(function(index){
-			
+      $(".container-event").each(function(index){
         // Makes sure it has the id attribute
-        if($(this).attr("id")){
-            
+        if($(this).children('.event').children('.event-individual').first().attr("id")){
           // Parses the price from the id and checks it against max
-          if(parseInt($(this).attr("id"), 10) > str){
+          if(parseInt($(this).children('.event').children('.event-individual').first().attr("id"), 10) > str){
             // Fades out those that dont match
             $(this).delay(800).fadeOut("slow");
           }else{
@@ -27,7 +83,7 @@
         }
       });
       }else if(isNaN(str)){
-      	$(".event-individual").each(function(index){
+      	$(".container-event").each(function(index){
             // Fades in items that match
             $(this).delay(800).fadeIn("slow");
       });

@@ -5,7 +5,7 @@
 </div>
 <div class="secondary-header3">
 	<% for i in 0...7 %>
-	<div class="weekday">
+	<div class="weekday2">
 		<h6 class="month">
 			<%= @d.strftime("%^a") %>
 		</h6>
@@ -43,13 +43,3 @@
 		</div>
 	</div>		
 </div>
-<script>
-	$('.middle2').on('click',function() {
-		$('.container').load('/week/home.html');
-	});
-</script>
-<script>
-	$('.middle1').on('click',function() {
-		$('.container').load('/month/home.html');
-	});
-</script>

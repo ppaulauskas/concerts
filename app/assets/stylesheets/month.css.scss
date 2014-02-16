@@ -1,16 +1,17 @@
 
 
 .container-monthly {
-  width: 920px;
+  width: 924px;
   height: auto;
   //padding: 0px 21px 0px 39px;
   // background-color: #126acc;
   clear: both;
   //top: 200px;
   overflow:auto;
+  padding-top:75px;
   
   .container-week {
-  width: 920px;
+  width: 924px;
   height: auto;
   display: block;
   overflow: hidden;
@@ -54,11 +55,12 @@
       
       .playbutton {
         position: absolute;
-        width: 15px;
-        height: 17px;
+        width: 10px;
+        height: 11px;
         margin-left: 8px;
         margin-top: 6px;
         background: url('https://s3.amazonaws.com/concerts-assets/images/play_button.png');
+        background-size: contain;
       }
       
       .bandpic {

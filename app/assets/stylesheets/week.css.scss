@@ -22,16 +22,18 @@
     }
 
 .container-weekly {
-  width: 920px;
+  width: 924px;
   height: auto;
   //padding: 0px 21px 0px 39px;
   // background-color: #126acc;
   clear: both;
   //top: 200px;
+  padding-top: 96px;
   
   .container-daily {
     width: 14.2857143%;
     height: auto;
+    min-height:10px;
     display: inline-block;
     float: left;
   
@@ -43,22 +45,7 @@
     // background-color:darkgray;
     margin-bottom: 15px;
     
-    .weekday {
-      width: 122px;
-      height: 17px;
-      float: left;
-      color: white;
-      // background-color: gray;
-      display: block;
-      text-align: right;
-      //margin-top: 2px;
-      
-      .month {
-        display: inline-block;
-        float: left;
-        color: white;
-      }
-    }
+    
     .event {
       width: 122px;
       height: auto;
@@ -83,11 +70,12 @@
       
       .playbutton {
         position: absolute;
-        width: 15px;
-        height: 17px;
+        width: 10px;
+        height: 11px;
         margin-left: 8px;
         margin-top: 6px;
         background: url('https://s3.amazonaws.com/concerts-assets/images/play_button.png');
+        background-size: contain;
       }
       
       .bandpic {
@@ -205,7 +193,7 @@
 }
 
 .week-days {
-  width: 920px;
+  width: 924px;
   height: 17px;
   
 }

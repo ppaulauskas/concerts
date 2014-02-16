@@ -1,17 +1,6 @@
 <% @eventstoday = @events.select{|x| x.eventtime.to_date == @d}.sort_by{|x| -(Band.find_by name: x.headliner).rating} %>
 <% @eventstoday.each_with_index do |individ, index2| %>
 <div class="container-event">
-	<% if index2 == 0 %>
-	<div class="weekday">
-		<h6 class="month">
-			<%= @d.strftime("%^a") %>
-		</h6>
-		<h6>
-			<%= @d.strftime("%b").upcase %>
-			<%= @d.day %>
-		</h6>
-	</div>
-	<%end%>
 	<div class="event <% if @d < Date.today %>old<%end%>">
 		<div class="playbutton">
 		</div>
@@ -36,9 +25,9 @@
 			-->
 				<div class="event-individual <%= @currband.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= Random.new.rand(10...100) %>">
 					<% if @currband.rating > 50 %>
-						<div class="star-full mover <% if index == 0 %>top<% end %>" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= individ.headliner %>" name="name"></div>
+						<div class="star-full mover2 <% if index == 0 %>top<% end %>" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= @currband.name %>" name="name"></div>
 					<% else %>
-						<div class="star-empty mover <% if index == 0 %>top<% end %>" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= individ.headliner %>" name="name"></div>
+						<div class="star-empty mover2 <% if index == 0 %>top<% end %>" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= @currband.name %>" name="name"></div>
 					<% end %>
 				<div class="curr-event"><h4><%= individ2 %></h4></div>
 				<div class="deleter cross" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= individ.headliner%>" name="name"></div>
@@ -68,7 +57,7 @@
 		
 		<% @currvenue = (Venue.find_by venue_id: individ.venue_id) %>
 		
-		<div class="event-individual" <%= @currvenue.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= @currvenue.venue_id %>">
+		<div class="event-individual <%= @currvenue.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= @currvenue.venue_id %>">
 			<div class="star-empty"></div>
 			<div class="curr-venue"><h4><%= @currvenue.name %></h4></div>
 			<div class="cross"></div>

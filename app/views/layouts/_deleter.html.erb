@@ -1,5 +1,5 @@
 <script>
-	$('.deleter').on('click', function(){
+	$(document).on('click', '.deleter', function(){
 		$(this).addClass('changing');
 		var values = $('.changing :input').serialize();
 		$(this).removeClass('changing');
@@ -24,7 +24,7 @@
 	});
 </script>
 <script>
-	$('.mover').on('click',function () {
+	$(document).on('click', '.mover', function () {
 		$(this).addClass('changing');
 		var values = $('.changing :input').serialize();
 		$(this).removeClass('changing');
@@ -76,21 +76,73 @@
     });
 </script>
 <script>
-	$('.bandpic').hover(function() {
-		$(this).siblings('.playbutton').css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button_hover_orange_border.png)");
-	}).mouseleave(function() {
-		$(this).siblings('.playbutton').css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button.png)");
-	});
+	$(document).on('click', '.mover2', function () {
+		$(this).addClass('changing');
+		var values = $('.changing :input').serialize();
+		$(this).removeClass('changing');
+		
+		if($(this).hasClass('star-empty')) {
+			$.ajax({
+        		url: "/bands/star",
+        		type: "post",
+        		data: values,
+     		});
+     		
+     		$('.'+$(this).parent().attr('class').split(' ')[1]).each(function() {
+        		$(this).children('.mover2').removeClass('star-empty');
+    			$(this).children('.mover2').addClass('star-full');
+    		});
+    	}
+    	else {
+    		$.ajax({
+        		url: "/bands/unstar",
+        		type: "post",
+        		data: values,
+     		});
+     		$('.'+$(this).parent().attr('class').split(' ')[1]).each(function() {
+        		$(this).children('.mover2').removeClass('star-full');
+    			$(this).children('.mover2').addClass('star-empty');
+    		});
+    	}
+    });
 </script>
 <script>
-	$('.playbutton').hover(function() {
-		$(this).css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button_hover_orange_border.png)");
-	}).mouseleave(function() {
-		$(this).css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button.png)");
-	});
+	$(document).on({
+		mouseenter: function() {
+			$(this).siblings('.playbutton').css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button_hover_orange_border.png)");
+		},
+		mouseleave: function() {
+			$(this).siblings('.playbutton').css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button.png)");
+		}
+	}, ".bandpic");
+</script>
+<script>
+	$(document).on({
+		mouseenter: function() {
+			$(this).css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button_hover_orange_border.png)");
+		},
+		mouseleave: function() {
+			$(this).css("background-image", "url(https://s3.amazonaws.com/concerts-assets/images/play_button.png)");
+		}
+	}, ".playbutton");
 </script>
 <script>
 	$('.logo').on('click',function () {
-		alert($( "#spot" ).contents().find( "artist-name" ));
+		$('.container').load('/ .container');
+	});
+</script>
+<script>
+	$(document).on('click', '.middle2', function() {
+		$('.container').load('/week .container');
+	});
+</script>
+<script>
+	$(document).on('click', '.middle1', function() {
+		$('.container').load('/ .container');
+	});
+</script>
+<script>
+	$('.logo').on('click', function() {
+		$('.container').load('/ .container');
 	});
 </script>
