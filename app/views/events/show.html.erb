@@ -6,6 +6,7 @@
 	<%= render 'layouts/navbar3' %>
 </div>
 <div class="container-moreinfo">
+	<div class="moreinfo-top">
 	<div class="part1">
 		<div class="event-individual <%= @currband.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= Random.new.rand(10...100) %>">
 					<% if @currband.rating > 50 %>
@@ -75,4 +76,12 @@
 		
 	</div>
 	<div class="part1"></div>
+	</div>
+	<div class="moreinfo-bottom">
+	<div class="part3">
+	<h5>Agnes Caroline Thaarup Obel (born 28 October 1980 in Gentofte, Copenhagen) is a Danish singer/songwriter. Her first album, Philharmonics, was released by PIAS Recordings on 4 October 2010 in Europe, most notably Denmark, Norway, and Germany. Philharmonics was certified gold in June 2011 by the Belgian Entertainment Association (BEA) for sales of 10,000 units. At the Danish Music Awards in November 2011, Agnes Obel won five prizes: Best Album Of The Year, Best Pop Release Of The Year, Best Debut Artist Of The Year, Best Female Artist Of The Year and Best Songwriter Of The Year.</h5>
+	</div>
+	<div class="part4">
+	</div>
+	</div>
 </div>
