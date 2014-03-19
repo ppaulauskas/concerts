@@ -1,73 +1,38 @@
-<div class="event <% if @d < Date.today %>old<%end%>">
-	<div class="playbutton">
-	</div>
-	<% @eventstoday = @events.select{|x| x.eventtime.to_date == @d}.sort_by{|x| -(Band.find_by name: x.headliner).rating} %>
+<% if @d >= Date.today %>
+<div class="event <% if @d < Date.today %>old <%end%><%= @d %>">
+	<div class="playbutton"></div>
 	<div class="bandpic" href="javascript:void(0);">
-		<img class="topimg" src="<% if @eventstoday.length > 0 %><%= (Band.find_by name: (@eventstoday[0].headliner)).image %><% end %>">
+		<img class="topimg" src="">
 	</div>
-	<% @eventstoday.each_with_index do |individ, index| %>
-		<% @currband = (Band.find_by name: individ.headliner[0,64]) %>
-		
-			<div class="event-full">
-			<% individ.artists.each_with_index do |individ2, index2| %>
-			<% @currband = (Band.find_by name: individ2[0,64]) %>
-			
-				<% if index2 == 0 %>
-					<div class="event-individual <%= @currband.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= Random.new.rand(10...100) %>">
-						<% if @currband.rating > 50 %>
-							<div class="star-full mover <% if index2 == 0 %>top<% end %>" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= @currband.name %>" name="name"></div>
-						<% else %>
-							<div class="star-empty mover <% if index2 == 0 %>top<% end %>" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= @currband.name %>" name="name"></div>
-						<% end %>
-					<div class="curr-event"><h4><%= individ2 %></h4></div>
-					<div class="deleter cross" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= individ.headliner%>" name="name"></div>
-					</div>	
-				<% else %>
-					<div class="event-individual2 <%= @currband.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= Random.new.rand(10...100) %>">
-						<% if @currband.rating > 50 %>
-							<div class="star-full mover2 <% if index2 == 0 %>top<% end %>" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= @currband.name %>" name="name"></div>
-						<% else %>
-							<div class="star-empty mover2 <% if index2 == 0 %>top<% end %>" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= @currband.name %>" name="name"></div>
-						<% end %>
-					<div class="curr-event2"><h4><%= individ2 %></h4></div>
-					<div class="deleter cross" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= individ.headliner%>" name="name"></div>
-					</div>	
-				<% end %>
-				
-			<% if index2 == 0 && index2 == individ.artists.size - 1 %>
-				<div class="littleinfo2">
-					<h4 class="weektiny">at</h4>
-				</div>
-			<% elsif index2 == 0 && !(index2 == individ.artists.size - 1) %>
-				<div class="littleinfo2">
-					<h4 class="weektiny">with</h4>
-				</div>
-			<% elsif index2 == individ.artists.size-1 && !(index2 == 0) %>
-				<div class="littleinfo2">
-					<h4 class="weektiny">at</h4>
-				</div>
-			<% else %>
-				<div class="littleinfo2">
-					<h4 class="weektiny">and</h4>
-				</div>
-			<% end %>
-		<%end%>
-			
-			<% @currvenue = (Venue.find_by venue_id: individ.venue_id) %>
-		
-			<div class="event-individual2 <%= @currvenue.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= @currvenue.venue_id %>">
-				<div class="star-empty"></div>
-				<div class="curr-venue"><h4><%= @currvenue.name %></h4></div>
-				<div class="cross"></div>
-			</div>
-		
-			<div class="littleinfo2">
-				<h4 class="weektiny"><%= individ.eventtime.strftime("%I:%M%p") %></h4>
-			</div>
-			<div class="event-individual3">
-				<div class="curr-venue2" id="<%= individ.id %>" style:"float: right;">SHOW INFO ></div>
-			</div>
+	
+	<div class="event-full vis template">
+		<div class="event-individual">
+			<div class="star-empty mover" name="" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="" name="name"></div>
+			<div class="curr-event"><h4></h4></div>
+			<div class="deleter cross" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="" name="name"></div>
 		</div>
-	<%end%>		
-	<% @d=@d.tomorrow %>
+	</div>
+	
+	<div class="littleinfo2 template-tiny"><h4 class="weektiny"></h4></div>
+	
+	<div class="event-individual2 template-secondary" id="">
+			<div class="star-empty mover2" name="" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="" name="name"></div>
+			<div class="curr-event2"><h4></h4></div>
+			<div class="deleter cross" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="" name="name"></div>
+	</div>
+	
+	<div class="venue-individual template-venue" id="">
+			<div class="star-empty"></div>
+			<div class="curr-venue"><h4></h4></div>
+			<div class="cross"></div>
+	</div>
+	
+	<div class="timeinfo template-time"><h4 class="timetiny"></h4></div>
+	<div class="show-info template-info"><div class="info-button" id="" style:"float: right;"><h4>More Info</h4></div>
+				
+	<script>getEvents("<%= @d %>","<%= @d.tomorrow %>");</script>
+		
 </div>
+</div>
+<%end%>
+<% @d=@d.tomorrow %>

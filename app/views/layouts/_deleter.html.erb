@@ -27,10 +27,13 @@
 <script>
 	// A script for starring/unstarring
 	$(document).on('click', '.mover', function () {
+	
+		// Gets the input values
 		$(this).addClass('changing');
 		var values = $('.changing :input').serialize();
 		$(this).removeClass('changing');
 		
+		// Upadtes the database side of things
 		if($(this).hasClass('star-empty')) {
 			$.ajax({
         		url: "/bands/star",
@@ -38,42 +41,32 @@
         		data: values,
      		});
      		
+     		// Moves all of the same artist up and changes the stars
+     		$.when(
      		$('.'+$(this).parent().attr('class').split(' ')[1]).each(function() {
-     			$(this).siblings('.bandpic').children('.topimg').attr('src', $(this).children('.mover').attr('name'));
-				$(this).children('.mover').addClass('top');
-				$(this).prevAll('.event-individual').children('.top').removeClass('top');
-        		$(this).insertBefore($(this).prevAll('.event-individual').last()).hide().slideDown();
-        		if($(this).children('.mover').hasClass('star-empty-old')) {
-        			$(this).children('.mover').removeClass('star-empty-old');
-    				$(this).children('.mover').addClass('star-full-old');
-    			}
+        		$(this).parent().insertBefore($(this).parent().prevAll('.event-full').last()).hide().slideDown();
         		$(this).children('.mover').removeClass('star-empty');
     			$(this).children('.mover').addClass('star-full');
-    		});
+    		})
+    		).done(function() { fader2(); } );
     	}
     	else {
+    	
+    		// Database update
     		$.ajax({
         		url: "/bands/unstar",
         		type: "post",
         		data: values,
      		});
-     		$('.'+$(this).parent().attr('class').split(' ')[1]).each(function() {
-     		if($(this).children('.mover').hasClass('top')) {
-     			$(this).siblings('.bandpic').children('.topimg').attr('src', $(this).next().children('.mover').attr('name'));
-     			$(this).next().children('.mover').addClass('top');
-     			$(this).children('.mover').removeClass('top');
-     		}
      		
-        		$(this).slideUp(function() {
-        			$(this).insertAfter($(this).nextAll('.event-individual').last()).slideDown();
-        		});
-        		if($(this).children('.mover').hasClass('star-full-old')) {
-        			$(this).children('.mover').removeClass('star-full-old');
-    				$(this).children('.mover').addClass('star-empty-old');
-    			}
+     		// Moves all the same artist down
+     		$.when(
+     		$('.'+$(this).parent().attr('class').split(' ')[1]).each(function() {
+     			$(this).parent().insertAfter($(this).parent().nextAll('.event-full').last()).hide().slideDown();
         		$(this).children('.mover').removeClass('star-full');
     			$(this).children('.mover').addClass('star-empty');
-    		});
+    		})
+    		).done(function() { fader2(); } );
     	}
     });
 </script>
@@ -180,18 +173,33 @@
 </script>
 <script>
 	$(document).on('click','.curr-event', function() {
-		$(this).parent().siblings('.event-individual2').toggle();
-		$(this).parent().siblings('.littleinfo2').toggle();
-		$(this).parent().siblings('.event-individual3').toggle();
-		var eventheight = $(this).parent().parent().parent().parent().height();
-		var thisheight = $(this).parent().parent().height();
-		var currheight = $(this).parent().height();
-		var totheight = eventheight+thisheight-currheight;
-		$(this).parent().parent().parent().parent().css('height', totheight+'px');
-	})
+		if($(this).parent().siblings('.timeinfo').is(':visible')) {
+			$(this).parent().siblings('.event-individual2').toggle();
+			$(this).parent().siblings('.littleinfo2').toggle();
+			$(this).parent().siblings('.venue-individual').toggle();
+			$(this).parent().siblings('.timeinfo').toggle();
+			$(this).parent().siblings('.show-info').toggle();
+			var eventheight = $(this).parent().parent().parent().parent().height();
+			var thisheight = $(this).parent().parent().height();
+			var currheight = $(this).parent().height();
+			var totheight = eventheight+thisheight-currheight;
+			$(this).parent().parent().parent().parent().css('height', '147px');
+		}else{
+			$(this).parent().siblings('.event-individual2').toggle();
+			$(this).parent().siblings('.littleinfo2').toggle();
+			$(this).parent().siblings('.venue-individual').toggle();
+			$(this).parent().siblings('.timeinfo').toggle();
+			$(this).parent().siblings('.show-info').toggle();
+			var eventheight = $(this).parent().parent().parent().parent().height();
+			var thisheight = $(this).parent().parent().height();
+			var currheight = $(this).parent().height();
+			var totheight = eventheight+thisheight-currheight;
+			$(this).parent().parent().parent().parent().css('height', totheight+'px');
+		}
+	});
 </script>
 <script>
-	$(document).on('click','.curr-venue2', function() {
+	$(document).on('click','.info-button', function() {
 		var eventid = $(this).attr('id');
 		$('.container').load('/events/'+eventid+' .container');
 	});
@@ -212,6 +220,31 @@
 	});
 </script>
 <script>
+function fader() {
+	$.when(
+	$('.invis').each(function() {
+		$(this).fadeOut('slow');
+	}),
+	$('.vis').each(function() {
+		$(this).fadeIn('slow');
+	})
+	)
+	.done(function() { fader2(); });
+}
+</script>
+<script>
+function fader2() {
+	$('.event').each(function() {
+		if($(this).find('.event-full:visible:first')) {
+            $(this).children('.bandpic').children('.topimg').attr('src', $(this).children('.event-full:visible:first').children('.event-individual').children('.mover').attr('name'));
+        } 
+        if(typeof($(this).children('.event-full:visible:first').attr('class')) === "undefined") {
+        	$(this).fadeOut("slow");
+        }
+	});
+}
+</script>
+<script>
   //Loads on document load
   $(document).ready(function(){
 	// Gets the maxprice as it is typed
@@ -220,31 +253,34 @@
       var str = parseInt($(".maxprice").val(), 10);
       
       if(str > 10){
+      
       	// Goes through each full event listing
       	$('.event-full').each(function(){
       	
       		// Goes through each individual event within the full listing
-      		$(this).children(".event-individual").each(function(index){
+      		$(this).children(".event-individual").each(function(){
         		// Makes sure it has the id attribute
         		if($(this).attr("id")){
           			// Parses the price from the id and checks it against max
           			if(parseInt($(this).attr("id"), 10) > str){
 						// Fades out those that dont match
-            			$(this).delay(800).fadeOut("slow");
+            			$(this).parent().removeClass('vis').addClass('invis');
           			}else{
             			// Fades in items that match
-            			$(this).delay(800).fadeIn("slow");
+            			$(this).parent().removeClass('invis').addClass('vis');
          			}
        			}
       		});
       	});
+      	fader();
       }else if(isNaN(str)){
       	$('.event-full').each(function(){
-      		$(this).children(".event-individual").each(function(index){
+      		$(this).children(".event-individual").each(function(){
             	// Fades in items that match
-            	$(this).delay(800).fadeIn("slow");
+            	$(this).parent().removeClass('invis').addClass('vis');
       		});
       	});
+      	fader();
       };
      });
    });
