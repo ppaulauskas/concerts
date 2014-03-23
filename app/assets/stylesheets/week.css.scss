@@ -1,3 +1,6 @@
+.template-big{
+  display: none !important;
+}
 
 .old {
   opacity: 0.5;
@@ -20,6 +23,81 @@
         color: white;
       }
     }
+
+.timeinfo2 {
+        height: 11px;
+        width: 122px;
+        float: left;
+        background-color:#2b2b2b;
+        color: white;
+        margin-top: -2px;
+      }
+
+.show-info2 {
+  width: 122px;
+  height: 17px;
+  // background-color: black;
+  margin-bottom: 2px;
+  float: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;  
+  background-color: black;
+  &:hover {
+            
+            cursor: pointer; 
+            cursor: hand;
+          }
+          
+          .info-button {
+          width: 55px;
+          height: 17px;
+          background-color: black;
+          display: inline-block;
+          float: right;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+}
+
+.venue-individual2 {
+  width: 122px;
+  height: 17px;
+  // background-color: black;
+  margin-bottom: 2px;
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+  
+  .star-empty {
+          width: 17px;
+          height: 17px;  
+          display: inline-block;
+          float: left;
+          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_empty.png');
+          background-size: contain;
+          &:hover {
+            background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_star_full.png');
+            cursor: pointer; 
+            cursor: hand;
+          }
+        }
+  .cross {
+          width: 17px;
+          height: 17px;
+          display: inline-block;
+          float: left;
+          background: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_empty.png');
+          background-size: contain;
+          &:hover {
+            background-image: url('https://s3.amazonaws.com/concerts-assets/images/blk_cross_full.png');
+            cursor: pointer; 
+            cursor: hand;
+          }
+        }   
+}
 
 .container-weekly {
   width: 924px;

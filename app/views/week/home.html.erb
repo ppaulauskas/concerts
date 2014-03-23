@@ -20,26 +20,8 @@
 	<% @d = Date.today.beginning_of_week %>
 <div class="container-calendar">
 	<div class="container-weekly">
-		<div class="container-daily">
+		<% for i in 0...7 %>
 			<%= render 'event_week/event' %>
-		</div>
-				<div class="container-daily">
-			<%= render 'event_week/event' %>
-		</div>
-				<div class="container-daily">
-			<%= render 'event_week/event' %>
-		</div>
-				<div class="container-daily">
-			<%= render 'event_week/event' %>
-		</div>
-				<div class="container-daily">
-			<%= render 'event_week/event' %>
-		</div>
-				<div class="container-daily">
-			<%= render 'event_week/event' %>
-		</div>
-				<div class="container-daily">
-			<%= render 'event_week/event' %>
-		</div>
+		<%end%>
 	</div>		
 </div>
