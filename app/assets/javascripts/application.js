@@ -13,5 +13,9 @@
 //= require jquery
 //= require bootstrap
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.pjax
 //= require_tree .
+
+$(function() {
+  $(document).pjax('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])', '[data-pjax-container]')
+});

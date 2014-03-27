@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
-gem 'rails'
-gem 'bootstrap-sass'
-gem 'bcrypt-ruby'
+gem 'rails', '4.0.4'
+gem 'bootstrap-sass','2.3.2'
+gem 'bcrypt'
 gem 'faker'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
-gem 'pg', '0.15.1'
+gem 'pg'
 gem 'pg_search'
 
 group :development, :test do
@@ -24,21 +24,21 @@ group :test do
   gem 'capybara'
   gem 'rb-notifu'
   gem 'wdm'
-  gem 'factory_girl_rails', '4.2.1'
+  gem 'factory_girl_rails'
 end
 
-gem 'sass-rails'
+gem 'sass-rails', '~>4.0.2'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder'
 gem 'seed_dump'
+gem 'pjax_rails'
 
 group :doc do
   gem 'sdoc', require: false
 end
 
 group :production do
-  gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor'
 end

@@ -10,18 +10,27 @@
 				type: "post",
 				data: values,
 			});
-		
+			
+			$.when(
 			$('.'+$(this).parent().attr('class').split(' ')[1]).each(function() {
+			
+				$(this).parent().insertAfter($(this).parent().nextAll('.event-full').last());
+			
+				//$(this).parent().insertBefore($(this).parent().prevAll('.event-full').first()).hide().slideDown();
+				
+				/*
 				if($(this).children('.mover').hasClass('top')) {
 					$(this).siblings('.bandpic').children('.topimg').attr('src', $(this).next().children('.mover').attr('name'));
 					$(this).next().children('.mover').addClass('top');
 					$(this).children('.mover').removeClass('top');
 				}
-
-			$(this).slideUp(400, function() {
-				$(this).remove();
-			});
- 		});
+				
+				$(this).slideUp(400, function() {
+					$(this).remove();
+				});
+				*/
+ 			})
+ 			).done(function() { fader2(); } );
 	});
 </script>
 <script>
@@ -125,22 +134,22 @@
 	}, ".playbutton");
 </script>
 <script>
+/*
 	// Loads main page from logo
 	$('.logo').on('click',function () {
 		$('.container').load('/ .container');
 	});
-</script>
-<script>
+	
 	// Loads week from button
 	$(document).on('click', '.middle2', function() {
 		$('.container').load('/week .container');
 	});
-</script>
-<script>
+
 	// Loads home from button
 	$(document).on('click', '.middle1', function() {
 		$('.container').load('/ .container');
 	});
+*/
 </script>
 <!--
 <script>
@@ -236,7 +245,10 @@ function fader() {
 function fader2() {
 	$('.event').each(function() {
 		if($(this).find('.event-full:visible:first')) {
-            $(this).children('.bandpic').children('.topimg').attr('src', $(this).children('.event-full:visible:first').children('.event-individual').children('.mover').attr('name'));
+			if($(this).children('.event-full:visible:first').children('.event-individual').children('.mover').attr('name'))
+            	$(this).children('.bandpic').children('.topimg').attr('src', $(this).children('.event-full:visible:first').children('.event-individual').children('.mover').attr('name'));
+            else
+            	$(this).children('.bandpic').children('.topimg').attr('src','');
         } 
         if(typeof($(this).children('.event-full:visible:first').attr('class')) === "undefined") {
         	$(this).fadeOut("slow");
@@ -306,4 +318,7 @@ function fader2() {
 	$('.previous').on('click', function() {
 		youtubeplayer.previousVideo();
 	});
+</script>
+<script>
+	$(document).pjax('a', '#data-pjax-container')
 </script>

@@ -3,9 +3,8 @@
 <!-- The website has been developed with the help of http://ruby.railstutorial.org/ created by Michael Hartl -->
 <head>
   <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag "application", media: "all",
-                          "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
 </head>
@@ -13,7 +12,7 @@
 <div class="secondary-header">
 		<%= render 'layouts/headbanner' %>
 </div>
-<div class="container">
+<div class="container" id="data-pjax-container" data-pjax-container>
   <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "alert alert-#{key}") %>
   <% end %>
