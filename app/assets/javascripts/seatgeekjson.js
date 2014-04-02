@@ -19,7 +19,7 @@ function getEvents(start, end) {
 					var title = event.title;
 					bands.push(title);
 					var price = event.stats.lowest_price;
-					var time = new Date(event.datetime_local.concat('-05:00'));
+					var time = new Date(event.datetime_utc);
 					var performers = [];
 					$.each(event.performers, function(j, performer) {
 						entry = new Object();
@@ -141,7 +141,7 @@ function getWeekEvents(start, end) {
 					var title = event.title;
 					bands.push(title);
 					var price = event.stats.lowest_price;
-					var time = new Date(event.datetime_local.concat('-05:00'));
+					var time = new Date(event.datetime_utc);
 					var performers = [];
 					$.each(event.performers, function(j, performer) {
 						entry = new Object();
@@ -254,7 +254,7 @@ function getDayEvents(eventid) {
 			var title = data.title;
 			bands.push(title);
 			var price = data.stats.lowest_price;
-			var time = new Date(data.datetime_local.concat('-05:00'));
+			var time = new Date(data.datetime_utc);
 			var performers = [];
 			var primname;
 			var primimage;
