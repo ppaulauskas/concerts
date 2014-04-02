@@ -28,11 +28,10 @@
 	</div>
 	
 	<div class="timeinfo template-time"><h4 class="timetiny"></h4></div>
-	<div class="show-info template-info"><div class="info-button" id="" style:"float: right;"><h4>More Info</h4></div>
-				
-	<script>getEvents("<%= @d %>","<%= @d.tomorrow %>");</script>
+	<div class="show-info template-info"><div class="info-button" id="" style:"float: right;"><h4><a class="linkinfo" href="">More Info</a></h4></div>
 		
+	</div>
 </div>
-</div>
+<script>getEvents("<%= @d %>","<%= @d.tomorrow %>");</script>
 <%end%>
 <% @d=@d.tomorrow %>
