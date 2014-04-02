@@ -65,13 +65,16 @@
     float:left;
     position:relative;
     
-    // Sub parts
-    .part1 {
-      width: 20%;
-    }
+    .part5sub {
+      height: 127px;
+     // Sub parts
+      .part1 {
+        width: 20%;
+      }
     
-    .part2 {
-      width: 40%;
+     .part2 {
+        width: 40%;
+      }
     }
 }
 
@@ -219,6 +222,11 @@
   margin-left: 15px;
   float: left;
 }
+
+.address {
+  margin-left: 15px;
+  float: left;
+}
   
 .container-moreinfo {
   width: 924px;
@@ -308,7 +316,7 @@
   }
   
   .curr-seller {
-    width: 88px;
+    width: 68px;
     height: 17px;
     background-color: black;
     display: inline-block;
@@ -324,7 +332,7 @@
   }
   
   .price {
-    width: 34px;
+    width: 54px;
     height: 17px;
     background-color: black;
     display: inline-block;

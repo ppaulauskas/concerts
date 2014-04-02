@@ -256,14 +256,21 @@ function getDayEvents(eventid) {
 			var price = data.stats.lowest_price;
 			var time = new Date(data.datetime_local);
 			var performers = [];
+			var primname;
+			var primimage;
 			$.each(data.performers, function(j, performer) {
 				entry = new Object();
 				entry.name = performer.name;
 				entry.image = performer.image;
+				if (performer.primary === true) {
+					primname = performer.name;
+					primimage = performer.image;
+				}
 				performers.push(entry);
 			});
 			var venname = data.venue.name;
 			var vennamerep = venname.replace(/ /g,'+');
+			vennamerep = vennamerep.replace(/&/g,'+');
 			var loc = data.venue.display_location;
 			var locrep = loc.replace(/ /g,'+');
 			var venid = data.venue.id;
@@ -271,6 +278,7 @@ function getDayEvents(eventid) {
 			var lat = data.venue.location.lat;
 			var lon = data.venue.location.lon;
 			var url = data.url;
+			var venueurl = data.venue.url;
 			
 			var $template = $(".moreinfo-top-template");
 			var $element = $template.clone().removeClass('moreinfo-top-template');
@@ -279,19 +287,26 @@ function getDayEvents(eventid) {
 			var $botelement = $bottemplate.clone().removeClass('moreinfo-bottom-template');
 			
 			// Fills in the top half with first band information
-			$element.children(".part5").children('.part1').children('.event-individual').children('.curr-event').children('h4').text(performers[0].name);
-			$element.children(".part5").children('.part1').children('.event-individual').addClass(performers[0].name.replace(/[^a-z0-9A-Z]/, ''));
-			$element.children(".part5").children('.part1').children('.event-individual').attr('id',price);
-			$element.children(".part5").children('.part1').children('.event-individual').children('.mover2').attr('name',performers[0].image);
+			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').children('.curr-event').children('h4').text(primname);
+			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').addClass(primname.replace(/[^a-z0-9A-Z]/, ''));
+			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').attr('id',price);
+			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').children('.mover2').attr('name',primimage);
 			
 			// Adds band picture	
-			$element.children(".part5").children('.bandpicture').children('.bandpic').children('.picture').attr('src',performers[0].image);	
+			$element.children(".part5").children('.part5sub').children('.bandpicture').children('.bandpic').children('.picture').attr('src',primimage);	
 			
 			// Adds event price
-			$element.children('.eventinfo').children('.bigspace').children('.price').children('a').children('h4').text('$'+price);
-			$element.children('.eventinfo').children('.bigspace').children('.curr-seller').children('a').children('h4').text('SEATGEEK >');
-			$element.children('.eventinfo').children('.bigspace').children('.price').children('a').attr('href',url);
-			$element.children('.eventinfo').children('.bigspace').children('.curr-seller').children('a').attr('href',url);
+			if (price === null) {
+				$element.children('.eventinfo').children('.bigspace').children('.price').children('a').children('h4').text('No Info');
+				$element.children('.eventinfo').children('.bigspace').children('.curr-seller').children('a').children('h4').text('SEATGEEK >');
+				$element.children('.eventinfo').children('.bigspace').children('.price').children('a').attr('href',url);
+				$element.children('.eventinfo').children('.bigspace').children('.curr-seller').children('a').attr('href',url);
+			} else {
+				$element.children('.eventinfo').children('.bigspace').children('.price').children('a').children('h4').text('$'+price);
+				$element.children('.eventinfo').children('.bigspace').children('.curr-seller').children('a').children('h4').text('SEATGEEK >');
+				$element.children('.eventinfo').children('.bigspace').children('.price').children('a').attr('href',url);
+				$element.children('.eventinfo').children('.bigspace').children('.curr-seller').children('a').attr('href',url);
+			}
 			
 			// Adds event title
 			$element.children('.eventinfo').children('.titleevent').children('.curr-event').children('h4').text(title);
@@ -300,12 +315,33 @@ function getDayEvents(eventid) {
 			$element.children('.eventinfo').children('.time').children('.date').text('Date: '+time.toLocaleDateString());
 			$element.children('.eventinfo').children('.time').children('.showtime').text('Time: '+time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}));
 			
-			var $tester = $element.children('.part5').clone();
-			var $tester2 = $element.children('.part5').clone();
-			var $tester3 = $element.children('.part5').clone();
-			$tester.appendTo($element);
-			$tester2.appendTo($element);
-			$tester3.appendTo($element);
+			// Adds venue name and info
+			$element.children('.eventinfo').children('.titlevenue').children('.curr-venue').children('a').children('h4').text(venname);
+			$element.children('.eventinfo').children('.titlevenue').children('.curr-venue').children('a').attr('href',venueurl);
+
+			// Adds venue address
+			$element.children('.eventinfo').children('.address').children('.address1').text(data.venue.address);
+			$element.children('.eventinfo').children('.address').children('.address2').text(data.venue.extended_address);
+			
+			// Adds extra performers
+			if (perflen > 1) {
+				$.each(performers, function(k,perf) {
+					if (perf.name !== primname) {
+						var $tester = $element.children('.part5').children('.template5sub').clone().removeClass('template5sub');
+						
+						$tester.children('.part1').children('.event-individual').children('.curr-event').children('h4').text(perf.name);
+						$tester.children('.part1').children('.event-individual').addClass(perf.name.replace(/[^a-z0-9A-Z]/, ''));
+						$tester.children('.part1').children('.event-individual').attr('id',price);
+						$tester.children('.part1').children('.event-individual').children('.mover2').attr('name',perf.image);
+			
+						// Adds band picture	
+						$tester.children('.bandpicture').children('.bandpic').children('.picture').attr('src',perf.image);	
+						
+						$tester.appendTo($element.children('.part5'));
+						
+					}
+				});
+			}
 			
 			$element.appendTo('.container-moreinfo');
 			
@@ -313,81 +349,5 @@ function getDayEvents(eventid) {
 			$botelement.children('.part4').children('iframe').attr('src','https://www.google.com/maps/embed/v1/place?key=AIzaSyBRSL6OcriI09lI4TztHLFgRB2UgrG_xNM&q='+vennamerep+','+locrep);
 			
 			$botelement.appendTo('.container-moreinfo');
-			
-			
-			// Adds extra bands if more than one is playing
-			/*
-				if (perflen > 1) {
-					for (k = 0; k < perflen; k++) {
-						if (k === 0) {
-							var $templatetiny = $("."+start).children('.template-tiny');
-							var $elementtiny = $templatetiny.clone().removeClass('template-tiny');
-							$elementtiny.children('.weektiny').text('with');
-							$elementtiny.appendTo($element.children(".event")); 
-							
-							var $templatesec = $("."+start).children('.template-secondary');
-							var $elementsec = $templatesec.clone().removeClass('template-secondary');
-							$elementsec.children('.curr-event2').children('h4').text(performers[k+1].name);
-							$elementsec.addClass(performers[k+1].name.replace(/[^a-z0-9A-Z]/, ''));
-							$elementsec.attr('id',price);
-							$elementsec.children('.mover2').attr('name',performers[k+1].image);	
-							$elementsec.appendTo($element.children(".event"));
-						}
-						else if (k === perflen-1) {
-							var $templatetiny = $("."+start).children('.template-tiny');
-							var $elementtiny = $templatetiny.clone().removeClass('template-tiny');
-							$elementtiny.children('.weektiny').text('at');
-							$elementtiny.appendTo($element.children(".event")); 
-						}
-						else {
-							var $templatetiny = $("."+start).children('.template-tiny');
-							var $elementtiny = $templatetiny.clone().removeClass('template-tiny');
-							$elementtiny.children('.weektiny').text('and');
-							$elementtiny.appendTo($element.children(".event")); 
-							
-							var $templatesec = $("."+start).children('.template-secondary');
-							var $elementsec = $templatesec.clone().removeClass('template-secondary');
-							$elementsec.children('.curr-event2').children('h4').text(performers[k+1].name);
-							$elementsec.addClass(performers[k+1].name.replace(/[^a-z0-9A-Z]/, ''));
-							$elementsec.attr('id',price);
-							$elementsec.children('.mover2').attr('name',performers[k+1].image);	
-							$elementsec.appendTo($element.children(".event"));
-						}
-					}
-				} else {
-					var $templatetiny = $("."+start).children('.template-tiny');
-					var $elementtiny = $templatetiny.clone().removeClass('template-tiny');
-					$elementtiny.children('.weektiny').text('at');
-					$elementtiny.appendTo($element.children(".event")); 
-				}
-			
-				// Venue information
-				var $templatevenue = $("."+start).children('.template-venue');
-				var $elementvenue = $templatevenue.clone().removeClass('template-venue');
-				$elementvenue.children('.curr-venue').children('h4').text(venname);
-				$elementvenue.addClass(venname.replace(/[^a-z0-9A-Z]/, ''));
-				$elementvenue.attr('id',venid);
-				$elementvenue.appendTo($element.children(".event"));
-			
-				// Time below the venue
-				var $templatetime = $("."+start).children('.template-time');
-				var $elementtime = $templatetime.clone().removeClass('template-time');
-				$elementtime.children('.timetiny').text(time.toLocaleTimeString());
-				$elementtime.appendTo($element.children(".event"));
-				
-				// Show info
-				var $templatelink = $('.'+start).children('.template-info');
-				var $elementlink = $templatelink.clone().removeClass('template-info');
-				$elementlink.children('.info-button').attr('id',id);
-				$elementlink.appendTo($element.children(".event"));
-			
-				$element.appendTo($template.parent());
-			*/
-		/*
-		if (bands.length === 0) {
-			$("."+start).children(".container-event").css("display","none");
-		}
-		var total = data.meta.total;
-		*/
 	});
 };
