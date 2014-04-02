@@ -255,7 +255,6 @@ function getDayEvents(eventid) {
 			bands.push(title);
 			var price = data.stats.lowest_price;
 			var time = new Date(data.datetime_local.concat('-05:00'));
-			alert(time.toString());
 			var performers = [];
 			var primname;
 			var primimage;
