@@ -34,6 +34,7 @@ gem 'jquery-rails'
 gem 'jbuilder'
 gem 'seed_dump'
 gem 'pjax_rails'
+gem 'devise'
 
 group :doc do
   gem 'sdoc', require: false

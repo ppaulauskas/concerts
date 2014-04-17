@@ -13,10 +13,10 @@
 		<%= render 'layouts/headbanner' %>
 </div>
 <div class="container" id="data-pjax-container" data-pjax-container>
+  <%= yield %>
   <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "alert alert-#{key}") %>
   <% end %>
-  <%= yield %>
   <%= debug(params) if Rails.env.development? %>
 </div>
   <%= render 'layouts/deleter' %>
