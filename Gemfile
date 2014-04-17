@@ -34,6 +34,9 @@ gem 'jquery-rails'
 gem 'jbuilder'
 gem 'seed_dump'
 gem 'pjax_rails'
+gem 'devise'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 group :doc do
   gem 'sdoc', require: false

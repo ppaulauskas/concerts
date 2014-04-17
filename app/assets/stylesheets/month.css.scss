@@ -289,46 +289,47 @@
       
 
 .littleinfo2 {
-        height: 11px;
-        width: 122px;
-        float: left;
-        background-color:#2b2b2b;
-        color: white;
-        display: none;
-        margin-top: -2px;
-      }
+  height: 11px;
+  width: 122px;
+  float: left;
+  background-color:#2b2b2b;
+  color: white;
+  display: none;
+  margin-top: -2px;
+}
       
-      .weektiny {
-        padding-left:26px;
-        font-size:10px;
-        margin-top:0px;
-        display: block;
-        }
+.weektiny {
+  padding-left:26px;
+  font-size:10px;
+  margin-top:0px;
+  display: block;
+}
         
-        .curr-event2 {
-            width: 88px;
-            height: 17px;
-            background-color: black;
-            display: inline-block;
-            float: left;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            &:hover {
-              cursor: pointer; 
-              cursor: hand;
-            }
-          }
-        .curr-venue {
-          width: 88px;
-          height: 17px;
-          background-color: black;
-          display: inline-block;
-          float: left;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
+.curr-event2 {
+  width: 88px;
+  height: 17px;
+  background-color: black;
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  &:hover {
+    cursor: pointer; 
+    cursor: hand;
+  }
+}
+
+.curr-venue {
+  width: 88px;
+  height: 17px;
+  background-color: black;
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
         
 .break {
   height: 4px;
@@ -346,20 +347,19 @@
   text-overflow: ellipsis;
   display: none;   
   background-color: black;
-  &:hover {
-            
-            cursor: pointer; 
-            cursor: hand;
-          }
+  &:hover {            
+    cursor: pointer; 
+    cursor: hand;
+  }
           
-          .info-button {
-          width: 55px;
-          height: 17px;
-          background-color: black;
-          display: inline-block;
-          float: right;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
+  .info-button {
+    width: 55px;
+    height: 17px;
+    background-color: black;
+    display: inline-block;
+    float: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }

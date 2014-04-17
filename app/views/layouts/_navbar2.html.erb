@@ -39,7 +39,11 @@
 		<div class="container-search">
 			<form id="search3" role="search">
      			<div>
-        			<input type="text" class="searchbox" placeholder="MY STUFF">
+        			<div class="buttonbox">
+        					<% if user_signed_in? %><h4><%= link_to "MY STUFF", edit_user_registration_path %> | <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></h4>
+							<% else %><h4><%= link_to "LOGIN", new_user_session_path %></h4>
+							<% end %>
+        			</div>
       			</div>
     		</form>
 		</div>	
