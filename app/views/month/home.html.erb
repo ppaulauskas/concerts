@@ -4,10 +4,11 @@
 		<%= render 'layouts/navbar' %>
 </div>
 <div class="container-calendar">
-	<div class="container-monthly">
+	<div class="container-monthly" style="overflow:hidden;">
 		<%= render 'event_calendar/week' %>
 		<%= render 'event_calendar/week' %>
 		<%= render 'event_calendar/week' %>
 		<%= render 'event_calendar/week' %>
-	</div>		
+		<!--<#%= link_to "Load More", moreweek_path, :remote => true %>-->
+	</div>
 </div>

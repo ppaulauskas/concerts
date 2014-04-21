@@ -47,7 +47,7 @@ function getEvents(start, end) {
 					
 					// Top Band information
 					$element.children('.event-individual').children('.curr-event').children('h4').text(performers[0].name);
-					$element.children('.event-individual').addClass(performers[0].name.replace(/[^a-z0-9A-Z]/, ''));
+					$element.children('.event-individual').addClass(performers[0].name.replace(/[^a-z0-9A-Z]/g, ''));
 					$element.children('.event-individual').attr('id',price);
 					$element.children('.event-individual').children('.mover').attr('name',performers[0].image);
 				
@@ -62,7 +62,7 @@ function getEvents(start, end) {
 								var $templatesec = $("."+start).children('.template-secondary');
 								var $elementsec = $templatesec.clone().removeClass('template-secondary');
 								$elementsec.children('.curr-event2').children('h4').text(performers[k+1].name);
-								$elementsec.addClass(performers[k+1].name.replace(/[^a-z0-9A-Z]/, ''));
+								$elementsec.addClass(performers[k+1].name.replace(/[^a-z0-9A-Z]/g, ''));
 								$elementsec.attr('id',price);
 								$elementsec.children('.mover2').attr('name',performers[k+1].image);	
 								$elementsec.appendTo($element);
@@ -82,7 +82,7 @@ function getEvents(start, end) {
 								var $templatesec = $("."+start).children('.template-secondary');
 								var $elementsec = $templatesec.clone().removeClass('template-secondary');
 								$elementsec.children('.curr-event2').children('h4').text(performers[k+1].name);
-								$elementsec.addClass(performers[k+1].name.replace(/[^a-z0-9A-Z]/, ''));
+								$elementsec.addClass(performers[k+1].name.replace(/[^a-z0-9A-Z]/g, ''));
 								$elementsec.attr('id',price);
 								$elementsec.children('.mover2').attr('name',performers[k+1].image);	
 								$elementsec.appendTo($element);
@@ -99,7 +99,7 @@ function getEvents(start, end) {
 					var $templatevenue = $("."+start).children('.template-venue');
 					var $elementvenue = $templatevenue.clone().removeClass('template-venue');
 					$elementvenue.children('.curr-venue').children('h4').text(venname);
-					$elementvenue.addClass(venname.replace(/[^a-z0-9A-Z]/, ''));
+					$elementvenue.addClass(venname.replace(/[^a-z0-9A-Z]/g, ''));
 					$elementvenue.attr('id',venid);
 					$elementvenue.appendTo($element);
 				
@@ -125,6 +125,9 @@ function getEvents(start, end) {
 			});
 			if (bands.length === 0) {
 				$("."+start).css("display","none");
+				if($("."+start).parent().is(':last-child')) {
+					$("."+start).parent().parent().remove();
+				}
 			}
 			var total = data.meta.total;
 		});
@@ -177,7 +180,7 @@ function getWeekEvents(start, end) {
 					
 					// Top Band information
 					$element.children(".event").children('.event-individual').children('.curr-event').children('h4').text(performers[0].name);
-					$element.children(".event").children('.event-individual').addClass(performers[0].name.replace(/[^a-z0-9A-Z]/, ''));
+					$element.children(".event").children('.event-individual').addClass(performers[0].name.replace(/[^a-z0-9A-Z]/g, ''));
 					$element.children(".event").children('.event-individual').attr('id',price);
 					$element.children(".event").children('.event-individual').children('.mover2').attr('name',performers[0].image);
 				
@@ -192,7 +195,7 @@ function getWeekEvents(start, end) {
 								var $templatesec = $("."+start).children('.template-secondary');
 								var $elementsec = $templatesec.clone().removeClass('template-secondary');
 								$elementsec.children('.curr-event2').children('h4').text(performers[k+1].name);
-								$elementsec.addClass(performers[k+1].name.replace(/[^a-z0-9A-Z]/, ''));
+								$elementsec.addClass(performers[k+1].name.replace(/[^a-z0-9A-Z]/g, ''));
 								$elementsec.attr('id',price);
 								$elementsec.children('.mover2').attr('name',performers[k+1].image);	
 								$elementsec.appendTo($element.children(".event"));
@@ -212,7 +215,7 @@ function getWeekEvents(start, end) {
 								var $templatesec = $("."+start).children('.template-secondary');
 								var $elementsec = $templatesec.clone().removeClass('template-secondary');
 								$elementsec.children('.curr-event2').children('h4').text(performers[k+1].name);
-								$elementsec.addClass(performers[k+1].name.replace(/[^a-z0-9A-Z]/, ''));
+								$elementsec.addClass(performers[k+1].name.replace(/[^a-z0-9A-Z]/g, ''));
 								$elementsec.attr('id',price);
 								$elementsec.children('.mover2').attr('name',performers[k+1].image);	
 								$elementsec.appendTo($element.children(".event"));
@@ -229,7 +232,7 @@ function getWeekEvents(start, end) {
 					var $templatevenue = $("."+start).children('.template-venue');
 					var $elementvenue = $templatevenue.clone().removeClass('template-venue');
 					$elementvenue.children('.curr-venue').children('h4').text(venname);
-					$elementvenue.addClass(venname.replace(/[^a-z0-9A-Z]/, ''));
+					$elementvenue.addClass(venname.replace(/[^a-z0-9A-Z]/g, ''));
 					$elementvenue.attr('id',venid);
 					$elementvenue.appendTo($element.children(".event"));
 				
@@ -317,7 +320,7 @@ function getDayEvents(eventid) {
 			
 			// Fills in the top half with first band information
 			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').children('.curr-event').children('h4').text(primname);
-			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').addClass(primname.replace(/[^a-z0-9A-Z]/, ''));
+			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').addClass(primname.replace(/[^a-z0-9A-Z]/g, ''));
 			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').attr('id',price);
 			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').children('.mover2').attr('name',primimage);
 			
@@ -363,7 +366,7 @@ function getDayEvents(eventid) {
 						var $tester = $element.children('.part5').children('.template5sub').clone().removeClass('template5sub');
 						
 						$tester.children('.part1').children('.event-individual').children('.curr-event').children('h4').text(perf.name);
-						$tester.children('.part1').children('.event-individual').addClass(perf.name.replace(/[^a-z0-9A-Z]/, ''));
+						$tester.children('.part1').children('.event-individual').addClass(perf.name.replace(/[^a-z0-9A-Z]/g, ''));
 						$tester.children('.part1').children('.event-individual').attr('id',price);
 						$tester.children('.part1').children('.event-individual').children('.mover2').attr('name',perf.image);
 			

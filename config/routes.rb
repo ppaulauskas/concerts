@@ -6,6 +6,7 @@ Concerts::Application.routes.draw do
   end
   resources :events
   resources :sessions, only: [:new, :create, :destroy]
+  resources :month
 
   root  'month#home'
   #match '/signup',  to: 'users#new',            via: 'get'
