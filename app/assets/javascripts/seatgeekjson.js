@@ -20,11 +20,17 @@ function getEvents(start, end) {
 					bands.push(title);
 					var price = event.stats.lowest_price;
 					var time = new Date(event.datetime_utc);
+					if (event.time_tbd === true) {
+						time = "TBD";
+					}
 					var performers = [];
 					$.each(event.performers, function(j, performer) {
 						entry = new Object();
 						entry.name = performer.name;
 						entry.image = performer.image;
+						if (performer.image === null) {
+							entry.image = "https://s3.amazonaws.com/concerts-assets/images/standin/small"+Math.floor((Math.random()*40)+1)+".jpg";
+						}
 						performers.push(entry);
 					});
 					var venname = event.venue.name;
@@ -100,7 +106,11 @@ function getEvents(start, end) {
 					// Time below the venue
 					var $templatetime = $("."+start).children('.template-time');
 					var $elementtime = $templatetime.clone().removeClass('template-time');
-					$elementtime.children('.timetiny').text(time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}));
+					if (time === "TBD") {
+						$elementtime.children('.timetiny').text(time);						
+					} else {
+						$elementtime.children('.timetiny').text(time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}));
+					}
 					$elementtime.appendTo($element);
 					
 					// Show info
@@ -142,11 +152,17 @@ function getWeekEvents(start, end) {
 					bands.push(title);
 					var price = event.stats.lowest_price;
 					var time = new Date(event.datetime_utc);
+					if (event.time_tbd === true) {
+						time = "TBD";
+					}
 					var performers = [];
 					$.each(event.performers, function(j, performer) {
 						entry = new Object();
 						entry.name = performer.name;
 						entry.image = performer.image;
+						if (performer.image === null) {
+							entry.image = "https://s3.amazonaws.com/concerts-assets/images/standin/small"+Math.floor((Math.random()*40)+1)+".jpg";
+						}
 						performers.push(entry);
 					});
 					var venname = event.venue.name;
@@ -220,8 +236,11 @@ function getWeekEvents(start, end) {
 					// Time below the venue
 					var $templatetime = $("."+start).children('.template-time');
 					var $elementtime = $templatetime.clone().removeClass('template-time');
-					
-					$elementtime.children('.timetiny').text(time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}));
+					if (time === "TBD") {
+						$elementtime.children('.timetiny').text(time);						
+					} else {
+						$elementtime.children('.timetiny').text(time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}));
+					}
 					$elementtime.appendTo($element.children(".event"));
 					
 					// Show info
@@ -255,6 +274,10 @@ function getDayEvents(eventid) {
 			bands.push(title);
 			var price = data.stats.lowest_price;
 			var time = new Date(data.datetime_utc);
+			var date = time.toLocaleDateString();
+			if (data.time_tbd === true) {
+				time = "TBD";
+			}
 			var performers = [];
 			var primname;
 			var primimage;
@@ -262,9 +285,15 @@ function getDayEvents(eventid) {
 				entry = new Object();
 				entry.name = performer.name;
 				entry.image = performer.image;
+				if (performer.image === null) {
+					entry.image = "https://s3.amazonaws.com/concerts-assets/images/standin/large"+Math.floor((Math.random()*28)+1)+".jpg";
+				}
 				if (performer.primary === true) {
 					primname = performer.name;
 					primimage = performer.image;
+					if (performer.image === null) {
+						primimage = "https://s3.amazonaws.com/concerts-assets/images/standin/large"+Math.floor((Math.random()*28)+1)+".jpg";
+					}
 				}
 				performers.push(entry);
 			});
@@ -312,8 +341,12 @@ function getDayEvents(eventid) {
 			$element.children('.eventinfo').children('.titleevent').children('.curr-event').children('h4').text(title);
 			
 			// Adds event time
-			$element.children('.eventinfo').children('.time').children('.date').text('Date: '+time.toLocaleDateString());
-			$element.children('.eventinfo').children('.time').children('.showtime').text('Time: '+time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}));
+			$element.children('.eventinfo').children('.time').children('.date').text('Date: '+date);
+			if (time === "TBD") {
+				$element.children('.eventinfo').children('.time').children('.showtime').text('Time: '+time);					
+			} else {
+				$element.children('.eventinfo').children('.time').children('.showtime').text('Time: '+time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}));
+			}
 			
 			// Adds venue name and info
 			$element.children('.eventinfo').children('.titlevenue').children('.curr-venue').children('a').children('h4').text(venname);

@@ -186,16 +186,28 @@
 	// Showing more info
 	$(document).on('click','.curr-event', function() {
 		if($(this).parent().siblings('.timeinfo').is(':visible')) {
+			var eventheight = $(this).parent().parent().parent().parent().height();
+			var thisheight = $(this).parent().parent().height();
+			var currheight = $(this).parent().height();
+			var totheight = eventheight-thisheight+currheight;
 			$(this).parent().siblings('.event-individual2').toggle();
 			$(this).parent().siblings('.littleinfo2').toggle();
 			$(this).parent().siblings('.venue-individual').toggle();
 			$(this).parent().siblings('.timeinfo').toggle();
 			$(this).parent().siblings('.show-info').toggle();
-			var eventheight = $(this).parent().parent().parent().parent().height();
-			var thisheight = $(this).parent().parent().height();
-			var currheight = $(this).parent().height();
-			var totheight = eventheight+thisheight-currheight;
-			$(this).parent().parent().parent().parent().css('height', '147px');
+			$(this).parent().parent().parent().parent().css('height', totheight+'px');
+			var fakedivclass = $(this).parent().attr('class').split(' ')[1]+"placeholder";
+			$.when(
+        		$(this).parent().parent().insertBefore($('.'+fakedivclass)).hide().slideDown()
+    		).done(function() { fader2(); } );
+    		$('.'+fakedivclass).remove();
+			//$.when(
+     		//$('.'+$(this).parent().attr('class').split(' ')[1]).each(function() {
+     		//	$(this).parent().insertAfter($(this).parent().nextAll('.event-full').last()).hide().slideDown();
+        	//	$(this).children('.mover').removeClass('star-full');
+    		//	$(this).children('.mover').addClass('star-empty');
+    		//})
+    		//).done(function() { fader2(); } );
 		}else{
 			$(this).parent().siblings('.event-individual2').toggle();
 			$(this).parent().siblings('.littleinfo2').toggle();
@@ -206,7 +218,12 @@
 			var thisheight = $(this).parent().parent().height();
 			var currheight = $(this).parent().height();
 			var totheight = eventheight+thisheight-currheight;
+			var fakedivclass = $(this).parent().attr('class').split(' ')[1]+"placeholder";
+			$('<div class="'+fakedivclass+'" style="display:none"></div>').insertAfter($(this).parent().parent());
 			$(this).parent().parent().parent().parent().css('height', totheight+'px');
+			$.when(
+        		$(this).parent().parent().insertBefore($(this).parent().parent().prevAll('.event-full').last()).hide().slideDown()
+    		).done(function() { fader2(); } );
 		}
 	});
 </script>
