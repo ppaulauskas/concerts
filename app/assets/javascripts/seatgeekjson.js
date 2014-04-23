@@ -12,6 +12,7 @@ function getEvents(start, end) {
 		"sort": "score.desc"
 	})
 		.done(function( data ) {
+			
 			var bands = [];
 			$.each(data.events, function(i,event) {
 				if (bands.indexOf(event.title) === -1) {
@@ -123,6 +124,8 @@ function getEvents(start, end) {
 					$element.appendTo($template.parent());
 				}
 			});
+			//$("."+start+"loader").remove();
+			
 			if (bands.length === 0) {
 				$("."+start).css("display","none");
 				if($("."+start).parent().is(':last-child')) {

@@ -1,5 +1,9 @@
 <% if @d >= Date.today %>
 <div class="event <% if @d < Date.today %>old <%end%><%= @d %>">
+	<!--><div class="<%#=@d%>loader overloader">
+		<img src="/assets/ajax-loader.gif" style="margin-top:54px; margin-left:53px;">
+	</div>
+	-->
 	<div class="playbutton"></div>
 	<div class="bandpic" href="javascript:void(0);">
 		<img class="topimg" src="">
