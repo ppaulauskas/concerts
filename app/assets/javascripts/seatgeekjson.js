@@ -1,6 +1,6 @@
 function getEvents(start, end) {
 
-	var seatgeekAPI = "http://api.seatgeek.com/2/events?";
+	var seatgeekAPI = "https://api.seatgeek.com/2/events?";
 	$.getJSON( seatgeekAPI, {
 		"lat": "40.757997",
 		"lon": "-73.981869",
@@ -135,7 +135,7 @@ function getEvents(start, end) {
 
 function getWeekEvents(start, end) {
 
-	var seatgeekAPI = "http://api.seatgeek.com/2/events?";
+	var seatgeekAPI = "https://api.seatgeek.com/2/events?";
 	$.getJSON( seatgeekAPI, {
 		"lat": "40.757997",
 		"lon": "-73.981869",
@@ -266,7 +266,7 @@ function getWeekEvents(start, end) {
 
 function getDayEvents(eventid) {
 
-	var seatgeekAPI = "http://api.seatgeek.com/2/events/"+eventid;
+	var seatgeekAPI = "https://api.seatgeek.com/2/events/"+eventid;
 	$.getJSON(seatgeekAPI).done(function(data) {
 			
 			// Creates an array to store bands
