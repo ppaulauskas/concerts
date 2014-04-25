@@ -451,6 +451,7 @@ function getDayEvents(eventid) {
 						// Spotify info
 						$.getJSON(slugger2).done(function(data2) {
 							$.each(data2.performers, function(z,event2) {
+								$tester.children('.songs').children('.toptracks').children('.spotify-player').children('.spotframe').hide();
 								$.each(event2.links, function(y,event3) {
 									if(event3.provider == 'spotify') {
 										var spotifyid = event3.id;
