@@ -348,6 +348,22 @@
     float:left;
   }
   
+  .spotify-player{
+    height: 100px;
+    width: 254px;
+    float:left;
+    display: inline-block;
+    //margin-left:-7px;
+    background-image:url('https://s3.amazonaws.com/concerts-assets/images/spotify_error.png');
+    
+    .spotframe {
+      display:none;
+      float:left;
+      margin-left:-3px;
+      margin-top:10px;
+    }
+  }
+  
   .title {
     width: 100%;
     height: 17px;

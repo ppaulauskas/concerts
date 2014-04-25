@@ -273,7 +273,11 @@ function getDayEvents(eventid) {
 	var seatgeekAPI = "https://api.seatgeek.com/2/events/"+eventid;
 	var data;
 	var data1;
+	var data2;
 	var event1;
+	var event2;
+	var event3;
+	var slugger2;
 	$.getJSON(seatgeekAPI).done(function(data) {
 			
 			// Creates an array to store bands
@@ -329,6 +333,7 @@ function getDayEvents(eventid) {
 			var $alsoplaytemplate = $(".template-locs");
 			var slugger="https://api.seatgeek.com/2/events?performers.slug="+primslug;
 			
+			// More playing
 			$.getJSON(slugger).done(function(data1) {
 				var test = 0;
 				$.each(data1.events, function(x,event1) {
@@ -336,14 +341,30 @@ function getDayEvents(eventid) {
 						var $alsoplay = $alsoplaytemplate.clone().removeClass('template-locs');
 						var options = {day: "numeric", month: "numeric"};
 						var datetime = new Date(event1.datetime_utc);
-						$alsoplay.children('.date').children('h4').text(datetime.toLocaleDateString("en-US", options));
-						$alsoplay.children('.place').children('h4').text(event1.venue.display_location);
+						$alsoplay.children('a').children('.date').children('h4').text(datetime.toLocaleDateString("en-US", options));
+						$alsoplay.children('a').children('.place').children('h4').text(event1.venue.display_location);
+						$alsoplay.children('a').attr('href','/events/'+event1.id);
 						$alsoplay.appendTo($element.children('.midspace').children('.template5sub').children('.bandlist'));
 						test=test+1;
 					}
 			
 					if (test >= 3)
 						return false;
+				});
+			});
+			
+			slugger2="https://api.seatgeek.com/2/performers?slug="+primslug;
+			
+			// Spotify info
+			$.getJSON(slugger2).done(function(data2) {
+				$.each(data2.performers, function(z,event2) {
+					$.each(event2.links, function(y,event3) {
+						if(event3.provider == 'spotify') {
+							var spotifyid = event3.id;
+							var spotlink = "https://embed.spotify.com/?uri="+spotifyid;
+							$element.children('.part5').children('.part5sub').children('.songs').children('.toptracks').children('.spotify-player').children('.spotframe').attr('src',spotlink).toggle();
+						}
+					});
 				});
 			});
 			
@@ -392,7 +413,7 @@ function getDayEvents(eventid) {
 			if (perflen > 1) {
 				$.each(performers, function(k,perf) {
 					if (perf.name !== primname) {
-						var $tester = $element.children('.part5').children('.template5sub').clone().removeClass('template5sub');
+						var $tester = $('.moreinfo-top-template').children('.midspace').children('.template5sub').clone().removeClass('template5sub');
 						
 						$tester.children('.part1').children('.event-individual').children('.curr-event').children('h4').text(perf.name);
 						$tester.children('.part1').children('.event-individual').addClass(perf.name.replace(/[^a-z0-9A-Z]/g, ''));
@@ -411,8 +432,9 @@ function getDayEvents(eventid) {
 									var $alsoplay = $alsoplaytemplate.clone().removeClass('template-locs');
 									var options = {day: "numeric", month: "numeric"};
 									var datetime = new Date(event1.datetime_utc);
-									$alsoplay.children('.date').children('h4').text(datetime.toLocaleDateString("en-US", options));
-									$alsoplay.children('.place').children('h4').text(event1.venue.display_location);
+									$alsoplay.children('a').children('.date').children('h4').text(datetime.toLocaleDateString("en-US", options));
+									$alsoplay.children('a').children('.place').children('h4').text(event1.venue.display_location);
+									$alsoplay.children('a').attr('href','/events/'+event1.id);
 									$alsoplay.appendTo($tester.children('.bandlist'));
 									test=test+1;
 								}
@@ -420,6 +442,27 @@ function getDayEvents(eventid) {
 								if (test >= 3)
 									return false;
 								});
+						});
+						
+						slugger2="https://api.seatgeek.com/2/performers?slug="+perf.slug;
+						
+						$tester.children('.songs').children('.toptracks').children('.spotify-player').children('.spotframe').hide();
+						
+						// Spotify info
+						$.getJSON(slugger2).done(function(data2) {
+							$.each(data2.performers, function(z,event2) {
+								$.each(event2.links, function(y,event3) {
+									if(event3.provider == 'spotify') {
+										var spotifyid = event3.id;
+										var spotlink = "https://embed.spotify.com/?uri="+spotifyid;
+										$tester.children('.songs').children('.toptracks').children('.spotify-player').children('.spotframe').attr('src',spotlink).show();
+										return false;
+									}
+									else {
+										$tester.children('.songs').children('.toptracks').children('.spotify-player').children('.spotframe').hide();
+									}
+								});
+							});
 						});
 						
 						$tester.appendTo($element.children('.part5'));

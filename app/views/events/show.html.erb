@@ -1,4 +1,4 @@
-<% provide(:title, 'Test Event') %>
+<% provide(:title, ' Information') %>
 
 <#%= @currband = Band.find_by name: @event.headliner %>
 
@@ -58,8 +58,8 @@
 				</div>
 				
 				<div class="regbox otherlocs template-locs">
-					<div class="date"><h4></h4></div>
-					<div class="place"><h4></h4></div>
+					<a><div class="date"><h4></h4></div></a>
+					<a><div class="place"><h4></h4></div></a>
 				</div>
 			</div>
 			
@@ -72,6 +72,10 @@
 					<div class="title">
 						<h4 class="bump">Top Tracks</h4>
 					</div>
+					<div class="spotify-player">
+						<iframe class="spotframe" src="" width="254" height="100" frameborder="0" allowtransparency="true"></iframe>
+					</div>
+					<!--
 					<div class="songdetails">
 						<div class="song-individual">
 							<div class="songname"><h4 class="bump">Test Song</h4></div>
@@ -101,6 +105,7 @@
 							</div>
 						</div>
 					</div>
+					-->
 				</div>
 			</div>
 			<div class="biobox">
