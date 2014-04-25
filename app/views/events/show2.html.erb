@@ -7,82 +7,101 @@
 </div>
 
 <div class="container-moreinfo">
-	<div class="moreinfo-top">
-	<div class="part1">
-		<div class="event-individual <%= @currband.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= Random.new.rand(10...100) %>">
-					<% if @currband.rating > 50 %>
-						<div class="star-full mover2" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= @currband.name %>" name="name"></div>
-					<% else %>
-						<div class="star-empty mover2" name="<%= @currband.image %>" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= @currband.name %>" name="name"></div>
-					<% end %>
-				<div class="curr-event"><h4><%= @event.headliner %></h4></div>
-				<div class="deleter cross" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="<%= @event.headliner%>" name="name"></div>
-		</div>	
-	</div>
-	<div class="part2">
-		<div class="bandpic"><img src="<%= @currband.image %>" class="picture" \></div>
-	</div>
-	<div class="part2">
-		<div class="toptracks">
-			<div class="title">
-				<h4 class="bump">Top Tracks</h4>
+	<div class="moreinfo-top moreinfo-top-template">
+		<div class="part5 midspace template5">
+			<div class="part5sub template5sub">
+			<div class="part1">
+				<div class="event-individual" id="">
+					<div class="star-empty mover2" name="" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="" name="name"></div>
+					<div class="curr-event"><h4></h4></div>
+					<div class="deleter cross" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="" name="name"></div>
+				</div>	
 			</div>
-			<div class="songdetails">
-				<div class="song-individual">
-				<div class="songname"><h4 class="bump">Riverside</h4></div>
-				<div class="currsong short">
-					<div class="youtube2" name="https://www.youtube.com/embed/vjncyiuwwXQ"></div>
-					<div class="soundcloud2"></div>
-					<div class="rdio2"></div>
-					<div class="spotify2" name="https://embed.spotify.com/?uri=spotify:track:6SyLzd7dXHKynQZMzg0MMb"></div>
-				</div>
-				</div>
-				<div class="song-individual">
-				<div class="songname"><h4 class="bump">The Curse</h4></div>
-				<div class="currsong short">
-					<div class="youtube2" name="https://www.youtube.com/embed/6h9XUYj96ho"></div>
-					<div class="soundcloud2"></div>
-					<div class="rdio2"></div>
-					<div class="spotify2" name="https://embed.spotify.com/?uri=spotify:track:69Na5EJJ6GK5t2vy4eq62x"></div>
-				</div>
-				</div>
-				<div class="song-individual">
-				<div class="songname"><h4 class="bump">Just So</h4></div>
-				<div class="currsong short">
-					<div class="youtube2" name="https://www.youtube.com/embed/5NmjJeNFUVU"></div>
-					<div class="soundcloud2"></div>
-					<div class="rdio2"></div>
-					<div class="spotify2" name="https://embed.spotify.com/?uri=spotify:track:6R7MI6kfB2MtPmxdSMonXl"></div>
-				</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="part1">
-		<% @currvenue = (Venue.find_by venue_id: @event.venue_id) %>
-		<div class="event-individual <%= @currvenue.name.gsub(/[^0-9A-Za-z]/, '') %>" id="<%= @currvenue.venue_id %>">
-			<div class="star-empty"></div>
-			<div class="curr-venue"><h4><%= @currvenue.name %></h4></div>
-			<div class="cross"></div>
-		</div>
-		<div class="time"><h4>
-			<%= @event.eventtime.to_date.strftime("%^a, %^b")%>
-			<%= @event.eventtime.to_date.day %></h4>
 			
-			<h4 class="less">Doors: 8:00 PM</h4>
-			<h4>Show: 9:00 PM</h4>
-			<h4 class="less">$20 Advance</h4>
-			<h4>$25 Day of Show</h4>
+			<div class="part2 bandpicture">
+				<div class="bandpic"><img src="" class="picture" \></div>
+			</div>
+			
+			<div class="part2 songs">
+				<div class="toptracks">
+					<div class="title">
+						<h4 class="bump">Top Tracks</h4>
+					</div>
+					<div class="songdetails">
+						<div class="song-individual">
+							<div class="songname"><h4 class="bump">Test Song</h4></div>
+							<div class="currsong short">
+								<div class="youtube2" name="https://www.youtube.com/embed/vjncyiuwwXQ"></div>
+								<div class="soundcloud2"></div>
+								<div class="rdio2"></div>
+								<div class="spotify2"></div>
+							</div>
+						</div>
+						<div class="song-individual">
+							<div class="songname"><h4 class="bump">Test Song #2</h4></div>
+							<div class="currsong short">
+								<div class="youtube2" name="https://www.youtube.com/embed/6h9XUYj96ho"></div>
+								<div class="soundcloud2"></div>
+								<div class="rdio2"></div>
+								<div class="spotify2"></div>
+							</div>
+						</div>
+						<div class="song-individual">
+							<div class="songname"><h4 class="bump">Test Song #3</h4></div>
+							<div class="currsong short">
+								<div class="youtube2" name="https://www.youtube.com/embed/5NmjJeNFUVU"></div>
+								<div class="soundcloud2"></div>
+								<div class="rdio2"></div>
+								<div class="spotify2"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			
 		</div>
-		
+		<div class="part1 eventinfo">
+			<div class="event-individual bigspace">
+				<div class="price"><a href=""><h4 class="leftbump"></h4></a></div>
+				<div class="curr-seller"><a href=""><h4 class="rightbump"></h4></a></div>
+			</div>
+			
+			<div class="event-individual titleevent bigspace2">
+					<div class="star-empty mover2" name="" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="" name="name"></div>
+					<div class="curr-event"><h4></h4></div>
+					<div class="deleter cross" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="" name="name"></div>
+			</div>	
+			
+			<div class="time">
+				<h4 class="date less"></h4>
+				<h4 class="showtime"></h4>
+			</div>
+			
+			<div class="event-individual titlevenue bigspace2">
+					<div class="star-empty mover2" name="" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="" name="name"></div>
+					<div class="curr-venue"><a href=""><h4></h4></a></div>
+					<div class="deleter cross" href="javascript:void(0);"><input name="_method" type="hidden" value="patch" /><input type="hidden" value="" name="name"></div>
+			</div>
+			
+			<div class="address">
+				<h4 class="address1 less"></h4>
+				<h4 class="address2"></h4>
+			</div>
+		</div>
+		<div class="part1 social">
+			Social bars
+		</div>
 	</div>
-	<div class="part1"></div>
-	</div>
-	<div class="moreinfo-bottom">
-	<div class="part3">
-	<h5>Agnes Caroline Thaarup Obel (born 28 October 1980 in Gentofte, Copenhagen) is a Danish singer/songwriter. Her first album, Philharmonics, was released by PIAS Recordings on 4 October 2010 in Europe, most notably Denmark, Norway, and Germany. Philharmonics was certified gold in June 2011 by the Belgian Entertainment Association (BEA) for sales of 10,000 units. At the Danish Music Awards in November 2011, Agnes Obel won five prizes: Best Album Of The Year, Best Pop Release Of The Year, Best Debut Artist Of The Year, Best Female Artist Of The Year and Best Songwriter Of The Year.</h5>
-	</div>
-	<div class="part4">
-	</div>
+	
+	<div class="moreinfo-bottom moreinfo-bottom-template">
+		<div class="part3">
+			<h5>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus nulla a magna viverra, eget luctus justo placerat. Donec non congue turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet consequat augue, ut condimentum sem. Etiam eros elit, eleifend eu quam sit amet, cursus euismod purus. Cras dolor nisl, posuere in auctor lobortis, mattis eget dui. Proin auctor, dui vel posuere lobortis, augue diam interdum erat, lacinia congue orci nulla id tortor. Integer gravida tempor sapien, eu adipiscing odio luctus ut.
+			</h5>
+		</div>
+		<div class="part4"><iframe width="100%" height="234" frameborder="0" style="border:0" src=""></iframe></div>
 	</div>
 </div>
+
+<script>getDayEvents(<%= params[:id] %>)</script>

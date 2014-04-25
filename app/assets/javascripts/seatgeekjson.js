@@ -266,8 +266,179 @@ function getWeekEvents(start, end) {
 		});
 };
 
-
 function getDayEvents(eventid) {
+	
+	var primslug;
+	var performers = [];
+	var seatgeekAPI = "https://api.seatgeek.com/2/events/"+eventid;
+	var data;
+	var data1;
+	var event1;
+	$.getJSON(seatgeekAPI).done(function(data) {
+			
+			// Creates an array to store bands
+			var bands = [];
+			
+			var id = data.id;
+			var title = data.title;
+			bands.push(title);
+			var price = data.stats.lowest_price;
+			var time = new Date(data.datetime_utc);
+			var date = time.toLocaleDateString();
+			if (data.time_tbd === true) {
+				time = "TBD";
+			}
+			var primname;
+			var primimage;
+			$.each(data.performers, function(j, performer) {
+				entry = new Object();
+				entry.name = performer.name;
+				entry.image = performer.image;
+				entry.slug = performer.slug;
+				if (performer.image === null) {
+					entry.image = "https://s3.amazonaws.com/concerts-assets/images/standin/large"+Math.floor((Math.random()*28)+1)+".jpg";
+				}
+				if (performer.primary === true) {
+					primname = performer.name;
+					primimage = performer.image;
+					primslug = performer.slug;
+					if (performer.image === null) {
+						primimage = "https://s3.amazonaws.com/concerts-assets/images/standin/large"+Math.floor((Math.random()*28)+1)+".jpg";
+					}
+				}
+				performers.push(entry);
+			});
+			var venname = data.venue.name;
+			var vennamerep = venname.replace(/ /g,'+');
+			vennamerep = vennamerep.replace(/&/g,'+');
+			var loc = data.venue.display_location;
+			var locrep = loc.replace(/ /g,'+');
+			var venid = data.venue.id;
+			var perflen = performers.length;
+			var lat = data.venue.location.lat;
+			var lon = data.venue.location.lon;
+			var url = data.url;
+			var venueurl = data.venue.url;
+			
+			var $template = $(".moreinfo-top-template");
+			var $element = $template.clone().removeClass('moreinfo-top-template');
+			
+			//var $bottemplate = $(".moreinfo-bottom-template");
+			//var $botelement = $bottemplate.clone().removeClass('moreinfo-bottom-template');
+						
+			var $alsoplaytemplate = $(".template-locs");
+			var slugger="https://api.seatgeek.com/2/events?performers.slug="+primslug;
+			
+			$.getJSON(slugger).done(function(data1) {
+				var test = 0;
+				$.each(data1.events, function(x,event1) {
+					if(event1.id != eventid) {
+						var $alsoplay = $alsoplaytemplate.clone().removeClass('template-locs');
+						var options = {day: "numeric", month: "numeric"};
+						var datetime = new Date(event1.datetime_utc);
+						$alsoplay.children('.date').children('h4').text(datetime.toLocaleDateString("en-US", options));
+						$alsoplay.children('.place').children('h4').text(event1.venue.display_location);
+						$alsoplay.appendTo($element.children('.midspace').children('.template5sub').children('.bandlist'));
+						test=test+1;
+					}
+			
+					if (test >= 3)
+						return false;
+				});
+			});
+			
+			// Fills in the top half with first band information
+			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').children('.curr-event').children('h4').text(primname);
+			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').addClass(primname.replace(/[^a-z0-9A-Z]/g, ''));
+			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').attr('id',price);
+			$element.children(".part5").children('.part5sub').children('.part1').children('.event-individual').children('.mover2').attr('name',primimage);
+			
+			// Adds band picture	
+			$element.children(".part5").children('.part5sub').children('.bandpicture').children('.bandpic').children('.picture').attr('src',primimage);	
+			
+			// Adds event price
+			if (price === null) {
+				$element.children('.eventinfo').children('.bigspace').children('.price').children('a').children('h4').text('No Info');
+				$element.children('.eventinfo').children('.bigspace').children('.curr-seller').children('a').children('h4').text('SEATGEEK >');
+				$element.children('.eventinfo').children('.bigspace').children('.price').children('a').attr('href',url);
+				$element.children('.eventinfo').children('.bigspace').children('.curr-seller').children('a').attr('href',url);
+			} else {
+				$element.children('.eventinfo').children('.bigspace').children('.price').children('a').children('h4').text('$'+price);
+				$element.children('.eventinfo').children('.bigspace').children('.curr-seller').children('a').children('h4').text('SEATGEEK >');
+				$element.children('.eventinfo').children('.bigspace').children('.price').children('a').attr('href',url);
+				$element.children('.eventinfo').children('.bigspace').children('.curr-seller').children('a').attr('href',url);
+			}
+			
+			// Adds event title
+			$element.children('.eventinfo').children('.titleevent').children('.curr-event').children('h4').text(title);
+			
+			// Adds event time
+			$element.children('.eventinfo').children('.time').children('.date').text('Date: '+date);
+			if (time === "TBD") {
+				$element.children('.eventinfo').children('.time').children('.showtime').text('Time: '+time);					
+			} else {
+				$element.children('.eventinfo').children('.time').children('.showtime').text('Time: '+time.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}));
+			}
+			
+			// Adds venue name and info
+			$element.children('.eventinfo').children('.titlevenue').children('.curr-venue').children('a').children('h4').text(venname);
+			$element.children('.eventinfo').children('.titlevenue').children('.curr-venue').children('a').attr('href',venueurl);
+
+			// Adds venue address
+			$element.children('.eventinfo').children('.address').children('.address1').text(data.venue.address);
+			$element.children('.eventinfo').children('.address').children('.address2').text(data.venue.extended_address);
+			
+			// Adds extra performers
+			if (perflen > 1) {
+				$.each(performers, function(k,perf) {
+					if (perf.name !== primname) {
+						var $tester = $element.children('.part5').children('.template5sub').clone().removeClass('template5sub');
+						
+						$tester.children('.part1').children('.event-individual').children('.curr-event').children('h4').text(perf.name);
+						$tester.children('.part1').children('.event-individual').addClass(perf.name.replace(/[^a-z0-9A-Z]/g, ''));
+						$tester.children('.part1').children('.event-individual').attr('id',price);
+						$tester.children('.part1').children('.event-individual').children('.mover2').attr('name',perf.image);
+			
+						// Adds band picture	
+						$tester.children('.bandpicture').children('.bandpic').children('.picture').attr('src',perf.image);	
+						
+						var slugger="https://api.seatgeek.com/2/events?performers.slug="+perf.slug;
+			
+						$.getJSON(slugger).done(function(data1) {
+							var test = 0;
+							$.each(data1.events, function(x,event1) {
+								if(event1.id != eventid) {
+									var $alsoplay = $alsoplaytemplate.clone().removeClass('template-locs');
+									var options = {day: "numeric", month: "numeric"};
+									var datetime = new Date(event1.datetime_utc);
+									$alsoplay.children('.date').children('h4').text(datetime.toLocaleDateString("en-US", options));
+									$alsoplay.children('.place').children('h4').text(event1.venue.display_location);
+									$alsoplay.appendTo($tester.children('.bandlist'));
+									test=test+1;
+								}
+			
+								if (test >= 3)
+									return false;
+								});
+						});
+						
+						$tester.appendTo($element.children('.part5'));
+						
+					}
+				});
+			}
+			
+			$element.appendTo('.container-moreinfo');
+			
+			// Map details
+			//$botelement.children('.part4').children('iframe').attr('src','https://www.google.com/maps/embed/v1/place?key=AIzaSyBRSL6OcriI09lI4TztHLFgRB2UgrG_xNM&q='+vennamerep+','+locrep);
+			
+			//$botelement.appendTo('.container-moreinfo');
+	});
+};
+
+
+function getDayEvents2(eventid) {
 
 	var seatgeekAPI = "https://api.seatgeek.com/2/events/"+eventid;
 	$.getJSON(seatgeekAPI).done(function(data) {
