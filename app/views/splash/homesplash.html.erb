@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sickday.at</title>
+<%= stylesheet_link_tag "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+  
+ <link rel="icon" type="image/png" href="https://s3.amazonaws.com/concerts-assets/images/favicon.ico">
+</head>
+<body>
+<div class="splash-container">
+	<div class="videoembed">
+		<iframe src="//player.vimeo.com/video/94617823" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+	<div class="splashlogo">
+		<img src="https://s3.amazonaws.com/concerts-assets/images/sickday-logo.png">
+	</div>
+	
+	<div class="email-collect">
+		<h4 class="notice">Get notified when the beta is out:</h4>
+		<div class="container-search">
+			<%= form_tag({}, class: "emaillist") do %>
+     			 <div class="emailer">
+     			 	<input class="searchbox" name="email" placeholder="Email address" required="required" type="email">
+      			</div>
+      			<input type="submit" value="SUBMIT">
+    		<%end%>
+    		<div class="errorbox"><h4 class="errors"></h4></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

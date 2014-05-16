@@ -7,7 +7,7 @@ Concerts::Application.routes.draw do
   resources :events
   resources :sessions, only: [:new, :create, :destroy]
 
-  root  'month#home'
+  root  'splash#homesplash'
   #match '/signup',  to: 'users#new',            via: 'get'
   #match '/signin',  to: 'sessions#new',         via: 'get'
   #match '/signout', to: 'sessions#destroy',     via: 'delete'
@@ -19,6 +19,7 @@ Concerts::Application.routes.draw do
   patch "/bands/star"
   patch "/bands/unstar"
   patch "/bands/remove"
+  match "/splash/emailsubmit", to: 'splash#emailsubmit', via: 'post'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

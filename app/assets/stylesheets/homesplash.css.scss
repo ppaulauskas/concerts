@@ -1,0 +1,122 @@
+.videoembed {
+  padding-top: 50px;
+}
+
+.splashlogo {
+  width: 130px;
+  height: 130px;
+  padding-top: 10px;
+  display: inline-block;
+  float: left;
+}
+
+.splash-container {
+  width: 1000px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.email-collect {
+  display: inline-block;
+  height: 130px;
+  padding-top: 10px;
+  padding-left:10px;
+  float: left;
+}
+
+.notice {
+  font-size: 16px;
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.errors {
+  font-size: 16px;
+  color: pink;
+}
+
+.errorbox {
+  display: inline-block;
+  float:left;
+}
+
+.container-search {
+    width: 205px;
+    height: 27px;
+    font-size: 16px;
+    font-family: "Roboto-Condensed";
+    display: inline-block; 
+    color: #5e5e5e;
+    float: left;
+    padding-left: 20px;
+    
+    input[type="email"] {
+      color: #5e5e5e;
+      font-size: 13px;
+      padding: 0px 6px 1px;
+      background-color: #d9d9d9;
+      border: none;
+      line-height:15px;
+    }
+    
+    input[type="text"] {
+      color: #5e5e5e;
+      font-size: 13px;
+      padding: 0px 6px 1px;
+      background-color: #d9d9d9;
+    }
+    
+    .searchbox {
+      font-family: "Roboto-Condensed";
+      width: 160px;
+      height: 17px !important;
+      color: #5e5e5e;
+      border-radius: 0px;
+      display: inline-block;
+      box-shadow: none !important;
+    }
+    
+    ::-webkit-input-placeholder {color: #5e5e5e;}
+    :-moz-placeholder {color: #5e5e5e; opacity:  1;}
+    ::-moz-placeholder {color: #5e5e5e; opacity:  1;}
+    :-ms-input-placeholder {color: #5e5e5e;}
+}
+
+.emailer {
+  width: 155px;
+  height: 17px;
+  display: inline-block;
+  float: left;
+}
+
+.ajaxsubmit {
+  height: 17px;
+  width: 50px;
+  display: inline-block;
+  float: left;
+  background-color: white;
+  &:hover {
+    cursor: pointer;
+    cursor: hand;
+  }
+  
+  h4 {
+    padding-left: 6px;
+  }
+}
+
+input[type="submit"] {
+  height: 17px !important;
+  width: 50px;
+  display: inline-block;
+  float: left;
+  background-color: white;
+  font-family: "Roboto-Condensed";
+  font-size: 12px;
+  font-weight: normal;
+  height: 21px;
+  line-height: 1;
+  color:#5e5e5e;
+  padding-top: 0px;
+}

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-<!-- The website has been developed with the help of http://ruby.railstutorial.org/ created by Michael Hartl -->
 <head>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
+  
+  <link rel="icon" type="image/png" href="https://s3.amazonaws.com/concerts-assets/images/favicon.ico">
 </head>
 <body>
 <div class="secondary-header">

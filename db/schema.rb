@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417202732) do
+ActiveRecord::Schema.define(version: 20140516042048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20140417202732) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "emaillists", force: true do |t|
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "emaillists", ["email"], name: "index_emaillists_on_email", unique: true, using: :btree
 
   create_table "events", primary_key: "event_id", force: true do |t|
     t.text     "title"
