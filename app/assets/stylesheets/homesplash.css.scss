@@ -10,6 +10,9 @@
   float: left;
 }
 
+body {
+  background-color: #cccccc !important;
+}
 
 .splash-container {
   width: 1000px;
@@ -21,15 +24,17 @@
 .email-collect {
   display: inline-block;
   height: 130px;
-  padding-top: 10px;
-  padding-left:10px;
-  float: left;
+  //padding-top: 10px;
+  //padding-left:10px;
+  //float: left;
 }
 
 .notice {
-  font-size: 16px;
+  font-size: 24px;
   padding-top: 30px;
-  padding-left: 20px;
+  font-family: "Roboto-Condensed";
+  //padding-left: 20px;
+  color: black;
 }
 
 .errors {
@@ -43,20 +48,20 @@
 }
 
 .container-search {
-    width: 205px;
+    width: 300px;
     height: 27px;
     font-size: 16px;
     font-family: "Roboto-Condensed";
     display: inline-block; 
     color: #5e5e5e;
     float: left;
-    padding-left: 20px;
+    //padding-left: 20px;
     
     input[type="email"] {
-      color: #5e5e5e;
+      color: black;
       font-size: 13px;
       padding: 0px 6px 1px;
-      background-color: #d9d9d9;
+      background-color: white;
       border: none;
       line-height:15px;
     }
@@ -70,30 +75,30 @@
     
     .searchbox {
       font-family: "Roboto-Condensed";
-      width: 160px;
-      height: 17px !important;
+      width: 220px;
+      height: 25px !important;
       color: #5e5e5e;
       border-radius: 0px;
       display: inline-block;
       box-shadow: none !important;
     }
     
-    ::-webkit-input-placeholder {color: #5e5e5e;}
-    :-moz-placeholder {color: #5e5e5e; opacity:  1;}
-    ::-moz-placeholder {color: #5e5e5e; opacity:  1;}
-    :-ms-input-placeholder {color: #5e5e5e;}
+    ::-webkit-input-placeholder {color: #8a8a8a;}
+    :-moz-placeholder {color: #8a8a8a; opacity:  1;}
+    ::-moz-placeholder {color: #8a8a8a; opacity:  1;}
+    :-ms-input-placeholder {color: #8a8a8a;}
 }
 
 .emailer {
-  width: 155px;
+  width: 220px;
   height: 17px;
   display: inline-block;
   float: left;
 }
 
 .ajaxsubmit {
-  height: 17px;
-  width: 50px;
+  height: 25px;
+  width: 100px;
   display: inline-block;
   float: left;
   background-color: white;
@@ -107,17 +112,31 @@
   }
 }
 
+.bottomfoot {
+  position: fixed;
+  bottom: 0;
+  margin-right:auto;
+  margin-left:auto;
+  width:100%;
+  background-color: #cccccc;
+}
+
+.contact {
+  color: black;
+  font-size: 20px;
+}
+
 input[type="submit"] {
-  height: 17px !important;
-  width: 50px;
+  height: 25px !important;
+  width: 80px;
   display: inline-block;
   float: left;
-  background-color: white;
-  font-family: "Roboto-Condensed";
-  font-size: 12px;
+  background-color: black;
+  font-family: "Roboto-Condensed-Bold";
+  font-size: 18px;
   font-weight: normal;
   height: 21px;
   line-height: 1;
-  color:#5e5e5e;
+  color: white;
   padding-top: 0px;
 }
