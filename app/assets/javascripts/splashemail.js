@@ -51,17 +51,27 @@ $(function() {
 
 
 onload=function(){
+	$('.comments').on('keyup',function() {
+		$(this).height(0);
+		$(this).height(this.scrollHeight);
+	});
+};
+	
+/*
+onload=function(){
     var text=document.getElementsByName('entry.428211031')[0];
     
     text.onkeyup=function(){
     	
         if(text.scrollTop) 
-        	text.rows=parseInt(text.rows)+1;
+        	while(text.scrollTop)
+        		text.rows=parseInt(text.rows)+1;
         	
         if(text.value=='')
         	text.rows=3;
     };
 };
+*/
 /*
 $(document).on('click', '.ajaxsubmit', function(){ 
 		var email = $(this).parent().children('.emailer').children('.searchbox').attr('value');
