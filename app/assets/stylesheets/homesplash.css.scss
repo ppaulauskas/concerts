@@ -35,30 +35,33 @@
   font-family: "Roboto-Condensed";
   //padding-left: 20px;
   color: black;
+  height: 24px;
 }
 
 .errors {
   font-size: 16px;
-  color: pink;
+  color: red;
 }
 
 .errorbox {
   display: inline-block;
   float:left;
+  width:300px;
 }
 
 .container-search {
     width: 300px;
-    height: 27px;
+    height: auto;
     font-size: 16px;
     font-family: "Roboto-Condensed";
     display: inline-block; 
     color: #5e5e5e;
     float: left;
+    padding-bottom:20px;
     //padding-left: 20px;
     
     input[type="email"] {
-      color: black;
+      color: #5e5e5e;
       font-size: 13px;
       padding: 0px 6px 1px;
       background-color: white;
@@ -87,6 +90,17 @@
     :-moz-placeholder {color: #8a8a8a; opacity:  1;}
     ::-moz-placeholder {color: #8a8a8a; opacity:  1;}
     :-ms-input-placeholder {color: #8a8a8a;}
+    
+    .comments {
+      font-family: "Roboto-Condensed";
+      color: #5e5e5e;
+      border-radius: 0px;
+      display: inline-block;
+      box-shadow: none !important;
+      resize: none;
+      border: none;
+      font-size:13px;
+    }
 }
 
 .emailer {

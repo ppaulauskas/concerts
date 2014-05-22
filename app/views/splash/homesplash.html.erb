@@ -24,12 +24,15 @@
 		<h4 class="notice">Get notified when the beta is out</h4>
 		<div class="container-search">
 			<%= form_tag({}, class: "emaillist") do %>
-     			 <div class="emailer">
-     			 	<input class="searchbox" name="email" placeholder="Email address" required="required" type="email">
+				<div class="commentses">
+					<textarea class="comments" name="entry.428211031" placeholder="Optional comments... Don't feel like giving us your email? Skip it, we appreciate all feedback!" rows="3" cols="50"></textarea>
+				</div>
+     			<div class="emailer">
+     			 	<input class="searchbox" name="entry.1502143306" placeholder="Email address" type="email">
       			</div>
       			<input type="submit" value="SUBMIT">
     		<%end%>
-    		<div class="errorbox"><h4 class="errors"></h4></div>
+    		<div class="errorbox"><center><h4 class="errors"></h4></center></div>
 		</div>
 	</div>
 	</center>
