@@ -49,6 +49,55 @@ $(function() {
 	});
 });
 
+$(function() {
+	$('.fbdirect').mouseover(function() {
+		$('.shareinfo').children('h4').text('Share to Facebook!');
+	}).mouseout(function() {
+		$('.shareinfo').children('h4').text('');
+	});
+	
+	$('.fblike').mouseover(function() {
+		$('.shareinfo').children('h4').text('Like us on Facebook!');
+	}).mouseout(function() {
+		$('.shareinfo').children('h4').text('');
+	});
+	
+	$('.twitter').mouseover(function() {
+		$('.shareinfo').children('h4').text('Tweet about us!');
+	}).mouseout(function() {
+		$('.shareinfo').children('h4').text('');
+	});
+	
+	$('.linkedin').mouseover(function() {
+		$('.shareinfo').children('h4').text('Share to LinkedIn!');
+	}).mouseout(function() {
+		$('.shareinfo').children('h4').text('');
+	});
+	
+	$('.tumblr').mouseover(function() {
+		$('.shareinfo').children('h4').text('Share to Tumblr!');
+	}).mouseout(function() {
+		$('.shareinfo').children('h4').text('');
+	});
+	
+	$('.googleplus').mouseover(function() {
+		$('.shareinfo').children('h4').text('Share to Google+!');
+	}).mouseout(function() {
+		$('.shareinfo').children('h4').text('');
+	});
+	
+	$('.pinterest').mouseover(function() {
+		$('.shareinfo').children('h4').text('Pin It on Pinterest!');
+	}).mouseout(function() {
+		$('.shareinfo').children('h4').text('');
+	});
+	
+	$('.reddit').mouseover(function() {
+		$('.shareinfo').children('h4').text('Find us on Reddit!');
+	}).mouseout(function() {
+		$('.shareinfo').children('h4').text('');
+	});
+});
 
 onload=function(){
 	$('.comments').on('keyup',function() {

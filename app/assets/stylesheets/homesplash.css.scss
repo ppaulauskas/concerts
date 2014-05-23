@@ -161,3 +161,152 @@ input[type="submit"] {
   color: white;
   padding-top: 0px;
 }
+
+.shareables {
+  height: 100px;
+  display: inline-block;
+  float: right;
+  margin-top: 60px;
+  
+  .shareinfo {
+    width: 140px;
+    height: 17px;
+    
+    h4 {
+      color: black;
+    }
+    
+  }
+  
+  .topshares {
+    height: 46px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    
+    .fbdirect {
+      background: url("https://s3.amazonaws.com/concerts-assets/images/share1-01.png");
+      width: 46px;
+      height: 46px;
+      background-size: contain;
+      display: inline-block;
+      margin-right: 1px;
+      border: 1px solid #cccccc;
+      &:hover {
+        cursor: pointer; 
+        cursor: hand;
+        border: 1px solid black;
+      }
+    }
+    
+    .fblike {
+      background: url("https://s3.amazonaws.com/concerts-assets/images/share2-01.png");
+      width: 46px;
+      height: 46px;
+      background-size: contain;
+      display: inline-block;
+      margin-right: 1px;
+      border: 1px solid #cccccc;
+      &:hover {
+        cursor: pointer; 
+        cursor: hand;
+        border: 1px solid black;
+      }
+    }
+    
+    .twitter {
+      background: url("https://s3.amazonaws.com/concerts-assets/images/share3-01.png");
+      width: 46px;
+      height: 46px;
+      background-size: contain;
+      display: inline-block;
+      margin-right: 1px;
+      border: 1px solid #cccccc;
+      &:hover {
+        cursor: pointer; 
+        cursor: hand;
+        border: 1px solid black;
+      }
+    }
+    
+    .linkedin {
+      background: url("https://s3.amazonaws.com/concerts-assets/images/share4-01.png");
+      width: 46px;
+      height: 46px;
+      background-size: contain;
+      display: inline-block;
+      margin-right: 1px;
+      border: 1px solid #cccccc;
+      &:hover {
+        cursor: pointer; 
+        cursor: hand;
+        border: 1px solid black;
+      }
+    }
+  }
+  
+  .bottomshares {
+    height: 46px;
+    padding-top: 3px;
+    padding-bottom: 1px;
+    
+    .tumblr {
+      background: url("https://s3.amazonaws.com/concerts-assets/images/share5-01.png");
+      width: 46px;
+      height: 46px;
+      background-size: contain;
+      display: inline-block;
+      margin-right: 1px;
+      border: 1px solid #cccccc;
+      &:hover {
+        cursor: pointer; 
+        cursor: hand;
+        border: 1px solid black;
+      }
+    }
+    
+    .googleplus {
+      background: url("https://s3.amazonaws.com/concerts-assets/images/share6-01.png");
+      width: 46px;
+      height: 46px;
+      background-size: contain;
+      display: inline-block;
+      margin-right: 1px;
+      border: 1px solid #cccccc;
+      &:hover {
+        cursor: pointer; 
+        cursor: hand;
+        border: 1px solid black;
+      }
+    }
+    
+    .pinterest {
+      background: url("https://s3.amazonaws.com/concerts-assets/images/share7-01.png");
+      width: 46px;
+      height: 46px;
+      background-size: contain;
+      display: inline-block;
+      margin-right: 1px;
+      border: 1px solid #cccccc;
+      &:hover {
+        cursor: pointer; 
+        cursor: hand;
+        border: 1px solid black;
+      }
+    }
+    
+    .reddit {
+      background: url("https://s3.amazonaws.com/concerts-assets/images/share8-01.png");
+      width: 46px;
+      height: 46px;
+      background-size: contain;
+      display: inline-block;
+      margin-right: 1px;
+      border: 1px solid #cccccc;
+      &:hover {
+        cursor: pointer; 
+        cursor: hand;
+        border: 1px solid black;
+      }
+    }
+  }
+}
