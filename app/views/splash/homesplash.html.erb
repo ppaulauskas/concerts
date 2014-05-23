@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sickday.at</title>
+<!--<title>Sickday.at</title>-->
 <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -40,16 +40,16 @@
 	
 	<div class="shareables">
 		<div class="topshares">
-			<a href="https://www.facebook.com/sharer.php?app_id=113869198637480&sdk=joey&u=https%3A%2F%2Fwww.sickday.at&display=popup"><div class="fbdirect"></div></a>
-			<a href="https://www.facebook.com/SickdayAt"><div class="fblike"></div></a>
-			<a href="https://twitter.com/share?text=Check%20out%20this%20music%20calendar%20in%20development!"><div class="twitter"></div></a>
-			<a href="https://www.linkedin.com/shareArticle?title=Sickday%2Eat%3A+Concerts+made+easy%21&mini=true&url=https://www%2Esickday%2Eat&source=sickday%2Eat"><div class="linkedin"></div></a>
+			<a href="https://www.facebook.com/sharer.php?app_id=113869198637480&sdk=joey&u=https%3A%2F%2Fwww.sickday.at&display=popup"><div class="fbdirect shareable"></div></a>
+			<a href="https://www.facebook.com/SickdayAt"><div class="fblike shareable"></div></a>
+			<a href="https://twitter.com/share?text=Just+saw+the+demo+for+a+rad+concert+browsing+site+-"><div class="twitter shareable"></div></a>
+			<a href="https://www.linkedin.com/shareArticle?title=Sickday%2Eat%3A+Concerts+made+easy%21&mini=true&url=https://www%2Esickday%2Eat&source=sickday%2Eat"><div class="linkedin shareable"></div></a>
 		</div>
 		<div class="bottomshares">
-			<a href="http://www.tumblr.com/share/link?url=www.sickday.at&name=New%20music%20calendar!&description=Check%20out%20this%20new%20music%20calendar%20currently%20in%20development!"><div class="tumblr"></div></a>
-			<a href="https://plus.google.com/share?url=https://www.sickday.at"><div class="googleplus"></div></a>
-			<a href="//www.pinterest.com/pin/create/button/?url=www.sickday.at&media=https%3A%2F%2Fs3.amazonaws.com%2Fconcerts-assets%2Fimages%2Fsickday-logo.png&description=Sickday.at%3A%20concerts%20made%20easy!"><div class="pinterest"></div></a>
-			<div class="reddit"></div>
+			<a href="http://www.tumblr.com/share/link?url=www.sickday.at&name=New%20music%20calendar%20demo!&description=Just+saw+the+demo+for+a+rad+concert+browsing+site!"><div class="tumblr shareable"></div></a>
+			<a href="https://plus.google.com/share?url=https://www.sickday.at"><div class="googleplus shareable"></div></a>
+			<a href="//www.pinterest.com/pin/create/button/?url=www.sickday.at&media=https%3A%2F%2Fs3.amazonaws.com%2Fconcerts-assets%2Fimages%2Fsickday-logo.png&description=Sickday.at%3A%20concerts%20made%20easy!"><div class="pinterest shareable"></div></a>
+			<div class="reddit shareable"></div>
 		</div>
 		<center><div class="shareinfo"><h4></h4></div></center>
 	</div>
@@ -59,5 +59,30 @@
 	<h4 class="contact">dot@sickday.at</h4>
 </div>
 </center>
+
+<div class="hidden">
+	<script type="text/javascript">
+		<!--//--><![CDATA[//><!--
+			var images = new Array()
+			function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image()
+					images[i].src = preload.arguments[i]
+				}
+			}
+			preload(
+				"https://s3.amazonaws.com/concerts-assets/images/share1-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share2-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share3-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share4-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share5-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share6-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share7-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share8-02.png"
+			)
+		//--><!]]>
+	</script>
+</div>
+
 </body>
 </html>
