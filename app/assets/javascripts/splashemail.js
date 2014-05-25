@@ -123,7 +123,10 @@ $(document).ready(function() {
     window.open(url, $(this).attr('class')[0], opts);
  
     return false;
-  });
+    
+  	ga('send', 'event', 'button', 'click', $(this).attr('class'[0]));
+  	
+	});
 });
 /*
 onload=function(){
