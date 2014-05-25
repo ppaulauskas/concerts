@@ -120,9 +120,9 @@ $(document).ready(function() {
                  ',top='    + top    +
                  ',left='   + left;
     
-    window.open(url, $(this).attr('class')[0], opts);
+    window.open(url, $(this).attr('class').split(' ')[0], opts);
  
- 	ga('send', 'event', 'button', 'click', $(this).attr('class')[0]);
+ 	ga('send', 'event', 'button', 'click', $(this).attr('class').split(' ')[0]);
  
     return false;
   	
