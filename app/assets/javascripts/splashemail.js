@@ -122,9 +122,9 @@ $(document).ready(function() {
     
     window.open(url, $(this).attr('class')[0], opts);
  
+ 	ga('send', 'event', 'button', 'click', $(this).attr('class'[0]));
+ 
     return false;
-    
-  	ga('send', 'event', 'button', 'click', $(this).attr('class'[0]));
   	
 	});
 });
