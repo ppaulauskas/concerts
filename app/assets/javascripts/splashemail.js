@@ -108,7 +108,7 @@ onload=function(){
 
 
 $(document).ready(function() {
-  $('.popup').click(function(event) {
+  $('.popup').click(function() {
     var width  = 575,
         height = 400,
         left   = ($(window).width()  - width)  / 2,
