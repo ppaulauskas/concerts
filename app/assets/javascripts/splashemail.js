@@ -122,10 +122,20 @@ $(document).ready(function() {
     
     window.open(url, $(this).attr('class')[0], opts);
  
- 	ga('send', 'event', 'button', 'click', $(this).attr('class'[0]));
+ 	ga('send', 'event', 'button', 'click', $(this).attr('class')[0]);
  
     return false;
   	
+	});
+});
+
+$(document).ready(function() {
+	$('#fblikelink').click(function() {
+		ga('send', 'event', 'button', 'click', 'fblike');
+	});
+	
+	$('#redditlink').click(function() {
+		ga('send', 'event', 'button', 'click', 'reddit');
 	});
 });
 /*
