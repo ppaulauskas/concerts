@@ -41,59 +41,77 @@
   		ga('send', 'pageview');
 
 	</script>
-</head>  
-<body class="splashbg">
-<div class="splash-container">
-	<div class="videoembed">
-		<iframe src="//player.vimeo.com/video/94617823" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-	</div>
-	<!--
-	<div class="splashlogo">
-		<img src="https://s3.amazonaws.com/concerts-assets/images/sickday-logo.png">
-	</div>
-	-->
-	<div class="email-collect">
-		<h4 class="notice">Get notified when the beta is out</h4>
-		<div class="container-search">
-			<%= form_tag({}, class: "emaillist") do %>
-				<div class="commentses">
-					<textarea class="comments" name="entry.428211031" placeholder="Optional comments" rows="3" cols="50"></textarea>
-				</div>
-     			<div class="emailer">
-     			 	<input class="searchbox" name="entry.1502143306" placeholder="Email address" type="email">
-      			</div>
-      			<input type="submit" value="SUBMIT">
-    		<%end%>
-    		<div class="errorbox"><center><h4 class="errors"></h4></center></div>
-		</div>
-	</div>
+	<script>
+	$(document).ready(function(){
+	$(".main").onepage_scroll({
+   		sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
+   		easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", 
+                                    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+   		animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
+   		pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
+   		updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+   		beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
+   		afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
+   		loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+   		keyboard: true,                  // You can activate the keyboard controls
+   		responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
+                                    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever 
+                                    // the browser's width is less than 600, the fallback will kick in.
+   		direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
+	});
+	});
+	</script>
 	
-	<div class="shareables">
-		<div class="topshares">
-			<a href="https://www.facebook.com/sharer.php?app_id=113869198637480&sdk=joey&u=https%3A%2F%2Fwww.sickday.at&display=popup" class="fbpop popup" id="fbdirectlink"><div id="fbdirect" class="fbdirect shareable"></div></a>
-			<a href="https://www.facebook.com/SickdayAt" target="_newtab" id="fblikelink"><div id="fblike" class="fblike shareable"></div></a>
-			<a href="https://twitter.com/share?text=Just+saw+the+demo+for+a+rad+concert+browsing+site+-" class="twitpop popup" id="twitterlink"><div id="twitter" class="twitter shareable"></div></a>
-			<a href="https://www.linkedin.com/shareArticle?title=Sickday%2Eat%3A+Concerts+made+easy%21&mini=true&url=https://www%2Esickday%2Eat&source=sickday%2Eat" class="linkedpop popup" id="linkedinlink"><div id="linkedin" class="linkedin shareable"></div></a>
-			
-		</div>
-		<div class="bottomshares">
-			<a href="http://www.tumblr.com/share/link?url=www.sickday.at&name=New%20music%20calendar%20demo!&description=Just+saw+the+demo+for+a+rad+concert+browsing+site!" class="tumblrpop popup" id="tumblrlink"><div id="tumblr" class="tumblr shareable"></div></a>
-			<a href="https://plus.google.com/share?url=https://www.sickday.at" class="googlepop popup" id="googlepluslink"><div id="googleplus" class="googleplus shareable"></div></a>
-			<a href="//www.pinterest.com/pin/create/button/?url=www.sickday.at&media=https%3A%2F%2Fs3.amazonaws.com%2Fconcerts-assets%2Fimages%2Fsickday-logo.png&description=Sickday.at%3A%20concerts%20made%20easy!" class="pintpop popup" id="pinterestlink"><div id="pinterest" class="pinterest shareable"></div></a>
-			<a href="http://www.reddit.com/r/SickdayAt" target="_newtab" id="redditlink"><div id="reddit" class="reddit shareable"></div></a>
-		</div>
-		<center><div class="shareinfo"><h4></h4></div></center>
-	</div>
-</div>
-<center>
-<div class="bottomfoot">
-	<h4 class="contact">dot@sickday.at</h4>
-</div>
-</center>
+</head>  
 
-<div class="hidden">
-	<script type="text/javascript">
-		<!--//--><![CDATA[//><!--
+
+<body>
+<div class="main onepage-wrapper">
+	<section class="page1 section active splashbg">
+		<div class="logo-top-left"></div>
+		<div class="splash-container">
+			<div class="videoembed">
+				<iframe src="//player.vimeo.com/video/94617823" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+			<!--
+			<div class="splashlogo">
+				<img src="https://s3.amazonaws.com/concerts-assets/images/sickday-logo.png">
+			</div>
+			-->
+			<div class="email-collect">
+				<h4 class="notice">Get notified when the beta is out</h4>
+					<div class="container-search5">
+						<%= form_tag({}, class: "emaillist") do %>
+     					<div class="emailer">
+     			 			<input class="searchbox" name="entry.1502143306" placeholder="Email address" type="email">
+      					</div>
+      					<input type="submit" value="">
+    					<%end%>
+    					<div class="errorbox"><center><h4 class="errors"></h4></center></div>
+					</div>
+			</div>
+	
+			<div class="shareables">
+				<div class="topshares">
+					<a href="https://www.facebook.com/sharer.php?app_id=113869198637480&sdk=joey&u=https%3A%2F%2Fwww.sickday.at&display=popup" class="fbpop popup" id="fbdirectlink"><div id="fbdirect" class="fbdirect shareable"></div></a>
+					<a href="https://www.facebook.com/SickdayAt" target="_newtab" id="fblikelink"><div id="fblike" class="fblike shareable"></div></a>
+					<a href="https://twitter.com/share?text=Just+saw+the+demo+for+a+rad+concert+browsing+site+-" class="twitpop popup" id="twitterlink"><div id="twitter" class="twitter shareable"></div></a>
+					<a href="http://www.tumblr.com/share/link?url=www.sickday.at&name=New%20music%20calendar%20demo!&description=Just+saw+the+demo+for+a+rad+concert+browsing+site!" class="tumblrpop popup" id="tumblrlink"><div id="tumblr" class="tumblr shareable"></div></a>
+					<a href="https://www.linkedin.com/shareArticle?title=Sickday%2Eat%3A+Concerts+made+easy%21&mini=true&url=https://www%2Esickday%2Eat&source=sickday%2Eat" class="linkedpop popup" id="linkedinlink"><div id="linkedin" class="linkedin shareable"></div></a>
+					<a href="https://plus.google.com/share?url=https://www.sickday.at" class="googlepop popup" id="googlepluslink"><div id="googleplus" class="googleplus shareable"></div></a>
+				</div>
+			<center><div class="shareinfo"><h4></h4></div></center>
+			</div>
+		</div>
+		<center>
+		<div class="bottomnav">
+			<a data-index="2" href="#2"><div class="quickdescrip"><h4>What is Sickday</h4></div></a>
+			<a data-index="2" href="#2"><div class="bottomarrow"></div></a>
+		</div>
+		</center>
+		<div class="hidden">
+			<script type="text/javascript">
+			<!--//--><![CDATA[//><!--
 			var images = new Array()
 			function preload() {
 				for (i = 0; i < preload.arguments.length; i++) {
@@ -111,9 +129,104 @@
 				"https://s3.amazonaws.com/concerts-assets/images/share7-02.png",
 				"https://s3.amazonaws.com/concerts-assets/images/share8-02.png"
 			)
-		//--><!]]>
-	</script>
-</div>
-
+			//--><!]]>
+			</script>
+		</div>
+	</section>
+	<section class="page2 section">
+		<div class="outer">
+		<div class="middle">
+		<div class="inner">
+		<div class="container-splash">
+			<div class="topbar"><h4>WHAT IF WE TOOK LISTINGS FROM ACROSS LIVE MUSIC SITES</h4></div>
+			<div class="image image2"><div class="gradient1"></div><a data-index="3" href="#3"><div class="bottomarrow"></div></a></div>
+		</div>
+		</div>
+		</div>
+		</div>
+	</section>
+	<section class="page3 section">
+		<div class="outer">
+		<div class="middle">
+		<div class="inner">
+		<div class="container-splash">
+			<div class="topbar"><h4>AND COMBINED CONCERTS LARGE AND SMALL INTO A SINGLE CALENDAR?</h4></div>
+			<div class="image image3"><div class="gradient2"></div><a data-index="4" href="#4"><div class="bottomarrow"></div></a></div>
+		</div>
+		</div>
+		</div>
+		</div>
+	</section>
+	<section class="page4 section">
+		<div class="outer">
+		<div class="middle">
+		<div class="inner">
+		<div class="container-splash">
+			<div class="topbar"><h4>CUSTOMIZE IT BY CONNECTING YOUR MUSIC SERVICES</h4></div>
+			<div class="image image4"><div class="gradient2"></div><a data-index="5" href="#5"><div class="bottomarrow"></div></a></div>
+		</div>
+		</div>
+		</div>
+		</div>
+	</section>
+	<section class="page5 section">
+		<div class="outer">
+		<div class="middle">
+		<div class="inner">
+		<div class="container-splash">
+			<div class="topbar"><h4>AND SAMPLE MUSIC INSTANTLY - LIKE A RADIO STATION OF UPCOMING SHOWS</h4></div>
+			<div class="image image5"><div class="gradient2"></div><a data-index="6" href="#6"><div class="bottomarrow"></div></a></div>
+		</div>
+		</div>
+		</div>
+		</div>
+	</section>
+	<section class="page6 section">
+		<div class="outer">
+		<div class="middle">
+		<div class="inner">
+		<div class="container-splash">
+			<div class="topbar"><h4>CREATE AND SHARE YOUR OFFICIAL MUSIC PROFILE & VIEW FRIENDS' CALENDARS</h4></div>
+			<div class="image image6"><div class="gradient2"></div><a data-index="7" href="#7"><div class="bottomarrow"></div></a></div>
+		</div>
+		</div>
+		</div>
+		</div>
+	</section>
+	<section class="page7 section image7">
+		<center><div class="comingsoon"><h4>COMING SOON...</h4></div></center>
+		<center>
+		<div class="email-collect2">
+				<h4 class="notice2">Get notified when the beta is out</h4>
+					<div class="container-search6">
+						<%= form_tag({}, class: "emaillist2") do %>
+     					<div class="emailer2">
+     			 			<input class="searchbox2" name="entry.1502143306" placeholder="Email address" type="email">
+      					</div>
+      					<input type="submit" value="">
+    					<%end%>
+    					<div class="errorbox2"><center><h4 class="errors2"></h4></center></div>
+					</div>
+		</div>
+		<br>
+		<div class="shareables">
+				<div class="topshares">
+					<a href="https://www.facebook.com/sharer.php?app_id=113869198637480&sdk=joey&u=https%3A%2F%2Fwww.sickday.at&display=popup" class="fbpop popup" id="fbdirectlink"><div id="fbdirect" class="fbdirect shareable"></div></a>
+					<a href="https://www.facebook.com/SickdayAt" target="_newtab" id="fblikelink"><div id="fblike" class="fblike shareable"></div></a>
+					<a href="https://twitter.com/share?text=Just+saw+the+demo+for+a+rad+concert+browsing+site+-" class="twitpop popup" id="twitterlink"><div id="twitter" class="twitter shareable"></div></a>
+					<a href="http://www.tumblr.com/share/link?url=www.sickday.at&name=New%20music%20calendar%20demo!&description=Just+saw+the+demo+for+a+rad+concert+browsing+site!" class="tumblrpop popup" id="tumblrlink"><div id="tumblr" class="tumblr shareable"></div></a>
+					<a href="https://www.linkedin.com/shareArticle?title=Sickday%2Eat%3A+Concerts+made+easy%21&mini=true&url=https://www%2Esickday%2Eat&source=sickday%2Eat" class="linkedpop popup" id="linkedinlink"><div id="linkedin" class="linkedin shareable"></div></a>
+					<a href="https://plus.google.com/share?url=https://www.sickday.at" class="googlepop popup" id="googlepluslink"><div id="googleplus" class="googleplus shareable"></div></a>
+				</div>
+			<center><div class="shareinfo"><h4></h4></div></center>
+			</div>
+			
+		<div class="contactmail"><h4>dot@sickday.at</h4></div>
+		<div class="bottomnav">
+			<a data-index="1" href="#1"><div class="bottomarrow"></div></a>
+		</div>
+		</center>
+		
+	</section>
 </body>
 </html>

@@ -7,6 +7,16 @@
   
 }
 
+.logo-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:56px;
+  height:56px;
+  display:block;
+  background: url('https://s3.amazonaws.com/concerts-assets/images/logo-final.png')
+}
+
 .splashlogo {
   width: 130px;
   height: 130px;
@@ -16,7 +26,12 @@
 }
 
 .splashbg {
-  background-color: #cccccc;
+  //background-color: #cccccc;
+  background:url('https://s3.amazonaws.com/concerts-assets/images/01-final.jpg') black no-repeat fixed top center;
+  background-size:cover;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
 }
 
 .splash-container {
@@ -39,7 +54,24 @@
   padding-top: 30px;
   font-family: "Roboto-Condensed";
   //padding-left: 20px;
-  color: black;
+  color: white;
+  height: 24px;
+}
+
+.email-collect2 {
+  display: inline-block;
+  height: 130px;
+  //padding-top: 10px;
+  //padding-left:10px;
+  //float: left;
+}
+
+.notice2 {
+  font-size: 24px;
+  padding-top: 30px;
+  font-family: "Roboto-Condensed";
+  //padding-left: 20px;
+  color: white;
   height: 24px;
 }
 
@@ -54,8 +86,20 @@
   width:300px;
 }
 
-.container-search {
-    width: 300px;
+.errors2 {
+  font-size: 16px;
+  color: red;
+}
+
+.errorbox2 {
+  display: inline-block;
+  float:left;
+  width:300px;
+}
+
+
+.container-search5 {
+    width: 302px;
     height: auto;
     font-size: 16px;
     font-family: "Roboto-Condensed";
@@ -83,8 +127,8 @@
     
     .searchbox {
       font-family: "Roboto-Condensed";
-      width: 220px;
-      height: 25px !important;
+      width: 251px;
+      height: 47px !important;
       color: #5e5e5e;
       border-radius: 0px;
       display: inline-block;
@@ -110,11 +154,76 @@
     }
 }
 
+.container-search6 {
+    width: 302px;
+    height: auto;
+    font-size: 16px;
+    font-family: "Roboto-Condensed";
+    display: inline-block; 
+    color: #5e5e5e;
+    float: left;
+    padding-bottom:20px;
+    //padding-left: 20px;
+    
+    input[type="email"] {
+      color: #5e5e5e;
+      font-size: 13px;
+      padding: 0px 6px 1px;
+      background-color: white;
+      border: none;
+      line-height:15px;
+    }
+    
+    input[type="text"] {
+      color: #5e5e5e;
+      font-size: 13px;
+      padding: 0px 6px 1px;
+      background-color: #d9d9d9;
+    }
+    
+    .searchbox2 {
+      font-family: "Roboto-Condensed";
+      width: 251px;
+      height: 47px !important;
+      color: #5e5e5e;
+      border-radius: 0px;
+      display: inline-block;
+      box-shadow: none !important;
+    }
+    
+    ::-webkit-input-placeholder {color: #8a8a8a;}
+    :-moz-placeholder {color: #8a8a8a; opacity:  1;}
+    ::-moz-placeholder {color: #8a8a8a; opacity:  1;}
+    :-ms-input-placeholder {color: #8a8a8a;}
+    
+    .comments2 {
+      font-family: "Roboto-Condensed";
+      color: #5e5e5e;
+      border-radius: 0px;
+      display: inline-block;
+      box-shadow: none !important;
+      resize: none;
+      border: none;
+      font-size:13px;
+      margin-bottom:7px;
+      overflow-y:hidden;
+    }
+}
+
 .emailer {
-  width: 220px;
-  height: 17px;
+  width: 251px;
+  height: 47px;
   display: inline-block;
   float: left;
+  margin-right:4px;
+}
+
+.emailer2 {
+  width: 251px;
+  height: 47px;
+  display: inline-block;
+  float: left;
+  margin-right:4px;
 }
 
 .ajaxsubmit {
@@ -148,18 +257,17 @@
 }
 
 input[type="submit"] {
-  height: 25px !important;
-  width: 80px;
+  height: 47px !important;
+  width: 47px;
   display: inline-block;
   float: left;
-  background-color: black;
+  background:url('https://s3.amazonaws.com/concerts-assets/images/ic-mail-final.PNG');
   font-family: "Roboto-Condensed-Bold";
   font-size: 18px;
   font-weight: normal;
-  height: 21px;
   line-height: 1;
-  color: white;
   padding-top: 0px;
+  padding: 0px;
 }
 
 .hidden {
@@ -229,6 +337,21 @@ input[type="submit"] {
         background: url("https://s3.amazonaws.com/concerts-assets/images/share4-02.png");
       }
     }
+    
+    .googleplus {
+      background: url("https://s3.amazonaws.com/concerts-assets/images/share6-01.png");
+      &:hover {
+        background: url("https://s3.amazonaws.com/concerts-assets/images/share6-02.png");
+      }
+    }
+    
+    .tumblr {
+      background: url("https://s3.amazonaws.com/concerts-assets/images/share5-01.png");
+      &:hover {
+        background: url("https://s3.amazonaws.com/concerts-assets/images/share5-02.png");
+      }
+    }
+    
   }
   
   .bottomshares {
@@ -263,5 +386,181 @@ input[type="submit"] {
         background: url("https://s3.amazonaws.com/concerts-assets/images/share8-02.png");
       }
     }
+  }
+}
+
+.bottomnav {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.quickdescrip {
+  h4 {
+    font-size:20px;
+  }
+}
+
+.bottomarrow {
+  background:url('https://s3.amazonaws.com/concerts-assets/images/arrowdown-final.png') no-repeat;
+  width:48px;
+  height:42px;
+  margin-bottom: 30px;
+}
+
+.container-splash {
+  max-width:1510px;
+  max-height:898px;
+  width:100%;
+  height:898px;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+.section {
+  background-color:black;
+}
+
+.onepage-pagination li a.active:before {
+  border: 1px solid white !important;
+}
+
+.onepage-pagination li a:before {
+  background: white !important;
+}
+
+.topbar {
+  width:100%;
+  height:80px;
+  background-color:black;
+  
+  h4 {
+    font-size:40px;
+    line-height:55px;
+    font-family:"Roboto-Condensed-Bold";
+    height:55px;
+    margin-right:auto;
+    margin-left:auto;
+    text-align:center;
+    padding-top: 10px;
+  }
+}
+
+.gradient1 {
+  background:url('https://s3.amazonaws.com/concerts-assets/images/gradient1-final.png');
+  position:absolute;
+  bottom:0;
+  width:100%;
+  max-height:496px;
+  height:100%;
+}
+
+.gradient2 {
+  background:url('https://s3.amazonaws.com/concerts-assets/images/gradient2-final.png');
+  position:absolute;
+  bottom:0;
+  width:100%;
+  max-height:185px;
+  height:100%;
+}
+
+.image {
+  max-width:1510px;
+  max-height:818px;
+  background-size:contain;
+  height:100%;
+  position:relative;
+  
+  .bottomarrow {
+    position:absolute;
+    display:block;
+    bottom:0;
+    margin-right: auto;
+    margin-left:48.5%;
+  }
+}
+
+.image2 {
+  background:url('https://s3.amazonaws.com/concerts-assets/images/02-final.jpg') no-repeat;
+}
+
+.image3 {
+  background:url('https://s3.amazonaws.com/concerts-assets/images/03-final.jpg') no-repeat;
+}
+
+.image4 {
+  background:url('https://s3.amazonaws.com/concerts-assets/images/04-final.png') no-repeat;
+}
+
+.image5 {
+  background:url('https://s3.amazonaws.com/concerts-assets/images/05-final.jpg') no-repeat;
+}
+
+.image6 {
+  background:url('https://s3.amazonaws.com/concerts-assets/images/06-final.png') no-repeat;
+}
+
+.image7 {
+  background:url('https://s3.amazonaws.com/concerts-assets/images/07-final.jpg') black no-repeat top center;
+  background-size:cover;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+    width: 100%;
+}
+
+.comingsoon {
+  margin-right:auto;
+  margin-left:auto;
+  margin-top:20%;
+  padding-bottom:50px;
+  
+  h4 {
+    font-size: 35px;
+    height:40px;
+    font-family:"Roboto-Condensed-Bold";
+  }
+}
+
+.page7 {
+  .shareables{
+    float:none;
+    margin-top:15px;
+  }
+  .bottomnav {
+    position:inherit;
+  .bottomarrow {
+    position:absolute;
+    display:block;
+    bottom:0;
+    margin-right: auto;
+    margin-left:48.5%;
+    background:url('https://s3.amazonaws.com/concerts-assets/images/arrowup-final.png') no-repeat;
+  }
+  }
+}
+
+.contactmail {
+  h4 {
+    font-size:18px;
   }
 }

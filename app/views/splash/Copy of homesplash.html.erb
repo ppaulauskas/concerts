@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product">
+<head>
+	<!-- Open Graph meta -->
+	<meta name="og:url" content="https://www.sickday.at">
+	<meta name="og:title" content="Sickday.at"/>
+	<meta name="og:description" content="Sickday is a complete, integrated concert calendar that facilitates browsing local acts, discovering new music and following your favorite artists."/>
+	<meta name="og:image" content="https://s3.amazonaws.com/concerts-assets/images/sickday-logo.png"/>
+	
+	<!-- Google meta -->
+	<meta itemprop="name" content="Sickday.at">
+	<meta itemprop="description" content="Sickday is a complete, integrated concert calendar that facilitates browsing local acts, discovering new music and following your favorite artists.">
+	<meta itemprop="image" content="https://s3.amazonaws.com/concerts-assets/images/sickday-logo.png">	
+	
+	<!-- Twitter meta -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Sickday.at">
+	<meta name="twitter:description" content="Sickday is a complete, integrated concert calendar that facilitates browsing local acts, discovering new music and following your favorite artists.">
+	<meta name="twitter:image:src" content="https://s3.amazonaws.com/concerts-assets/images/sickday-logo.png">
+	<meta name="twitter:domain" content="https://www.sickday.at">
+		
+	<!-- Standard meta -->
+	<title>Sickday.at</title>
+	<meta name="description" content="Sickday is a complete, integrated concert calendar that facilitates browsing local acts, discovering new music and following your favorite artists."/>
+	<%= stylesheet_link_tag "application", media: "all" %>
+  	<%= javascript_include_tag "application" %>
+  	<%= csrf_meta_tags %>
+  	<%= render 'layouts/shim' %>
+  
+    <!-- Icon -->
+ 	<link rel="icon" type="image/png" href="https://s3.amazonaws.com/concerts-assets/images/favicon.ico">
+ 
+ 	<!-- Google analytics -->
+ 	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  		ga('create', 'UA-51284951-1', 'sickday.at');
+  		ga('send', 'pageview');
+
+	</script>
+</head>  
+<body class="splashbg">
+<div class="splash-container">
+	<div class="videoembed">
+		<iframe src="//player.vimeo.com/video/94617823" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+	<!--
+	<div class="splashlogo">
+		<img src="https://s3.amazonaws.com/concerts-assets/images/sickday-logo.png">
+	</div>
+	-->
+	<div class="email-collect">
+		<h4 class="notice">Get notified when the beta is out</h4>
+		<div class="container-search">
+			<%= form_tag({}, class: "emaillist") do %>
+				<div class="commentses">
+					<textarea class="comments" name="entry.428211031" placeholder="Optional comments" rows="3" cols="50"></textarea>
+				</div>
+     			<div class="emailer">
+     			 	<input class="searchbox" name="entry.1502143306" placeholder="Email address" type="email">
+      			</div>
+      			<input type="submit" value="SUBMIT">
+    		<%end%>
+    		<div class="errorbox"><center><h4 class="errors"></h4></center></div>
+		</div>
+	</div>
+	
+	<div class="shareables">
+		<div class="topshares">
+			<a href="https://www.facebook.com/sharer.php?app_id=113869198637480&sdk=joey&u=https%3A%2F%2Fwww.sickday.at&display=popup" class="fbpop popup" id="fbdirectlink"><div id="fbdirect" class="fbdirect shareable"></div></a>
+			<a href="https://www.facebook.com/SickdayAt" target="_newtab" id="fblikelink"><div id="fblike" class="fblike shareable"></div></a>
+			<a href="https://twitter.com/share?text=Just+saw+the+demo+for+a+rad+concert+browsing+site+-" class="twitpop popup" id="twitterlink"><div id="twitter" class="twitter shareable"></div></a>
+			<a href="https://www.linkedin.com/shareArticle?title=Sickday%2Eat%3A+Concerts+made+easy%21&mini=true&url=https://www%2Esickday%2Eat&source=sickday%2Eat" class="linkedpop popup" id="linkedinlink"><div id="linkedin" class="linkedin shareable"></div></a>
+			
+		</div>
+		<div class="bottomshares">
+			<a href="http://www.tumblr.com/share/link?url=www.sickday.at&name=New%20music%20calendar%20demo!&description=Just+saw+the+demo+for+a+rad+concert+browsing+site!" class="tumblrpop popup" id="tumblrlink"><div id="tumblr" class="tumblr shareable"></div></a>
+			<a href="https://plus.google.com/share?url=https://www.sickday.at" class="googlepop popup" id="googlepluslink"><div id="googleplus" class="googleplus shareable"></div></a>
+			<a href="//www.pinterest.com/pin/create/button/?url=www.sickday.at&media=https%3A%2F%2Fs3.amazonaws.com%2Fconcerts-assets%2Fimages%2Fsickday-logo.png&description=Sickday.at%3A%20concerts%20made%20easy!" class="pintpop popup" id="pinterestlink"><div id="pinterest" class="pinterest shareable"></div></a>
+			<a href="http://www.reddit.com/r/SickdayAt" target="_newtab" id="redditlink"><div id="reddit" class="reddit shareable"></div></a>
+		</div>
+		<center><div class="shareinfo"><h4></h4></div></center>
+	</div>
+</div>
+<center>
+<div class="bottomfoot">
+	<h4 class="contact">dot@sickday.at</h4>
+</div>
+</center>
+
+<div class="hidden">
+	<script type="text/javascript">
+		<!--//--><![CDATA[//><!--
+			var images = new Array()
+			function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image()
+					images[i].src = preload.arguments[i]
+				}
+			}
+			preload(
+				"https://s3.amazonaws.com/concerts-assets/images/share1-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share2-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share3-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share4-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share5-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share6-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share7-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/share8-02.png"
+			)
+		//--><!]]>
+	</script>
+</div>
+
+</body>
+</html>

@@ -16,16 +16,67 @@ $(function() {
 			type: "POST",
 			dataType: "xml",
 			success: function(){
-				$('.container-search').hide();
+				$('.container-search5').hide();
 				$('.errors').hide();
 				$('.notice').text('Thank You!');
 			},
 			error: function(){
 				//Cross domain problems, currently accept all entries
 				//$('.errors').text('Uh oh! Something went wrong. Please try again later.');
-				$('.container-search').hide();
+				$('.container-search5').hide();
 				$('.errors').hide();
 				$('.notice').text('Thank You!');
+			}
+		});
+		}
+		
+		/*
+		$.ajax({
+			url: "/splash/emailsubmit",
+			type: "post",
+			data: data,
+			success: function(){
+			$('.container-search').hide();
+			$('.errors').hide();
+			$('.notice').text('Thank You! We\'ll let you know when we\'re up and running!');
+			},
+			error: function(){
+			$('.errors').text('Uh oh! Something went wrong. Please try again later.');
+			}
+		});
+		*/
+		
+	});
+});
+
+$(function() {
+	$('.emaillist2').on('submit', function(e) {
+		e.preventDefault();
+		//var data = $('.emaillist').serialize();
+		var comment = $('.comments2').val();
+		var email = $('.searchbox2').val();
+		
+		if(comment==''&&email=='') {
+			$('.errors2').text('Please fill out at least one field.');
+		}
+		else {
+		$.ajax({
+			url: "https://docs.google.com/forms/d/1FRuM1h2mQyh1LLcT7_bnQ3SmoqfPN4uucZPvsr9TNR0/formResponse",
+			//data: data,
+			data: {"entry.428211031" : comment, "entry.1502143306" : email},
+			type: "POST",
+			dataType: "xml",
+			success: function(){
+				$('.container-search6').hide();
+				$('.errors2').hide();
+				$('.notice2').text('Thank You!');
+			},
+			error: function(){
+				//Cross domain problems, currently accept all entries
+				//$('.errors').text('Uh oh! Something went wrong. Please try again later.');
+				$('.container-search6').hide();
+				$('.errors2').hide();
+				$('.notice2').text('Thank You!');
 			}
 		});
 		}
