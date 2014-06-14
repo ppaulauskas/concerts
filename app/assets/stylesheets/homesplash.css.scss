@@ -257,8 +257,12 @@
 }
 
 input[type="submit"] {
+
+}
+
+.mailicon {
   height: 47px !important;
-  width: 47px;
+  width: 47px !important;
   display: inline-block;
   float: left;
   background:url('https://s3.amazonaws.com/concerts-assets/images/ic-mail-final.PNG');
@@ -400,6 +404,9 @@ input[type="submit"] {
 .quickdescrip {
   h4 {
     font-size:20px;
+    &:hover{
+      color: #FF4200;
+    }
   }
 }
 
@@ -408,6 +415,9 @@ input[type="submit"] {
   width:48px;
   height:42px;
   margin-bottom: 30px;
+  &:hover{
+    background:url('https://s3.amazonaws.com/concerts-assets/images/arrowdownb-final.png') no-repeat;
+  }
 }
 
 .container-splash {
@@ -449,12 +459,15 @@ input[type="submit"] {
 }
 
 .gradient1 {
-  background:url('https://s3.amazonaws.com/concerts-assets/images/gradient1-final.png');
+  background:url('https://s3.amazonaws.com/concerts-assets/images/gradient1.png');
   position:absolute;
   bottom:0;
   width:100%;
   max-height:496px;
   height:100%;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
 
 .gradient2 {
@@ -468,8 +481,8 @@ input[type="submit"] {
 
 .image {
   max-width:1510px;
-  max-height:818px;
-  background-size:contain;
+  max-height:898px;
+  //background-size:contain;
   height:100%;
   position:relative;
   
@@ -483,23 +496,38 @@ input[type="submit"] {
 }
 
 .image2 {
-  background:url('https://s3.amazonaws.com/concerts-assets/images/02-final.jpg') no-repeat;
+  background:url('https://s3.amazonaws.com/concerts-assets/images/02.jpg') no-repeat;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
 
 .image3 {
-  background:url('https://s3.amazonaws.com/concerts-assets/images/03-final.jpg') no-repeat;
+  background:url('https://s3.amazonaws.com/concerts-assets/images/03.jpg') no-repeat;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
 
 .image4 {
-  background:url('https://s3.amazonaws.com/concerts-assets/images/04-final.png') no-repeat;
+  background:url('https://s3.amazonaws.com/concerts-assets/images/04.png') no-repeat;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
 
 .image5 {
-  background:url('https://s3.amazonaws.com/concerts-assets/images/05-final.jpg') no-repeat;
+  background:url('https://s3.amazonaws.com/concerts-assets/images/05.jpg') no-repeat;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
 
 .image6 {
-  background:url('https://s3.amazonaws.com/concerts-assets/images/06-final.png') no-repeat;
+  background:url('https://s3.amazonaws.com/concerts-assets/images/06.jpg') no-repeat;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
 
 .image7 {
@@ -548,14 +576,18 @@ input[type="submit"] {
   }
   .bottomnav {
     position:inherit;
-  .bottomarrow {
-    position:absolute;
-    display:block;
-    bottom:0;
-    margin-right: auto;
-    margin-left:48.5%;
-    background:url('https://s3.amazonaws.com/concerts-assets/images/arrowup-final.png') no-repeat;
-  }
+    
+    .bottomarrow {
+      position:absolute;
+      display:block;
+      bottom:0;
+      margin-right: auto;
+      margin-left:48.5%;
+      background:url('https://s3.amazonaws.com/concerts-assets/images/arrowup-final.png') no-repeat;
+      &:hover{
+        background:url('https://s3.amazonaws.com/concerts-assets/images/arrowupb-final.png') no-repeat;
+      }
+    }
   }
 }
 

@@ -85,7 +85,7 @@
      					<div class="emailer">
      			 			<input class="searchbox" name="entry.1502143306" placeholder="Email address" type="email">
       					</div>
-      					<input type="submit" value="">
+      					<input class="mailicon" type="submit" value="">
     					<%end%>
     					<div class="errorbox"><center><h4 class="errors"></h4></center></div>
 					</div>
@@ -127,7 +127,10 @@
 				"https://s3.amazonaws.com/concerts-assets/images/share5-02.png",
 				"https://s3.amazonaws.com/concerts-assets/images/share6-02.png",
 				"https://s3.amazonaws.com/concerts-assets/images/share7-02.png",
-				"https://s3.amazonaws.com/concerts-assets/images/share8-02.png"
+				"https://s3.amazonaws.com/concerts-assets/images/share8-02.png",
+				"https://s3.amazonaws.com/concerts-assets/images/arrowupb-final.png",
+				"https://s3.amazonaws.com/concerts-assets/images/arrowdownb-final.png",
+				"https://s3.amazonaws.com/concerts-assets/images/ic-mail2-final.png"
 			)
 			//--><!]]>
 			</script>
@@ -138,7 +141,7 @@
 		<div class="middle">
 		<div class="inner">
 		<div class="container-splash">
-			<div class="topbar"><h4>WHAT IF WE TOOK LISTINGS FROM ACROSS LIVE MUSIC SITES</h4></div>
+			<!--<div class="topbar"><h4>WHAT IF WE TOOK LISTINGS FROM ACROSS LIVE MUSIC SITES</h4></div>-->
 			<div class="image image2"><div class="gradient1"></div><a data-index="3" href="#3"><div class="bottomarrow"></div></a></div>
 		</div>
 		</div>
@@ -150,8 +153,8 @@
 		<div class="middle">
 		<div class="inner">
 		<div class="container-splash">
-			<div class="topbar"><h4>AND COMBINED CONCERTS LARGE AND SMALL INTO A SINGLE CALENDAR?</h4></div>
-			<div class="image image3"><div class="gradient2"></div><a data-index="4" href="#4"><div class="bottomarrow"></div></a></div>
+			<!--<div class="topbar"><h4>AND COMBINED CONCERTS LARGE AND SMALL INTO A SINGLE CALENDAR?</h4></div>-->
+			<div class="image image3"><div class="spacer"></div><div class="gradient2"></div><a data-index="4" href="#4"><div class="bottomarrow"></div></a></div>
 		</div>
 		</div>
 		</div>
@@ -162,7 +165,7 @@
 		<div class="middle">
 		<div class="inner">
 		<div class="container-splash">
-			<div class="topbar"><h4>CUSTOMIZE IT BY CONNECTING YOUR MUSIC SERVICES</h4></div>
+			<!--<div class="topbar"><h4>CUSTOMIZE IT BY CONNECTING YOUR MUSIC SERVICES</h4></div>-->
 			<div class="image image4"><div class="gradient2"></div><a data-index="5" href="#5"><div class="bottomarrow"></div></a></div>
 		</div>
 		</div>
@@ -174,7 +177,7 @@
 		<div class="middle">
 		<div class="inner">
 		<div class="container-splash">
-			<div class="topbar"><h4>AND SAMPLE MUSIC INSTANTLY - LIKE A RADIO STATION OF UPCOMING SHOWS</h4></div>
+			<!--<div class="topbar"><h4>AND SAMPLE MUSIC INSTANTLY - LIKE A RADIO STATION OF UPCOMING SHOWS</h4></div>-->
 			<div class="image image5"><div class="gradient2"></div><a data-index="6" href="#6"><div class="bottomarrow"></div></a></div>
 		</div>
 		</div>
@@ -186,7 +189,7 @@
 		<div class="middle">
 		<div class="inner">
 		<div class="container-splash">
-			<div class="topbar"><h4>CREATE AND SHARE YOUR OFFICIAL MUSIC PROFILE & VIEW FRIENDS' CALENDARS</h4></div>
+			<!--<div class="topbar"><h4>CREATE AND SHARE YOUR OFFICIAL MUSIC PROFILE & VIEW FRIENDS' CALENDARS</h4></div>-->
 			<div class="image image6"><div class="gradient2"></div><a data-index="7" href="#7"><div class="bottomarrow"></div></a></div>
 		</div>
 		</div>
@@ -228,5 +231,30 @@
 		</center>
 		
 	</section>
+	
+	<script>
+	$(document).ready(function() {
+		var picheight = ($('.image').width())*.602;
+		$('.image').height(picheight);
+		
+		var gradheight = ($('.gradient1').width())*.3285;
+		$('.gradient1').height(gradheight);
+		
+       $(window).resize(function() {
+          var picheight = ($('.image').width())*.602;
+		  $('.image').height(picheight);
+		  
+		  var gradheight = ($('.gradient1').width())*.3285;
+		  $('.gradient1').height(gradheight);
+       }); 
+       
+       $('.searchbox').focus(function(){
+        $('.mailicon').css('background','url("https://s3.amazonaws.com/concerts-assets/images/ic-mail2-final.png")');
+       });
+       $('.searchbox').focusout(function(){
+        $('.mailicon').css('background','url("https://s3.amazonaws.com/concerts-assets/images/ic-mail-final.PNG")');
+       });
+    });
+    </script>
 </body>
 </html>
